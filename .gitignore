@@ -3,6 +3,7 @@
 
 # Allow website files
 !.gitignore
+!CNAME
 !index.html
 !style.css
 !script.js
