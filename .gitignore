@@ -1,0 +1,17 @@
+# Ignore everything
+*
+
+# Allow website files
+!.gitignore
+!index.html
+!style.css
+!script.js
+!assets/
+!assets/**
+
+# Ignore OS files
+.DS_Store
+**/.DS_Store
+
+# Ignore Claude config
+.claude/

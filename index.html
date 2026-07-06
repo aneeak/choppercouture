@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinkaisch // Anika Müggler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-dot"></div>
+
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <button class="nav-logo" data-page="0">DINKAISCH // ANIKA MÜGGLER</button>
+    <ul class="nav-links">
+      <li><button data-page="1">Campaigns</button></li>
+      <li><button data-page="2">Podcast</button></li>
+      <li><button data-page="3">Flyer</button></li>
+      <li><button data-page="4">Tattoo</button></li>
+      <li><button data-page="5">Graffiti</button></li>
+      <li><button data-page="6">About</button></li>
+    </ul>
+    <div id="page-indicator"></div>
+  </nav>
+
+  <!-- Viewer -->
+  <div id="viewer">
+    <div id="pages">
+
+      <!-- PAGE 0: HOME -->
+      <section class="page" id="page-home">
+        <div class="hero">
+          <div class="hero-video-wrap">
+            <video autoplay muted loop playsinline>
+              <source src="assets/logo-video.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="hero-text fade-in">
+            <h1>DINKAISCH</h1>
+            <p class="hero-sub">// Anika Müggler</p>
+            <p class="hero-desc">Here you'll find projects that exist somewhere between design, strategy, and subculture.</p>
+          </div>
+        </div>
+        <div class="home-nav-grid fade-in-up">
+          <div class="home-nav-item" onclick="goToPage(1)">
+            <span class="home-nav-label">Campaigns &amp; Concepts</span>
+            <span class="home-nav-arrow">→</span>
+          </div>
+          <div class="home-nav-item" onclick="goToPage(2)">
+            <span class="home-nav-label">Podcast Covers</span>
+            <span class="home-nav-arrow">→</span>
+          </div>
+          <div class="home-nav-item" onclick="goToPage(3)">
+            <span class="home-nav-label">Flyer &amp; Visual Studies</span>
+            <span class="home-nav-arrow">→</span>
+          </div>
+          <div class="home-nav-item" onclick="goToPage(4)">
+            <span class="home-nav-label">Digital to Dermal</span>
+            <span class="home-nav-arrow">→</span>
+          </div>
+          <div class="home-nav-item" onclick="goToPage(5)">
+            <span class="home-nav-label">Graffiti</span>
+            <span class="home-nav-arrow">→</span>
+          </div>
+          <div class="home-nav-item" onclick="goToPage(6)">
+            <span class="home-nav-label">About</span>
+            <span class="home-nav-arrow">→</span>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <span>© 2025 Anika Müggler</span>
+          <a href="mailto:contact@dinkaisch.com">contact@dinkaisch.com</a>
+          <a href="https://www.instagram.com/dinkaisch" target="_blank">Instagram @DINKAISCH</a>
+        </footer>
+      </section>
+
+      <!-- PAGE 1: CAMPAIGNS & CONCEPTS -->
+      <section class="page" id="page-campaigns">
+        <div class="page-header fade-in">
+          <h2>Campaigns<br>&amp; Concepts</h2>
+          <p class="page-header-sub">Strategically developed, visually translated.</p>
+        </div>
+
+        <!-- Project: #RideAndRepair -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Semester Project</span>
+            <span class="project-year">April–June 2024 · HTW Berlin</span>
+          </div>
+          <h3>#RideAndRepair</h3>
+          <p class="project-desc">Awareness campaign for the bicycle mechanic profession. Turn your passion for cycling into a career with impact.</p>
+          <p class="project-credits">Team: Anika Müggler, Amelie Thoms, Angelina Jovelly, Saba Shamsizadeh</p>
+          <p class="project-scope">Storyboard · Posters · Social Media · Personas · Tone of Voice</p>
+          <div class="image-grid grid-2">
+            <img src="assets/foodsharing-01.jpg" alt="RideAndRepair Campaign" class="scroll-reveal">
+            <img src="assets/foodsharing-02.jpg" alt="RideAndRepair Poster" class="scroll-reveal">
+          </div>
+        </div>
+
+        <!-- Project: Bück Dich für Berlin -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Awareness Campaign</span>
+            <span class="project-year">2025 · HTW Berlin</span>
+          </div>
+          <h3>BÜCK DICH FÜR BERLIN</h3>
+          <p class="project-desc">Campaign emphasizing responsibility and pride — addressing dog waste in Berlin's public spaces through gamification, character generation, OOH posters, and a campaign music video.</p>
+          <p class="project-credits">Team: Anika Müggler, Paul Gronbach, Michael Scheidl, Jara-Katharina Lorenz, Paul Ribbeck</p>
+          <p class="project-scope">OOH · Social Media · Character Generator · Campaign Video</p>
+          <div class="image-grid grid-3">
+            <img src="assets/kotbeutel.jpg" alt="Bück Dich für Berlin" class="scroll-reveal">
+            <img src="assets/foodsharing-03.jpg" alt="Campaign Poster" class="scroll-reveal">
+            <img src="assets/foodsharing-04.jpg" alt="Campaign Social" class="scroll-reveal">
+          </div>
+        </div>
+
+        <!-- Project: Herzkern -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Visual Identity</span>
+            <span class="project-year">2024–ongoing</span>
+          </div>
+          <h3>HERZKERN</h3>
+          <p class="project-desc">Logo and visual system for Herzkern, a Bern-based gabber label. Hand-sketched heart logo → vector (Illustrator) → 3D (Cinema 4D).</p>
+          <p class="project-scope">Logo · Typography · Visual System · Event Flyers</p>
+          <div class="image-grid grid-2">
+            <img src="assets/herzkern-.jpg" alt="Herzkern Concept" class="scroll-reveal">
+            <img src="assets/herzkern-2.jpg" alt="Herzkern Concept 2" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-3">
+            <img src="assets/herzkern-3.jpg" alt="Herzkern" class="scroll-reveal">
+            <img src="assets/herzkern-4.jpg" alt="Herzkern" class="scroll-reveal">
+            <img src="assets/herzkern-5.jpg" alt="Herzkern" class="scroll-reveal">
+          </div>
+        </div>
+
+        <!-- Project: Gentrification -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Visual Protest</span>
+            <span class="project-year">2021 · ZHDK</span>
+          </div>
+          <h3>GENTRIFICATION</h3>
+          <p class="project-desc">Visual response to the Koch-Areal demolition in Zurich. Photography, Procreate illustrations, digital collage, burned/scanned materials — façade interventions as urban displacement critique.</p>
+          <div class="image-grid grid-2">
+            <img src="assets/gentri-gentrifizierung-plakat-a.png" alt="Gentrification" class="scroll-reveal">
+            <img src="assets/gentri-gentrifizierung-plakat-b.png" alt="Gentrification" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-3">
+            <img src="assets/gentri-gentrifizierung-plakat-c.png" alt="Gentrification" class="scroll-reveal">
+            <img src="assets/gentri-gentrifizierung-plakat-kulturzentrum-b.png" alt="Gentrification" class="scroll-reveal">
+            <img src="assets/gentri-gentrifizierung-plakat-mutter-a.jpg" alt="Gentrification" class="scroll-reveal">
+          </div>
+        </div>
+
+        <!-- Project: Vivimo -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Merchandise &amp; Print</span>
+            <span class="project-year">2021</span>
+          </div>
+          <h3>VIVIMO</h3>
+          <p class="project-desc">Custom longpape packaging for trance DJ/producer from Zürich. Custom lettering, illustration, modular graphics, offset printing.</p>
+          <div class="image-grid grid-3">
+            <img src="assets/vivimo-papes-ed170f16-73b5-4a91-8e8e-3d9120e38731.jpg" alt="Vivimo Papes" class="scroll-reveal">
+            <img src="assets/vivimo-papes-8efab691-e96f-40b3-8618-ac828a2eb9a3.jpg" alt="Vivimo Papes" class="scroll-reveal">
+            <img src="assets/vivimo-papes-8d991a9c-6d3a-48d4-97c8-030c7769e73b.jpg" alt="Vivimo Papes" class="scroll-reveal">
+          </div>
+        </div>
+
+        <!-- Project: Foodsharing -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Semester Project</span>
+            <span class="project-year">October–November 2024 · HTW Berlin</span>
+          </div>
+          <h3>FOODSHARING</h3>
+          <p class="project-desc">Campaign addressing low participation in food waste reduction through emotional accessibility and practical relevance.</p>
+          <p class="project-credits">Team: Anika Müggler, Jara Lorenz</p>
+          <div class="image-grid grid-2">
+            <img src="assets/foodsharing-05.jpg" alt="Foodsharing Campaign" class="scroll-reveal">
+            <img src="assets/foodsharing-06.jpg" alt="Foodsharing Campaign" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-3">
+            <img src="assets/foodsharing-07.jpg" alt="Foodsharing" class="scroll-reveal">
+            <img src="assets/foodsharing-08.jpg" alt="Foodsharing" class="scroll-reveal">
+            <img src="assets/foodsharing-09.jpg" alt="Foodsharing" class="scroll-reveal">
+          </div>
+        </div>
+
+        <footer class="page-footer">
+          <span>© 2025 Anika Müggler</span>
+          <a href="mailto:contact@dinkaisch.com">contact@dinkaisch.com</a>
+          <a href="https://www.instagram.com/dinkaisch" target="_blank">@DINKAISCH</a>
+        </footer>
+      </section>
+
+      <!-- PAGE 2: PODCAST -->
+      <section class="page" id="page-podcast">
+        <div class="page-header fade-in">
+          <h2>Podcast<br>Series</h2>
+          <p class="page-header-sub">Glanzikultur — Zurich-based techno label</p>
+        </div>
+
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Visual System</span>
+            <span class="project-year">2022–2024</span>
+          </div>
+          <h3>GLANZIKULTUR PODCAST SERIES</h3>
+          <p class="project-desc">A modular visual system that balances consistency with creative freedom. Minimalist covers with bold typography informed by distortion, rhythm, and silence.</p>
+          <p class="project-desc">The visual concept is shaped by the artist's musical style, public image, and aesthetic tone — translating sound into visual language.</p>
+          <p class="project-scope"><a href="https://soundcloud.com/glanzikultur" target="_blank" class="text-link">SoundCloud → Glanzikultur</a></p>
+        </div>
+
+        <div class="podcast-masonry fade-in-up" id="podcast-grid">
+          <img src="assets/podcast-01.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-02.jpg" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-03.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-04.jpg" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-05.jpg" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-06.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-07.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-08.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-09.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-10.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-11.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-12.jpg" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-13.jpg" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-14.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-15.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-16.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-17.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-18.jpg" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-19.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-20.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-21.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-22.jpg" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-23.jpg" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-24.jpg" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-25.jpg" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-26.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-27.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-28.png" alt="Podcast Cover" class="scroll-reveal">
+          <img src="assets/podcast-29.png" alt="Podcast Cover" class="scroll-reveal">
+        </div>
+
+        <footer class="page-footer">
+          <span>© 2025 Anika Müggler</span>
+          <a href="mailto:contact@dinkaisch.com">contact@dinkaisch.com</a>
+          <a href="https://www.instagram.com/dinkaisch" target="_blank">@DINKAISCH</a>
+        </footer>
+      </section>
+
+      <!-- PAGE 3: FLYER -->
+      <section class="page" id="page-flyer">
+        <div class="page-header fade-in">
+          <h2>Flyer &amp;<br>Visual Studies</h2>
+          <p class="page-header-sub">Commissioned work — posters, covers, spatial structures</p>
+        </div>
+
+        <!-- Herzkern Flyers -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Commissioned</span>
+            <span class="project-year">2024–ongoing</span>
+          </div>
+          <h3>HERZKERN</h3>
+          <p class="project-desc">Flyer series for Herzkern, a Bern-based gabber label. Spatial structures in Cinema 4D — abstract geometries, soft lighting, minimal typography.</p>
+          <div class="image-grid grid-3">
+            <img src="assets/herzkern-6.jpg" alt="Herzkern Flyer" class="scroll-reveal">
+            <img src="assets/herzkern-7.jpg" alt="Herzkern Flyer" class="scroll-reveal">
+            <img src="assets/herzkern-8.jpg" alt="Herzkern Flyer" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-2">
+            <img src="assets/herzkern-9.jpg" alt="Herzkern Flyer" class="scroll-reveal">
+            <img src="assets/herzkern-10.jpg" alt="Herzkern Flyer" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-3">
+            <img src="assets/herzkern-11.jpg" alt="Herzkern" class="scroll-reveal">
+            <img src="assets/herzkern-12.jpg" alt="Herzkern" class="scroll-reveal">
+            <img src="assets/herzkern-13.jpg" alt="Herzkern" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-2">
+            <img src="assets/herzkern-14.jpg" alt="Herzkern" class="scroll-reveal">
+            <img src="assets/herzkern-15.jpg" alt="Herzkern" class="scroll-reveal">
+          </div>
+        </div>
+
+        <!-- Glanzikultur Flyers -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Commissioned</span>
+            <span class="project-year">2022–2024</span>
+          </div>
+          <h3>GLANZIKULTUR</h3>
+          <p class="project-desc">Flyer series reflecting the intensity and tempo of the sound — fast, distorted, uncompromising. Covers drawn individually in Procreate, signal rather than frame.</p>
+          <div class="image-grid grid-3">
+            <img src="assets/cover-herzkern-plakat.jpg" alt="Glanzikultur" class="scroll-reveal">
+            <img src="assets/cover-clubvariete.jpg" alt="Glanzikultur" class="scroll-reveal">
+            <img src="assets/cover-cosmos.png" alt="Glanzikultur" class="scroll-reveal">
+          </div>
+        </div>
+
+        <!-- Record Artwork -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Record Artwork</span>
+            <span class="project-year">2022–ongoing</span>
+          </div>
+          <h3>RECORD ARTWORK</h3>
+          <p class="project-desc">Cover designs for various artists using Cinema 4D and Photoshop — abstract structures, surface contrasts, minimal typography.</p>
+          <div class="image-grid grid-2">
+            <img src="assets/cover-dark.png" alt="Record Artwork" class="scroll-reveal">
+            <img src="assets/cover-vivimo1.png" alt="Record Artwork" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-3">
+            <img src="assets/cover-vivimo2.png" alt="Record Artwork" class="scroll-reveal">
+            <img src="assets/cover-andykatz.png" alt="Record Artwork" class="scroll-reveal">
+            <img src="assets/cover-1luu.jpg" alt="Record Artwork" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-2">
+            <img src="assets/cover-discjogga.jpg" alt="Record Artwork" class="scroll-reveal">
+            <img src="assets/cover-luu.jpg" alt="Record Artwork" class="scroll-reveal">
+          </div>
+        </div>
+
+        <footer class="page-footer">
+          <span>© 2025 Anika Müggler</span>
+          <a href="mailto:contact@dinkaisch.com">contact@dinkaisch.com</a>
+          <a href="https://www.instagram.com/dinkaisch" target="_blank">@DINKAISCH</a>
+        </footer>
+      </section>
+
+      <!-- PAGE 4: TATTOO -->
+      <section class="page" id="page-tattoo">
+        <div class="page-header fade-in">
+          <h2>Digital<br>to Dermal</h2>
+          <p class="page-header-sub">Body-responsive design — from Procreate to skin</p>
+        </div>
+
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Tattoo Design</span>
+            <span class="project-year">ongoing</span>
+          </div>
+          <h3>TATTOO FLASHBOOK</h3>
+          <p class="project-desc">All elements are originally hand-drawn, then converted into splines and extruded in Cinema 4D. The creative objective focuses on organic forms that appear to melt into the skin and adapt seamlessly to different body parts.</p>
+          <p class="project-scope">Procreate → Splines → Cinema 4D → 2D Refinement</p>
+        </div>
+
+        <div class="tattoo-gallery fade-in-up">
+          <img src="assets/tattoo-01.jpg" alt="Tattoo Flash" class="scroll-reveal tattoo-img">
+          <img src="assets/tattoo-02.jpg" alt="Tattoo Flash" class="scroll-reveal tattoo-img">
+          <img src="assets/tattoo-03.jpg" alt="Tattoo Flash" class="scroll-reveal tattoo-img">
+          <img src="assets/tattoo-04.jpg" alt="Tattoo Flash" class="scroll-reveal tattoo-img">
+          <img src="assets/tattoo-05.jpg" alt="Tattoo Flash" class="scroll-reveal tattoo-img">
+          <img src="assets/tattoo-06.jpg" alt="Tattoo Flash" class="scroll-reveal tattoo-img">
+          <img src="assets/tattoo-07.jpg" alt="Tattoo Flash" class="scroll-reveal tattoo-img">
+        </div>
+
+        <footer class="page-footer">
+          <span>© 2025 Anika Müggler</span>
+          <a href="mailto:contact@dinkaisch.com">contact@dinkaisch.com</a>
+          <a href="https://www.instagram.com/dinkaisch" target="_blank">@DINKAISCH</a>
+        </footer>
+      </section>
+
+      <!-- PAGE 5: GRAFFITI -->
+      <section class="page" id="page-graffiti">
+        <div class="page-header fade-in">
+          <h2>Graffiti</h2>
+          <p class="page-header-sub">Spraycan work — commissioned and personal</p>
+        </div>
+
+        <!-- Commissioned -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Commissioned</span>
+          </div>
+          <h3>TENTI AG, CH</h3>
+          <div class="image-grid grid-2">
+            <img src="assets/graffiti2-01.png" alt="Tenti AG Graffiti" class="scroll-reveal">
+            <img src="assets/graffiti-tenti-01.jpg" alt="Tenti AG Graffiti" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-3">
+            <img src="assets/graffiti2-02.png" alt="Graffiti" class="scroll-reveal">
+            <img src="assets/graffiti2-03.png" alt="Graffiti" class="scroll-reveal">
+            <img src="assets/graffiti2-04.png" alt="Graffiti" class="scroll-reveal">
+          </div>
+        </div>
+
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Commissioned</span>
+          </div>
+          <h3>HIGHWAY COFFEESHOP, BASEL CH</h3>
+          <div class="image-grid grid-2">
+            <img src="assets/graffiti-highway-01.jpg" alt="Highway Coffeeshop" class="scroll-reveal">
+            <img src="assets/graffiti-highway-02.jpg" alt="Highway Coffeeshop" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-2">
+            <img src="assets/graffiti-highway-03.jpg" alt="Highway Coffeeshop" class="scroll-reveal">
+            <img src="assets/graffiti-highway-04.jpg" alt="Highway Coffeeshop" class="scroll-reveal">
+          </div>
+        </div>
+
+        <!-- Private Projects -->
+        <div class="project-block fade-in-up">
+          <div class="project-meta">
+            <span class="project-tag">Private Projects</span>
+          </div>
+          <h3>EIGENE PROJEKTE</h3>
+          <div class="image-grid grid-3">
+            <img src="assets/graffiti-private-01.jpg" alt="Private Graffiti" class="scroll-reveal">
+            <img src="assets/graffiti-private-02.jpg" alt="Private Graffiti" class="scroll-reveal">
+            <img src="assets/graffiti-private-03.jpg" alt="Private Graffiti" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-2">
+            <img src="assets/graffiti-private-04.jpg" alt="Private Graffiti" class="scroll-reveal">
+            <img src="assets/graffiti-private-05.jpg" alt="Private Graffiti" class="scroll-reveal">
+          </div>
+          <div class="image-grid grid-3">
+            <img src="assets/graffiti-private-06.jpg" alt="Private Graffiti" class="scroll-reveal">
+            <img src="assets/graffiti-private-07.jpg" alt="Private Graffiti" class="scroll-reveal">
+            <img src="assets/graffiti-private-08.jpg" alt="Private Graffiti" class="scroll-reveal">
+          </div>
+        </div>
+
+        <footer class="page-footer">
+          <span>© 2025 Anika Müggler</span>
+          <a href="mailto:contact@dinkaisch.com">contact@dinkaisch.com</a>
+          <a href="https://www.instagram.com/dinkaisch" target="_blank">@DINKAISCH</a>
+        </footer>
+      </section>
+
+      <!-- PAGE 6: ABOUT -->
+      <section class="page" id="page-about">
+        <div class="about-layout">
+          <div class="about-image fade-in">
+            <img src="assets/profile.jpg" alt="Anika Müggler">
+          </div>
+          <div class="about-text fade-in-up">
+            <h2>About Me</h2>
+            <p class="about-name">Anika Müggler</p>
+            <p class="about-title">Strategic Communication &amp; Design</p>
+            <p class="about-bio">Hi, I'm Anika — I fuse strategy with creativity to make cool things happen.</p>
+            <p class="about-bio">Business Communication student at HTW Berlin, 4th semester. Arts background with design foundation training at ZHDK. I'm drawn to visual clarity, conceptual structure, and thoughtful systems.</p>
+            <p class="about-bio">Based in Berlin · CH/PL</p>
+            <div class="about-details">
+              <p>Volunteers with Foodsharing · Cyclist</p>
+              <p>Seeking internship opportunities</p>
+            </div>
+            <div class="about-contact">
+              <a href="mailto:contact@dinkaisch.com">contact@dinkaisch.com</a>
+              <a href="https://www.instagram.com/dinkaisch" target="_blank">Instagram @DINKAISCH</a>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <span>© 2025 Anika Müggler</span>
+          <a href="mailto:contact@dinkaisch.com">contact@dinkaisch.com</a>
+          <a href="https://www.instagram.com/dinkaisch" target="_blank">@DINKAISCH</a>
+        </footer>
+      </section>
+
+    </div><!-- /#pages -->
+  </div><!-- /#viewer -->
+
+  <script src="script.js"></script>
+</body>
+</html>
