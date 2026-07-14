@@ -10,7 +10,8 @@
  * Ease-out-Kurve von allein wie eine sanfte Pause.
  */
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useRef } from "react";
+import type { RefObject } from "react";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,9 +20,13 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const LenisCtx = createContext<Lenis | null>(null);
+const LenisCtx = createContext<RefObject<Lenis | null> | null>(null);
 export function useLenis() {
-  return useContext(LenisCtx);
+  const context = useContext(LenisCtx);
+  if (!context) {
+    throw new Error("useLenis must be used within SmoothScrollProvider");
+  }
+  return context;
 }
 
 export default function SmoothScrollProvider({
@@ -29,7 +34,7 @@ export default function SmoothScrollProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [lenis, setLenis] = useState<Lenis | null>(null);
+  const lenis = useRef<Lenis | null>(null);
 
   useEffect(() => {
     const prefersReduced = window.matchMedia(
@@ -45,7 +50,7 @@ export default function SmoothScrollProvider({
       smoothWheel: true,
       wheelMultiplier: 0.9,
     });
-    setLenis(instance);
+    lenis.current = instance;
 
     const raf = (time: number) => instance.raf(time * 1000);
     gsap.ticker.add(raf);
@@ -55,7 +60,7 @@ export default function SmoothScrollProvider({
     return () => {
       gsap.ticker.remove(raf);
       instance.destroy();
-      setLenis(null);
+      lenis.current = null;
     };
   }, []);
 

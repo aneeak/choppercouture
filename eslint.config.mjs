@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Adobe ExtendScript source is not JavaScript for the web toolchain.
+    "indesign/**/*.jsx",
   ]),
 ]);
 

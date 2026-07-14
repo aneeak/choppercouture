@@ -88,36 +88,3 @@ export default function Hero({
     </section>
   );
 }
-
-/** Kleine Typewriter-Animation für „Got teeth? Got options." */
-function TypeClaim() {
-  const [txt, setTxt] = useState("");
-  const full = "Got teeth? Got options.";
-  useEffect(() => {
-    let i = 0;
-    let cancelled = false;
-    const start = setTimeout(() => {
-      const tick = () => {
-        if (cancelled) return;
-        i++;
-        setTxt(full.slice(0, i));
-        if (i < full.length) setTimeout(tick, 60);
-      };
-      tick();
-    }, 1200);
-    return () => {
-      cancelled = true;
-      clearTimeout(start);
-    };
-  }, []);
-  return (
-    <p
-      className="absolute right-6 md:right-12 bottom-16 md:bottom-20 z-20 pointer-events-none font-mono text-sm md:text-base tracking-[0.02em] text-cc-offwhite"
-      style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
-      aria-label={full}
-    >
-      {txt}
-      <span className="inline-block w-[0.6em] animate-pulse">|</span>
-    </p>
-  );
-}

@@ -53,8 +53,11 @@ export default function HeroBreak() {
   const scrollToDesigner = () => {
     const el = document.querySelector<HTMLElement>("#designer");
     if (!el) return;
-    if (lenis) lenis.scrollTo(el, { offset: -10, duration: 1.4 });
-    else el.scrollIntoView({ behavior: "smooth" });
+    if (lenis.current) {
+      lenis.current.scrollTo(el, { offset: -10, duration: 1.4 });
+    } else {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (

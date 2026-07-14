@@ -77,8 +77,11 @@ export default function Navigation() {
 
   /** Smoothly scroll to a target element (Lenis-aware). */
   const scrollTo = (target: string | number) => {
-    if (lenis) {
-      lenis.scrollTo(target, { offset: target === 0 ? 0 : -10, duration: 1.4 });
+    if (lenis.current) {
+      lenis.current.scrollTo(target, {
+        offset: target === 0 ? 0 : -10,
+        duration: 1.4,
+      });
     } else {
       // Fallback when reduced-motion disabled Lenis
       if (typeof target === "number") {
