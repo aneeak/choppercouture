@@ -1,0 +1,18 @@
+# Node
+node_modules/
+.next/
+out/
+.turbo/
+
+# Editor
+.DS_Store
+
+# Env
+.env.local
+.env.*.local
+
+# Große Backups (nie ins Repo)
+public/videos/process_original.mp4
+
+# Claude runtime
+.claude/

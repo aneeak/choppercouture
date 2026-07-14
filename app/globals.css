@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Expanded:wght@300;400&display=swap");
+@import "tailwindcss";
+
+/* =========================================================================
+   CHOPPER COUTURE — Design Tokens
+   Quelle: ChopperCouture_BrandIdentity.pdf (2025)
+   ========================================================================= */
+
+@theme {
+  /* --- Farben (Builder-Spec 2026-07) --- */
+  --color-cc-black: #0d0d0d;        /* Near-black — Text auf hell */
+  --color-cc-pure: #000000;         /* Pure black — dunkle Sektionen (Material) */
+  --color-cc-purple: #7c3aed;       /* Brand Purple — Promise, About-BG */
+  --color-cc-offwhite: #f9f9f9;     /* Seitenhintergrund */
+  --color-cc-gray-light: #e6e6e6;   /* Trennlinien */
+  --color-cc-gray-dark: #282828;    /* Sekundäre dunkle Flächen */
+  --color-cc-white: #ffffff;        /* Text auf dunkel */
+  /* Alt-Aliase für bestehende Komponenten (Zahn-Designer, Hero-Legacy) */
+  --color-cc-pink: #ff5a8a;
+  --color-cc-turquoise: #88dcc8;
+  --color-cc-green: #22cc77;
+  --color-cc-gradient: #e8e3f5;
+
+  /* Semantische Aliasse */
+  --color-bg-default: #f9f9f9;
+  --color-text-default: var(--color-cc-black);
+  --color-bg-dark: var(--color-cc-pure);
+  --color-text-on-dark: var(--color-cc-white);
+
+  /* --- Fonts ---
+     Loos ExtraWide Bold → Inter Black (Fallback bis Lizenz da ist).
+     Loos Wide Light/ExtraLight → Instrument Sans.
+     PP Hatton Ultralight (Italic) → Fraunces.
+     Später einfach die --font-loos-extrawide etc via localFont ersetzen.
+  */
+  /* Echte Pangram-Fonts (Typekit + lokal). Fallback bleibt sans/serif. */
+  --font-loos-extrawide: "loos-extrawide", var(--font-inter), ui-sans-serif, sans-serif;
+  --font-loos-wide: "loos-wide", var(--font-inter), ui-sans-serif, sans-serif;
+  --font-hatton: var(--font-hatton), Georgia, "Times New Roman", serif;
+  /* Legacy-Aliase — bestehende Nutzung nicht brechen */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-loos-wide), ui-monospace, "SF Mono", monospace;
+
+  /* --- Custom Easings (für GSAP UND CSS) --- */
+  --ease-cc-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-cc-panel: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* --- Body / Root --- */
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: var(--color-bg-default);
+  color: var(--color-text-default);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Lenis: wenn aktiv, kein eigener Body-Scroll --- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* --- Kein CSS Scroll-Snap mehr.
+   Lenis übernimmt das smoothe Scrollen komplett. Das CSS scroll-snap
+   hatte mit Lenis konkurriert und ein Stocken erzeugt. Die full-height
+   Videos wirken durch Lenis' Ease-Kurve von allein als sanfte Pause. */
+
+/* --- Reduced Motion Override ---
+   Lenis wird im Provider deaktiviert; hier zusätzlich Animationen drosseln. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--color-cc-purple);
+  color: var(--color-cc-offwhite);
+}
+
+/* --- Tracking-Klassen für Caps (Nav, Labels) --- */
+.tracking-cc-caps {
+  letter-spacing: 0.05em;
+}
+
+/* --- Scrollbar verstecken (für Mobile-Swipe-Galerie) --- */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* --- Mobile: nichts unter 15px, keine Überläufe, HL-Versätze kleiner --- */
+@media (max-width: 767px) {
+  main p, main li, main label { font-size: max(15px, 1em); }
+
+  /* HL kleiner + tighter, so dass zweite versetzte Zeilen nicht überlaufen. */
+  .headline-lg { font-size: clamp(2.75rem, 12vw, 5rem) !important; letter-spacing: -0.02em; }
+  .headline-md { font-size: clamp(2.25rem, 10vw, 4rem) !important; }
+  .subline     { font-size: clamp(1.125rem, 4.5vw, 1.5rem) !important; white-space: normal !important; }
+  .body-copy   { font-size: max(15px, 1rem); }
+
+  /* Mobile: alle inline paddings-left auf zweiten HL-Zeilen kappen — sonst
+     schiebt der 210px-Versatz die Zeile über den rechten Rand. */
+  .headline-lg > span[style*="padding-left"] { padding-left: clamp(1rem, 6vw, 2.5rem) !important; }
+
+  /* Subline: eigener kleinerer Versatz (statt 320px) */
+  section .subline[style*="padding-left"],
+  section span.subline[style*="padding-left"] {
+    padding-left: clamp(1rem, 8vw, 3rem) !important;
+  }
+
+  /* Prozess-Untertitel eingerückt auch klein */
+  #process p.subline,
+  #process span.subline { padding-left: clamp(1rem, 8vw, 3rem) !important; }
+}
+
+/* --- Builder-Spec Typo-Klassen (echte Fonts) ---
+   Typekit-Loos exponiert nur weight 400 / 700 → wir nutzen 700 für "Bold",
+   400 für "Light"/"ExtraLight" (Ersatz für nicht ausgelieferte Weights).
+   PP Hatton lokal in weight 200 (Ultralight) + Italic 200. */
+.font-hatton    { font-family: var(--font-hatton); font-weight: 200; }
+.font-hatton-i  { font-family: var(--font-hatton); font-weight: 200; font-style: italic; }
+.font-wide      { font-family: var(--font-loos-wide); font-weight: 400; }
+.font-wide-l    { font-family: var(--font-loos-wide); font-weight: 400; letter-spacing: 0.02em; }
+.font-xwide     { font-family: var(--font-loos-extrawide); font-weight: 700;
+                  letter-spacing: -0.02em; }
+.headline-lg    { font-family: var(--font-loos-extrawide); font-weight: 700;
+                  letter-spacing: -0.03em; line-height: 0.92; }
+.headline-md    { font-family: var(--font-loos-extrawide); font-weight: 700;
+                  letter-spacing: -0.02em; line-height: 1.02; }
+.section-num    { font-family: var(--font-hatton); font-weight: 200; font-style: italic;
+                  line-height: 1; }
+.section-name   { font-family: var(--font-loos-wide); font-weight: 400;
+                  letter-spacing: 0.06em; text-transform: uppercase; }
+.subline        { font-family: var(--font-hatton); font-weight: 200; font-style: italic;
+                  line-height: 1.15; }
+.body-copy      { font-family: var(--font-loos-wide); font-weight: 400;
+                  line-height: 1.55; }
+.copy-serif     { font-family: var(--font-hatton); font-weight: 200; }
+
+/* Legacy: h1–h4 auf existierenden Sektionen bekommen Loos ExtraWide 700 */
+section h1, section h2, section h3, section h4,
+section .font-black {
+  font-family: var(--font-loos-extrawide);
+  font-weight: 700;
+}
+/* Body-Copy: Loos Wide 400 */
+section p,
+section label,
+section figcaption,
+section .tracking-cc-caps,
+main p {
+  font-family: var(--font-loos-wide);
+  font-weight: 400;
+}
+
+/* --- Idle-Atmung fürs Logo (sehr subtil) --- */
+@keyframes cc-logo-breathe {
+  0%, 100% { filter: blur(0px); }
+  50%      { filter: blur(1.5px); }
+}
+.cc-logo-idle {
+  animation: cc-logo-breathe 6s var(--ease-cc-out) infinite;
+}
+
+/* Reduced motion: keine Atmung */
+@media (prefers-reduced-motion: reduce) {
+  .cc-logo-idle {
+    animation: none;
+  }
+}
+
+/* --- Tooth Designer: Zahn-Polygone über dem Gebiss-PNG --- */
+.cc-tooth {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: fill 0.2s var(--ease-cc-out), stroke 0.2s var(--ease-cc-out), stroke-width 0.2s var(--ease-cc-out);
+}
+.cc-tooth:hover {
+  fill: rgba(255, 90, 138, 0.45);
+  stroke: var(--color-cc-pink);
+  stroke-width: 3;
+  mix-blend-mode: multiply;
+}
+.cc-tooth[data-selected="true"] {
+  /* multiply: weiße Zähne werden kräftig rosa, rosa Zahnfleisch bleibt klar abgegrenzt */
+  fill: rgb(255, 80, 150);
+  stroke: rgb(255, 30, 100);
+  stroke-width: 3;
+  mix-blend-mode: multiply;
+}

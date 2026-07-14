@@ -1,0 +1,61 @@
+%!Adobe-FontList 1.24
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/dinkaisch/Documents/CC Chopper Couture/CC_Kreation/CC_Webdesign/CC_Webiste neu /chopper-couture/indesign/Document Fonts/AdobeFnt24.lst
+FileLength:1481
+FileModTime:804959012
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Inter-Regular
+FamilyName:Inter
+StyleName:Regular
+MenuName:Inter
+FamilyPrefix:Inter
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Inter Regular
+WritingScript:Roman
+OutlineFileName:/Users/dinkaisch/Documents/CC Chopper Couture/CC_Kreation/CC_Webdesign/CC_Webiste neu /chopper-couture/indesign/Document Fonts/Inter.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:TrueTypeVariableFont
+FileLength:876576
+FileModTime:803745485
+NameArray:0,Win,1,Inter
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:JetBrainsMono-Regular
+FamilyName:JetBrains Mono
+StyleName:Regular
+MenuName:JetBrains Mono
+FamilyPrefix:JetBrainsMonoRoman
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:JetBrains Mono Regular
+WritingScript:Roman
+OutlineFileName:/Users/dinkaisch/Documents/CC Chopper Couture/CC_Kreation/CC_Webdesign/CC_Webiste neu /chopper-couture/indesign/Document Fonts/JetBrainsMono.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:TrueTypeVariableFont
+FileLength:187208
+FileModTime:803745486
+NameArray:0,Win,1,JetBrains Mono
+%EndFont
+
