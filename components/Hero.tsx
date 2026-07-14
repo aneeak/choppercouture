@@ -21,11 +21,13 @@ import ParticleLogo from "@/components/ParticleLogo";
 
 interface HeroProps {
   videoSrc?: string;
+  mobileVideoSrc?: string;
   poster?: string;
 }
 
 export default function Hero({
   videoSrc = "/videos/hero-loop.mp4",
+  mobileVideoSrc = "/videos/hero-loop-mobile.mp4",
   poster,
 }: HeroProps) {
   // Mobile: kleineres Logo, gröberer Sample-Step → weniger Partikel,
@@ -44,14 +46,16 @@ export default function Hero({
       {/* z-0: background video */}
       <video
         className="absolute inset-0 z-0 h-full w-full object-cover"
-        src={videoSrc}
         poster={poster}
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
-      />
+        preload="metadata"
+      >
+        <source media="(max-width: 767px)" src={mobileVideoSrc} type="video/mp4" />
+        <source src={videoSrc} type="video/mp4" />
+      </video>
       <div className="absolute inset-0 z-0 bg-black/20" />
 
       {/* z-10: full-bleed particle canvas.

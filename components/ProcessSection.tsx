@@ -14,7 +14,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SectionHeader from "@/components/SectionHeader";
 
 interface Step {
@@ -66,6 +66,21 @@ const STEPS: Step[] = [
 export default function ProcessSection() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { rootMargin: "300px 0px", threshold: 0.01 },
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   const toggleMute = () => {
     const v = videoRef.current;
@@ -123,13 +138,14 @@ export default function ProcessSection() {
           <video
             ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover"
-            src="/videos/process.mp4"
-            autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
-          />
+            preload="none"
+          >
+            <source media="(max-width: 767px)" src="/videos/process-mobile.mp4" type="video/mp4" />
+            <source src="/videos/process.mp4" type="video/mp4" />
+          </video>
 
           {/* Ton an/aus — unten rechts, transparent-weiß, schlicht */}
           <button

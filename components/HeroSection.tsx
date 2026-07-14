@@ -6,7 +6,7 @@
  * Builder-Spec 2026-07:
  *   - Zweizeilige XXL-Headline "Got Teeth, got options..." (Loos ExtraWide Bold)
  *   - Outline-Button darunter (PP Hatton Ultralight)
- *   - Full-Width Video (smile.mov — Typ mit Grillz)
+ *   - Full-Width Video (smile.mp4 — Typ mit Grillz)
  *   - Off-White Hintergrund, keine dunkle Sektion mehr
  *
  * Navigation kommt aus components/Navigation.tsx über app/layout.tsx.
@@ -19,8 +19,20 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
-    // Autoplay soft anstoßen (iOS Safari muted-autoplay quirk)
-    videoRef.current?.play().catch(() => {});
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Erst laden und abspielen, wenn der lange Video-Block in die Nähe
+    // des Viewports kommt. Das spart beim ersten Seitenaufruf viel Traffic.
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { rootMargin: "300px 0px", threshold: 0.01 },
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -62,13 +74,14 @@ export default function HeroSection() {
           <video
             ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover"
-            src="/videos/smile.mov"
-            autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
-          />
+            preload="none"
+          >
+            <source media="(max-width: 767px)" src="/videos/smile-mobile.mp4" type="video/mp4" />
+            <source src="/videos/smile.mp4" type="video/mp4" />
+          </video>
           {/* Micro-Caption unten links wie im PNG "V-05" */}
           <p
             className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-10 text-cc-white/80 font-hatton-i"
