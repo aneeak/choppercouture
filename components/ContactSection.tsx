@@ -36,23 +36,23 @@ export default function ContactSection() {
           Lass quatschen!
         </h2>
 
-        {/* Subline auf eigener Achse */}
+        {/* Subline — kompakter (Figma-Text 1:1) */}
         <p
           className="subline mt-6 md:mt-8 max-w-4xl"
           style={{
-            fontSize: "clamp(1.125rem, 2.1vw, 1.875rem)" /* 18 → 30px */,
-            paddingLeft: "clamp(5rem, 22vw, 20rem)" /* 80 → 320px */,
+            fontSize: "clamp(1.5rem, 2.1vw, 1.875rem)" /* 24 → 30px */,
+            paddingLeft: "clamp(3.75rem, 22vw, 20rem)",
           }}
         >
-          Frage, Idee oder einfach Lust auf ein piece? Schreib mir! Du landest direkt bei mir, nicht in irgendeinem Support-Postfach.
+          Frage, Idee oder einfach Lust auf ein piece? Schreib mir!
         </p>
 
-        {/* Kontaktinfo-Block — mittig, mit dekorativen Sternen */}
-        <div className="mt-20 md:mt-28 flex items-center justify-center gap-6 md:gap-12">
-          {/* Stern links */}
+        {/* Kontaktinfo-Block — Mobile: schlichter zentrierter Text (Figma).
+            Desktop: mit dekorativen Sternen. */}
+        <div className="mt-16 md:mt-28 flex items-center justify-center gap-6 md:gap-12">
           <span
             aria-hidden="true"
-            className="font-hatton-i text-cc-black/40"
+            className="hidden md:inline font-hatton-i text-cc-black/40"
             style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1 }}
           >
             *
@@ -61,12 +61,12 @@ export default function ContactSection() {
           <div className="text-center space-y-3">
             <p
               className="section-name text-cc-black/50"
-              style={{ fontSize: "clamp(0.75rem, 1vw, 0.875rem)" /* 12 → 14px */ }}
+              style={{ fontSize: "clamp(0.6875rem, 1vw, 0.875rem)" /* 11 → 14px */ }}
             >
-              Direkt
+              DIREKT
             </p>
-            <div className="space-y-2" style={{ fontSize: "clamp(1.125rem, 1.8vw, 1.5rem)" /* 18 → 24px */ }}>
-              <p className="font-hatton">
+            <div className="space-y-1 md:space-y-2" style={{ fontSize: "clamp(1.125rem, 1.8vw, 1.5rem)" /* 18 → 24px */ }}>
+              <p className="font-hatton-i">
                 insta:{" "}
                 <a
                   href="https://instagram.com/choppercouture"
@@ -77,7 +77,7 @@ export default function ContactSection() {
                   @choppercouture
                 </a>
               </p>
-              <p className="font-hatton">
+              <p className="font-hatton-i">
                 <a
                   href="mailto:choppercouture@gmail.com"
                   className="underline underline-offset-2 hover:text-cc-purple transition-colors"
@@ -88,22 +88,21 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Stern rechts */}
           <span
             aria-hidden="true"
-            className="font-hatton-i text-cc-black/40"
+            className="hidden md:inline font-hatton-i text-cc-black/40"
             style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1 }}
           >
             *
           </span>
         </div>
 
-        {/* CTA-Button */}
-        <div className="mt-16 md:mt-20 flex justify-center">
+        {/* CTA-Button — Mobile: full-width 335×56, PP Hatton italic 24px */}
+        <div className="mt-10 md:mt-20 flex justify-center">
           <Link
             href="mailto:choppercouture@gmail.com?subject=Anfrage%20Chopper%20Couture"
-            className="inline-flex items-center gap-3 rounded-full border border-cc-black bg-cc-black px-8 py-4 md:px-10 md:py-5 font-hatton text-cc-offwhite hover:bg-cc-purple hover:border-cc-purple transition-colors"
-            style={{ fontSize: "clamp(1rem, 1.4vw, 1.375rem)" }}
+            className="w-full md:w-auto inline-flex items-center justify-center gap-3 rounded-full border border-cc-black bg-cc-black py-4 md:py-5 px-8 md:px-10 font-hatton-i text-cc-offwhite hover:bg-cc-purple hover:border-cc-purple transition-colors"
+            style={{ fontSize: "clamp(1.5rem, 1.4vw, 1.5rem)" /* 24px */ }}
           >
             <span>Anfrage senden</span>
             <span aria-hidden="true">→</span>

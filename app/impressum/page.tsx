@@ -9,8 +9,9 @@ import SectionHeader from "@/components/SectionHeader";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Impressum — Chopper Couture",
+  title: "Impressum",
   description: "Impressum von Chopper Couture · Anika Müggler, Berlin.",
+  alternates: { canonical: "/impressum" },
 };
 
 interface Block {

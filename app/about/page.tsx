@@ -19,9 +19,10 @@ import SectionHeader from "@/components/SectionHeader";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "About — Chopper Couture",
+  title: "About",
   description:
     "Chopper Couture — Dental Jewelry aus Berlin. Marke und die Person dahinter, Anika Müggler.",
+  alternates: { canonical: "/about" },
 };
 
 const BRAND_VALUES = [

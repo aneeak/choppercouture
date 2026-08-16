@@ -60,17 +60,14 @@ interface StyleDef {
   image: string | null;   // null → keine Bild-Fläche in der Karte
 }
 const STYLES: StyleDef[] = [
-  { key: "spiky",      title: "Spiky",      body: "Kantig, spitz, agressiv.",         first: 170, add: 90,
-    // TODO: sobald public/images/styles/spiky.jpg gespeichert ist, hier ersetzen
-    image: "/images/styles/tribal.jpg" },
-  { key: "organic",    title: "Organic",    body: "weich, luftig, freundlich.",       first: 160, add: 85,
-    // Bild vorerst modern.jpg (getauscht mit Whole); TODO: organic.jpg
-    image: "/images/styles/modern.jpg" },
-  { key: "whole",      title: "Whole",      body: "ganzer Zahn. glatt, silber.",      first: 120, add: 65,
-    // Bewusst leer — bis das richtige Bild kommt.
+  { key: "spiky",      title: "Spiky",      body: "Kantig, spitz, aggressiv.",       first: 210, add: 90,
+    image: "/images/styles/tribal.webp" },
+  { key: "organic",    title: "Organic",    body: "Weich, luftig, freundlich.",      first: 210, add: 85,
+    image: "/images/styles/modern.webp" },
+  { key: "whole",      title: "Whole",      body: "Ganzer Zahn. Glatt, silber.",     first: 180, add: 65,
     image: null },
-  { key: "ornamental", title: "Ornamental", body: "verspielt, dynamisch, dekorativ",  first: 210, add: 95,
-    image: "/images/styles/Ornamental.png" },
+  { key: "ornamental", title: "Ornamental", body: "Verspielt, dynamisch, dekorativ.", first: 305, add: 95,
+    image: "/images/styles/Ornamental.webp" },
 ];
 const styleOf = (k: StyleKey) => STYLES.find((s) => s.key === k)!;
 
@@ -157,28 +154,38 @@ export default function DesignerSection() {
         {/* Section-Header */}
         <SectionHeader number="02" name="DESIGNER" tone="dark" />
 
-        {/* Headline versetzt */}
-        <h2 className="headline-lg mt-8 md:mt-10" style={{ fontSize: "clamp(2.5rem, 9.2vw, 8.25rem)" }}>
+        {/* Headline — Mobile: 3-zeilig "Design / dein / Stück." (Figma).
+            Desktop: 2-zeilig "Design / dein Stück." */}
+        <h2 className="headline-lg mt-8 md:mt-10 md:hidden" style={{ fontSize: "52px", lineHeight: "0.95" }}>
+          <span className="block">Design</span>
+          <span className="block" style={{ paddingLeft: "40px" }}>dein</span>
+          <span className="block" style={{ paddingLeft: "115px" }}>Stück.</span>
+        </h2>
+        <h2 className="headline-lg mt-8 md:mt-10 hidden md:block" style={{ fontSize: "clamp(2.5rem, 9.2vw, 8.25rem)" }}>
           Design
           <br />
-          <span className="inline-block" style={{ paddingLeft: "clamp(3.5rem, 14.6vw, 13.125rem)" /* 56 → 210px, keine Überschneidung mit Zeile 1 */ }}>
+          <span className="inline-block" style={{ paddingLeft: "clamp(3.5rem, 14.6vw, 13.125rem)" }}>
             dein Stück.
           </span>
         </h2>
 
-        {/* Subline zweizeilig (wie PNG) — PP Hatton Italic (subline-Klasse
-            direkt auf den span-Elementen; als <span> gerendert, damit die
-            globale `section p`-Regel den Font nicht überschreibt). */}
-        <div className="mt-6 md:mt-8" style={{ fontSize: "clamp(1.125rem, 2.1vw, 1.875rem)" }}>
+        {/* Subline — Mobile: 3-zeilig "Stil aussuchen, / Zähne anklicken, abschicken. / Ich meld mich bei dir."
+            Desktop: 2-zeilig langer Text. */}
+        <div className="mt-6 md:mt-8 md:hidden" style={{ fontSize: "22px", lineHeight: "1.3" }}>
+          <span className="font-hatton-i block" style={{ fontSize: "22px" }}>Stil aussuchen,</span>
+          <span className="font-hatton-i block" style={{ paddingLeft: "40px", fontSize: "22px" }}>Zähne anklicken, abschicken.</span>
+          <span className="font-hatton-i block" style={{ fontSize: "22px" }}>Ich meld mich bei dir.</span>
+        </div>
+        <div className="hidden md:block mt-6 md:mt-8" style={{ fontSize: "clamp(1.125rem, 2.1vw, 1.875rem)" }}>
           <span
             className="subline block"
-            style={{ paddingLeft: "clamp(9rem, 32vw, 29rem)" /* 144 → 464px */ }}
+            style={{ paddingLeft: "clamp(9rem, 32vw, 29rem)" }}
           >
             Spiel dich durch. Stil aussuchen, Zähne anklicken, abschicken —
           </span>
           <span
             className="subline block"
-            style={{ paddingLeft: "clamp(3rem, 12vw, 10.5rem)" /* 48 → 168px */ }}
+            style={{ paddingLeft: "clamp(3rem, 12vw, 10.5rem)" }}
           >
             ich meld mich bei dir und wir machen einen Termin klar. Ganz unverbindlich.
           </span>
@@ -191,7 +198,7 @@ export default function DesignerSection() {
             <StepLabel n="01" name="Klicke die Zähne an" />
             <div className="mt-6 md:mt-8 relative w-full select-none" style={{ aspectRatio: `${VB_W} / ${VB_H}` }}>
               <Image
-                src="/images/designer/grill-designer.png"
+                src="/images/designer/grill-designer.webp"
                 alt="Gebiss — wähle deine Zähne"
                 fill
                 sizes="(max-width: 1024px) 100vw, 55vw"
@@ -270,7 +277,7 @@ export default function DesignerSection() {
                           className="font-hatton"
                           style={{ fontSize: "clamp(0.875rem, 1.05vw, 1.0625rem)" /* 14 → 17px */ }}
                         >
-                          {s.first} € <span className="text-cc-black/50 group-data-[active=true]:text-cc-white/60">jeder weitere {s.add} €</span>
+                          {s.first} € <span className="text-cc-black/50 group-data-[active=true]:text-cc-white/60">/ +{s.add} €</span>
                         </p>
                       </div>
                     </button>

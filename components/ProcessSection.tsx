@@ -28,38 +28,38 @@ const STEPS: Step[] = [
   {
     n: "01",
     title: "ABDRUCK",
-    body: "Wir treffen uns im Labor, ich schiebe dir nen Löffel mit Alginat in den Mund eine Minute warten.. Tut nix, schmeckt nach nix. Done.",
-    src: "/images/process-new/01-abdruck.png",
+    body: "Wir treffen uns im Labor, ich schiebe dir nen Löffel mit Alginat in den Mund — eine Minute warten. Tut nix, schmeckt nach nix. Done.",
+    src: "/images/process-new/01-abdruck.webp",
   },
   {
     n: "02",
     title: "GIPSMODELL",
-    body: "Aus deinem Abdruck gieße ich ein Gipsmodell. Millimetergenau, von hier an arbeite ich nur noch mit deinem Modell, nicht mehr mit dir.",
-    src: "/images/process-new/02-gipsmodell.png",
+    body: "Aus deinem Abdruck gieße ich ein Gipsmodell. Millimetergenau, von hier an arbeite ich nur noch mit deinem Modell.",
+    src: "/images/process-new/02-gipsmodell.webp",
   },
   {
     n: "03",
     title: "SCAN",
-    body: "Dein Modell kommt unter den 3D-Scanner. Blaue Laser, ein paar Sekunden, fertig. Dein Kiefer existiert jetzt auch digital.",
-    src: "/images/process-new/03-scan.jpg",
+    body: "Dein Modell kommt unter den 3D-Scanner. Blaue Laser, ein paar Sekunden, fertig.",
+    src: "/images/process-new/03-scan.webp",
   },
   {
     n: "04",
     title: "3D-DESIGN",
-    body: "In einer 3D Software designe ich dein Grillz direkt auf deinen Zähnen. Du sagst mir, was du willst, wir iterieren so lange, bis es sitzt. Erst dann geht's weiter.",
-    src: "/images/process-new/04-3d-design.png",
+    body: "In einer 3D-Software designe ich dein Grillz direkt auf deinen Zähnen. Iteriert, bis es sitzt.",
+    src: "/images/process-new/04-3d-design.webp",
   },
   {
     n: "05",
     title: "SLM-DRUCK",
-    body: "Selective Laser Melting beim Schütz Fräszentrum. Dein Stück wird Schicht für Schicht aus Edelmetall aufgeschichtet, ein Guss, ohne Naht. Mehr dazu unter Medizinisches.",
-    src: "/images/process-new/05-slm.jpg",
+    body: "Selective Laser Melting beim Schütz Fräszentrum. Dein Stück Schicht für Schicht aus Edelmetall.",
+    src: "/images/process-new/05-slm.webp",
   },
   {
     n: "06",
     title: "POLITUR",
-    body: "Saubere politur mit 30 000 Touren. Jede Kante, jede Spitze. Erst wenn's glänzt, ist es deins.",
-    src: "/images/process/herstellung.JPG",
+    body: "Saubere Politur mit 30 000 Touren. Jede Kante, jede Spitze. Erst wenn's glänzt, ist es deins.",
+    src: "/images/process/herstellung.webp",
   },
 ];
 
@@ -103,27 +103,47 @@ export default function ProcessSection() {
         {/* Section-Header 01 — THE PROCESS */}
         <SectionHeader number="01" name="THE PROCESS" tone="dark" />
 
-        {/* Headline zweizeilig — zweite Zeile 150px nach rechts */}
+        {/* HL — Mobile: 4-zeilig versetzt (Figma), Desktop: 2-zeilig kompakt */}
         <h2
-          className="headline-lg mt-8 md:mt-10"
-          style={{ fontSize: "clamp(2.5rem, 9.2vw, 8.25rem)" /* 40 → 132px */ }}
+          className="headline-lg mt-8 md:mt-10 md:hidden"
+          style={{ fontSize: "46px", lineHeight: "0.95" }}
+        >
+          <span className="block" style={{ paddingLeft: "52px" }}>Vom</span>
+          {/* 91px liess "Abdruck" (264px breit) exakt an die Bildschirmkante
+              stossen. Weiter links + viewport-relativ, damit es auch auf
+              schmaleren Handys mit Rand steht. */}
+          <span className="block" style={{ paddingLeft: "min(48px, 13vw)" }}>Abdruck</span>
+          <span className="block" style={{ paddingLeft: "69px" }}>zum</span>
+          <span className="block">Schmuck</span>
+        </h2>
+        <h2
+          className="headline-lg mt-8 md:mt-10 hidden md:block"
+          style={{ fontSize: "clamp(2.5rem, 9.2vw, 8.25rem)" }}
         >
           Vom Abdruck
           <br />
           <span
             className="inline-block"
-            style={{ paddingLeft: "clamp(3.5rem, 14.6vw, 13.125rem)" /* 56 → 210px, keine Überschneidung mit Zeile 1 */ }}
+            style={{ paddingLeft: "clamp(3.5rem, 14.6vw, 13.125rem)" }}
           >
             zum Schmuck
           </span>
         </h2>
 
-        {/* Subline — deutlich weiter rechts als "zum Schmuck" (~320px), einzeilig */}
+        {/* Subline — Mobile: 3-zeilig versetzt, Desktop: 1-zeilig */}
+        <div
+          className="subline mt-6 md:mt-8 md:hidden"
+          style={{ fontSize: "24px", lineHeight: "1.3" }}
+        >
+          <span className="block" style={{ paddingLeft: "154px" }}>6 Schritte,</span>
+          <span className="block" style={{ paddingLeft: "52px" }}>von deinem Mund,</span>
+          <span className="block" style={{ paddingLeft: "124px" }}>bis zum fertigen Grill.</span>
+        </div>
         <p
-          className="subline mt-6 md:mt-8"
+          className="subline mt-6 md:mt-8 hidden md:block"
           style={{
-            fontSize: "clamp(1.125rem, 2.1vw, 1.875rem)" /* 18 → 30px */,
-            paddingLeft: "clamp(5rem, 22vw, 20rem)" /* 80 → 320px */,
+            fontSize: "clamp(1.125rem, 2.1vw, 1.875rem)",
+            paddingLeft: "clamp(5rem, 22vw, 20rem)",
             whiteSpace: "nowrap",
           }}
         >
@@ -131,10 +151,9 @@ export default function ProcessSection() {
         </p>
       </div>
 
-      {/* Prozess-Video — Sticky-Container: 200vh hoch, Video 100vh sticky.
-          Verlangsamt den Scroll natürlich beim Durchqueren des Videos. */}
-      <div className="mt-8 md:mt-12 w-full" style={{ height: "200vh" }}>
-        <div className="sticky top-0 relative w-full h-screen bg-cc-black overflow-hidden">
+      {/* Prozess-Video — Mobile: 596px normaler Block. Desktop: 200vh sticky. */}
+      <div className="mt-8 md:mt-12 w-full h-[596px] md:h-[200vh]">
+        <div className="relative md:sticky md:top-0 w-full h-full md:h-screen bg-cc-black overflow-hidden">
           <video
             ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover"
@@ -188,8 +207,9 @@ export default function ProcessSection() {
                 className={`grid md:grid-cols-12 items-start ${indent}`}
                 style={{ columnGap: "clamp(1.5rem, 3.5vw, 3.125rem)" /* 24 → 50px */, rowGap: "2rem" }}
               >
-                {/* Bild — immer links */}
-                <div className="md:col-span-6 lg:col-span-6">
+                {/* Bild — Mobile: edge-to-edge (negatives mx bricht aus Container-Padding aus).
+                    Desktop: in Grid-Spalte links */}
+                <div className="md:col-span-6 lg:col-span-6 -mx-5 md:mx-0">
                   <div className="relative w-full aspect-[4/3] bg-cc-black/5 overflow-hidden">
                     <Image
                       src={step.src}
@@ -203,29 +223,28 @@ export default function ProcessSection() {
 
                 {/* Text — direkt rechts vom Bild (max 50px Abstand via columnGap) */}
                 <div className="md:col-span-6 lg:col-span-6">
-                  {/* 01 - step  (43pt italic / 28pt wide) */}
-                  <div className="flex items-baseline gap-4">
+                  {/* Nummer — 38px auf Mobile (Figma), 43px auf Desktop */}
+                  <div className="flex items-baseline gap-3 md:gap-4">
                     <span
-                      className="section-num"
-                      style={{ fontSize: "clamp(2rem, 3vw, 2.6875rem)" /* 32 → 43px */ }}
+                      className="font-hatton-i step-num"
+                      style={{ fontSize: "clamp(2.375rem, 3vw, 2.6875rem)" /* 38 → 43px */, lineHeight: 1 }}
                     >
                       {step.n}
                     </span>
                     <span className="text-cc-black/60" style={{ fontSize: "clamp(1rem, 1.4vw, 1.375rem)" }}>—</span>
                     <span
-                      className="section-name normal-case"
-                      style={{ fontSize: "clamp(1rem, 1.8vw, 1.75rem)", letterSpacing: "0.02em", textTransform: "none" }}
+                      className="font-wide text-cc-black/60 lowercase"
+                      style={{ fontSize: "clamp(0.875rem, 1.8vw, 1.75rem)", letterSpacing: "0.02em" }}
                     >
                       step
                     </span>
                   </div>
-                  {/* Titel */}
+                  {/* Titel — PP Hatton italic 36px auf Mobile (Figma), 64px auf Desktop */}
                   <h3
-                    className="mt-6 md:mt-8 subline uppercase"
+                    className="mt-4 md:mt-8 font-hatton-i uppercase"
                     style={{
-                      fontSize: "clamp(2.25rem, 4.5vw, 4rem)" /* 36 → 64px */,
-                      fontWeight: 200,
-                      fontStyle: "italic",
+                      fontSize: "clamp(2.25rem, 4.5vw, 4rem)",
+                      lineHeight: "1.3",
                       letterSpacing: "0",
                     }}
                   >
@@ -250,11 +269,7 @@ export default function ProcessSection() {
                         >
                           Schütz Fräszentrum
                         </a>
-                        . Dein Stück wird Schicht für Schicht aus Edelmetall aufgeschichtet, ein Guss, ohne Naht. Mehr dazu unter{" "}
-                        <Link href="#material" className="underline underline-offset-2 hover:text-cc-purple">
-                          Medizinisches
-                        </Link>
-                        .
+                        . Dein Stück Schicht für Schicht aus Edelmetall.
                       </>
                     ) : (
                       step.body

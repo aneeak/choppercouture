@@ -2,8 +2,9 @@ import SectionHeader from "@/components/SectionHeader";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "AGB — Chopper Couture",
+  title: "AGB",
   description: "Allgemeine Geschäftsbedingungen von Chopper Couture.",
+  alternates: { canonical: "/agb" },
 };
 
 export default function AgbPage() {

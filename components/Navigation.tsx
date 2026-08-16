@@ -22,9 +22,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { useLenis } from "@/components/providers/SmoothScrollProvider";
 
 const LINKS: { href: string; anchor?: string; label: string }[] = [
-  { href: "/", anchor: "#pieces", label: "Pieces" },
-  { href: "/", anchor: "#process", label: "The Process" },
+  { href: "/galerie", label: "Galerie" },
   { href: "/", anchor: "#designer", label: "Designer" },
+  { href: "/", anchor: "#process", label: "The Process" },
   { href: "/about", label: "About" },
 ];
 

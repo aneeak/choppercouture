@@ -108,29 +108,86 @@ html.lenis body {
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }
 
-/* --- Mobile: nichts unter 15px, keine Überläufe, HL-Versätze kleiner --- */
+/* ============================================================================
+   MOBILE OVERRIDES (Figma Mobile 375 Spec 2026-08)
+   Alle Werte hier greifen NUR unter 768px — Desktop-Layout bleibt unverändert.
+   Die Inline-Styles der Components werden per !important überschrieben.
+   ========================================================================== */
 @media (max-width: 767px) {
   main p, main li, main label { font-size: max(15px, 1em); }
 
-  /* HL kleiner + tighter, so dass zweite versetzte Zeilen nicht überlaufen. */
-  .headline-lg { font-size: clamp(2.75rem, 12vw, 5rem) !important; letter-spacing: -0.02em; }
-  .headline-md { font-size: clamp(2.25rem, 10vw, 4rem) !important; }
-  .subline     { font-size: clamp(1.125rem, 4.5vw, 1.5rem) !important; white-space: normal !important; }
-  .body-copy   { font-size: max(15px, 1rem); }
-
-  /* Mobile: alle inline paddings-left auf zweiten HL-Zeilen kappen — sonst
-     schiebt der 210px-Versatz die Zeile über den rechten Rand. */
-  .headline-lg > span[style*="padding-left"] { padding-left: clamp(1rem, 6vw, 2.5rem) !important; }
-
-  /* Subline: eigener kleinerer Versatz (statt 320px) */
-  section .subline[style*="padding-left"],
-  section span.subline[style*="padding-left"] {
-    padding-left: clamp(1rem, 8vw, 3rem) !important;
+  /* Container: 20px Padding links/rechts (statt 24px im md-Layout) */
+  section > div.px-6,
+  section > div[class*="px-6"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
-  /* Prozess-Untertitel eingerückt auch klein */
-  #process p.subline,
-  #process span.subline { padding-left: clamp(1rem, 8vw, 3rem) !important; }
+  /* --- HL-XL (Loos ExtraWide 700 → Archivo Black Fallback) ---
+     Figma-Wert: 52px, letter-spacing -3%, line-height 95%. */
+  .headline-lg {
+    font-size: 52px !important;
+    letter-spacing: -0.03em !important;
+    line-height: 0.95 !important;
+  }
+
+  /* Hero-Claim spezifisch: 45px / 42.75px line-height (Figma) */
+  .headline-lg.hero-claim {
+    font-size: 45px !important;
+    line-height: 42.75px !important;
+  }
+
+  /* HL-Versätze werden jetzt pro Section explizit mit exakten Figma-Werten
+     gesetzt (in den Components selbst). Kein globaler Override mehr. */
+
+  /* --- Section-Number (PP Hatton Italic → Fraunces Light Italic) --- */
+  .section-num {
+    font-size: 48px !important;
+    line-height: 1.0 !important;
+  }
+
+  /* --- Section-Name (Loos Wide → Instrument Sans, caps) --- */
+  .section-name {
+    font-size: 14px !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  /* --- Subline (PP Hatton italic 24px auf Mobile) --- */
+  .subline {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+  }
+  .subline[style*="padding-left"],
+  section .subline[style*="padding-left"] {
+    padding-left: 40px !important;
+  }
+
+  /* --- Body-Copy (Loos Wide → Instrument Sans 15px) --- */
+  .body-copy {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Prozess-Step-Titel + Body kleiner auf Mobile */
+  #process h3 { font-size: 36px !important; }
+  #process .body-copy { font-size: 13px !important; }
+
+  /* Design/Contact-HL kleiner damit's passt */
+  #designer h2, #contact h2, #about h2, #material h2 {
+    font-size: 52px !important;
+  }
+
+  /* "Material & Sicherheit": bei 52px ist "Sicherheit" breiter als der
+     Container und lief bis an den Bildschirmrand. Viewport-relative Größe
+     + kleinerer Versatz, damit die HL auf jedem Handy komplett sichtbar
+     bleibt. Staffelung bleibt erhalten. */
+  #material h2.mat-hl {
+    font-size: clamp(2.25rem, 11.5vw, 3.25rem) !important;
+  }
+  #material h2.mat-hl > span {
+    padding-left: clamp(1.5rem, 9vw, 2.75rem) !important;
+  }
 }
 
 /* --- Builder-Spec Typo-Klassen (echte Fonts) ---
@@ -162,6 +219,12 @@ section h1, section h2, section h3, section h4,
 section .font-black {
   font-family: var(--font-loos-extrawide);
   font-weight: 700;
+}
+/* Ausnahme: h3 mit .font-hatton-i sollen italic Serif bleiben (Process-Steps). */
+section h1.font-hatton-i, section h2.font-hatton-i, section h3.font-hatton-i, section h4.font-hatton-i {
+  font-family: var(--font-hatton);
+  font-weight: 200;
+  font-style: italic;
 }
 /* Body-Copy: Loos Wide 400 */
 section p,

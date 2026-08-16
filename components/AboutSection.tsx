@@ -23,8 +23,8 @@ interface Value {
 const VALUES: Value[] = [
   { n: "01", title: "PRÄZISION",   body: "Handwerk steht über allem." },
   { n: "02", title: "INKLUSION",   body: "Für alle, die Zähne haben." },
-  { n: "03", title: "AUSDRUCK",    body: "Schmuck als persönliche Sprache." },
-  { n: "04", title: "HANDWERK",    body: "Made to fit. Jedes Stück individuell." },
+  { n: "03", title: "HANDWERK",    body: "Made to fit. Jedes Stück individuell." },
+  { n: "04", title: "AUSDRUCK",    body: "Schmuck als persönliche Sprache." },
 ];
 
 export default function AboutSection() {
@@ -50,7 +50,7 @@ export default function AboutSection() {
           <br />
           <span
             className="inline-block"
-            style={{ paddingLeft: "clamp(3.5rem, 14.6vw, 13.125rem)" /* 210px */ }}
+            style={{ paddingLeft: "clamp(3.5rem, 14.6vw, 13.125rem)" /* 56px mobile / 210px desktop */ }}
           >
             Couture.
           </span>
@@ -77,24 +77,43 @@ export default function AboutSection() {
                 Chopper Couture macht Zahnschmuck in Berlin. Grillz, die nicht nach Klischee aussehen. Fein, sauber, modern. Hochpräzise auf dein Gebiss angepasst.
               </p>
               <p>
-                Kein Massenprodukt, kein Klischee. Jedes Stück wird nach deinem Abdruck einzeln entworfen und gefertigt — Präzision, Filigranität, Individualität als Studio-Prinzip.
+                Kein Massenprodukt, kein Klischee. Jedes Stück wird nach deinem Abdruck einzeln entworfen und gefertigt Präzision, Filigranität, Individualität.
               </p>
             </div>
 
-            {/* CTA — führt zur separaten About-Sub-Page (Marke + Person getrennt) */}
-            <Link
-              href="/about"
-              className="mt-10 md:mt-12 inline-flex items-center gap-3 rounded-full border border-cc-white/80 px-6 py-3 md:px-8 md:py-4 font-hatton text-cc-white hover:bg-cc-white hover:text-cc-purple transition-colors"
-              style={{ fontSize: "clamp(1rem, 1.4vw, 1.375rem)" }}
-            >
-              <span>Mehr über uns</span>
-              <span aria-hidden="true">→</span>
-            </Link>
+            {/* CTA — Mobile: mittig-rechts. Desktop: linksbündig */}
+            <div className="mt-10 md:mt-12 flex justify-end md:justify-start pr-1 md:pr-0">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-3 rounded-full border border-cc-white bg-cc-purple px-6 py-3 md:px-8 md:py-4 font-hatton-i text-cc-white hover:bg-cc-white hover:text-cc-purple transition-colors"
+                style={{ fontSize: "clamp(1.25rem, 1.4vw, 1.5rem)" }}
+              >
+                <span>Mehr über CC</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* 4 Werte-Karten — bleiben, sind Marken-Ebene */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 md:gap-x-12 lg:gap-x-16 gap-y-12 md:gap-y-16 mt-24 md:mt-32">
+        {/* MOBILE: 4 Werte inline (nur Labels, Figma-Spec) */}
+        <div className="md:hidden mt-12 flex justify-between items-baseline">
+          {VALUES.map((v) => (
+            <span
+              key={v.n}
+              className="text-cc-white uppercase"
+              style={{
+                fontSize: "clamp(0.75rem, 3vw, 0.875rem)" /* 12 → 14px */,
+                letterSpacing: "0.02em",
+                fontFamily: "var(--font-loos-wide)",
+              }}
+            >
+              {v.title}
+            </span>
+          ))}
+        </div>
+
+        {/* DESKTOP: 4 Werte-Karten mit Nummer + Body */}
+        <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-x-6 md:gap-x-12 lg:gap-x-16 gap-y-12 md:gap-y-16 mt-24 md:mt-32">
           {VALUES.map((v) => (
             <article key={v.n}>
               <p

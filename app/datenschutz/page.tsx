@@ -2,8 +2,9 @@ import SectionHeader from "@/components/SectionHeader";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Datenschutz — Chopper Couture",
+  title: "Datenschutz",
   description: "Datenschutzerklärung von Chopper Couture.",
+  alternates: { canonical: "/datenschutz" },
 };
 
 export default function DatenschutzPage() {

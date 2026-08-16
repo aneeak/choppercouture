@@ -37,10 +37,10 @@ interface Style {
   add: number;
 }
 const STYLES: Style[] = [
-  { key: "tribal", title: "Tribal", body: "Spiky, kantig, ein Statement.", image: "/images/styles/tribal.jpg", first: 180, add: 100 },
-  { key: "ornamental", title: "Ornamental", body: "Verspielt, kunstvoll, opulent.", image: "/images/styles/ornamental.jpg", first: 180, add: 100 },
-  { key: "modern", title: "Modern", body: "Voll Silber, clean, zeitlos.", image: "/images/styles/modern.jpg", first: 120, add: 80 },
-  { key: "reduziert", title: "Reduziert", body: "Ein Detail, maximale Wirkung.", image: "/images/styles/reduziert.jpg", first: 120, add: 80 },
+  { key: "tribal", title: "Tribal", body: "Spiky, kantig, ein Statement.", image: "/images/styles/tribal.webp", first: 180, add: 100 },
+  { key: "ornamental", title: "Ornamental", body: "Verspielt, kunstvoll, opulent.", image: "/images/styles/ornamental.webp", first: 180, add: 100 },
+  { key: "modern", title: "Modern", body: "Voll Silber, clean, zeitlos.", image: "/images/styles/modern.webp", first: 120, add: 80 },
+  { key: "reduziert", title: "Reduziert", body: "Ein Detail, maximale Wirkung.", image: "/images/styles/reduziert.webp", first: 120, add: 80 },
 ];
 const styleOf = (k: StyleKey) => STYLES.find((s) => s.key === k)!;
 
@@ -153,7 +153,7 @@ export default function ToothDesigner() {
       <div className="lg:col-span-7">
         <div className="relative w-full select-none" style={{ aspectRatio: `${VB_W} / ${VB_H}` }}>
           <Image
-            src="/images/designer/grill-designer.png"
+            src="/images/designer/grill-designer.webp"
             alt="Gebiss — wähle deine Zähne"
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"

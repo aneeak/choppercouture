@@ -23,37 +23,45 @@ export default function BrandPromiseSection() {
         paddingRight: "clamp(1.5rem, 14.6vw, 13.125rem)" /* 210px eingerückt von rechts */,
       }}
     >
-      <div className="px-6 md:px-12 lg:px-16 max-w-[1440px] mx-auto w-full">
-        {/* Section-Label — 20px nach rechts */}
+      <div className="px-5 md:px-12 lg:px-16 max-w-[1440px] mx-auto w-full">
+        {/* Section-Label */}
         <p
           className="font-hatton-i text-cc-white"
           style={{
-            fontSize: "clamp(1.75rem, 5vw, 4.5rem)" /* 28 → 72px */,
-            paddingLeft: "20px",
+            fontSize: "clamp(1.25rem, 5vw, 4.5rem)" /* 20 → 72px */,
+            paddingLeft: "clamp(1.25rem, 3vw, 20px)",
           }}
         >
           Brand Promise
         </p>
 
-        {/* Zweizeilige HL: "LIFECHANGING / SMILES." — 2. Zeile 720px (Spec 700 + 20) */}
+        {/* HL "Life changing / Smiles." — Figma-Text 1:1 mit versetzten Wörtern.
+            Mobile: 3-zeilig, Desktop: 2-zeilig */}
         <h2
-          className="headline-lg mt-4 md:mt-6"
-          style={{ fontSize: "clamp(3rem, 9.2vw, 8.25rem)" /* 48 → 132px */ }}
+          className="headline-lg mt-6 md:mt-6 md:hidden"
+          style={{ fontSize: "52px", lineHeight: "0.95" }}
         >
-          Lifechanging
+          <span className="block" style={{ paddingLeft: "40px" }}>Life</span>
+          <span className="block" style={{ paddingLeft: "60px" }}>changing</span>
+          <span className="block">Smiles.</span>
+        </h2>
+        <h2
+          className="headline-lg mt-6 md:mt-6 hidden md:block"
+          style={{ fontSize: "clamp(3.25rem, 9.2vw, 8.25rem)" }}
+        >
+          <span style={{ paddingLeft: "0.75rem" }}>Life</span>
+          <span style={{ paddingLeft: "1.75rem" }}>changing</span>
           <br />
-          <span
-            className="inline-block"
-            style={{ paddingLeft: "clamp(6rem, 50vw, 45rem)" /* 96 → 720px (+20 vom Original) */ }}
-          >
-            Smiles.
-          </span>
+          Smiles.
         </h2>
 
-        {/* Subline — nach ganz rechts (rechtsbündig) */}
+        {/* Subline — Mobile: rechtsbündig (Screenshot zeigt rechts-mittig durch text-right).
+            Desktop: rechtsbündig. */}
         <p
-          className="font-hatton-i text-cc-white text-right mt-8 md:mt-12"
-          style={{ fontSize: "clamp(1.125rem, 2.1vw, 1.875rem)" /* 18 → 30px */ }}
+          className="font-hatton-i text-cc-white mt-4 md:mt-12 text-right"
+          style={{
+            fontSize: "clamp(1.375rem, 2.1vw, 1.875rem)" /* 22 → 30px */,
+          }}
         >
           Schmuck, der im Kopf bleibt.
         </p>

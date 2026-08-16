@@ -19,10 +19,38 @@ const LINKS: { href: string; label: string; external?: boolean }[] = [
 
 export default function Footer() {
   return (
-    <footer className="bg-cc-pure text-cc-white/80 px-6 md:px-12 lg:px-16 py-10 md:py-14">
+    <footer className="bg-cc-pure text-cc-white/80 px-5 md:px-12 lg:px-16 py-8 md:py-14">
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        {/* Link-Reihe links */}
-        <ul className="flex flex-wrap gap-x-6 gap-y-2 section-name" style={{ fontSize: "clamp(0.6875rem, 0.9vw, 0.8125rem)" }}>
+        {/* MOBILE: 3-zeilig mit · Separatoren (Figma) */}
+        <div
+          className="md:hidden font-wide"
+          style={{
+            fontSize: "11px",
+            letterSpacing: "0.05em",
+            lineHeight: "2.2",
+          }}
+        >
+          <p>
+            <Link href="/#about" className="hover:text-cc-white transition-colors">ABOUT</Link>
+            {" · "}
+            <Link href="/#material" className="hover:text-cc-white transition-colors">MATERIAL</Link>
+            {" · "}
+            <Link href="/impressum" className="hover:text-cc-white transition-colors">IMPRESSUM</Link>
+          </p>
+          <p>
+            <Link href="/datenschutz" className="hover:text-cc-white transition-colors">DATENSCHUTZ</Link>
+            {" · "}
+            <Link href="/agb" className="hover:text-cc-white transition-colors">AGB</Link>
+          </p>
+          <p>
+            <a href="https://instagram.com/choppercouture" target="_blank" rel="noopener noreferrer" className="hover:text-cc-white transition-colors">INSTAGRAM</a>
+            {" · "}
+            <a href="mailto:choppercouture@gmail.com" className="hover:text-cc-white transition-colors">E-MAIL</a>
+          </p>
+        </div>
+
+        {/* DESKTOP: flex-wrap Link-Reihe */}
+        <ul className="hidden md:flex flex-wrap gap-x-6 gap-y-2 section-name" style={{ fontSize: "clamp(0.6875rem, 0.9vw, 0.8125rem)" }}>
           {LINKS.map((l) =>
             l.external ? (
               <li key={l.label}>
@@ -45,10 +73,10 @@ export default function Footer() {
           )}
         </ul>
 
-        {/* Copyright rechts */}
+        {/* Copyright — Mixed Case, klein (Figma). */}
         <p
-          className="section-name text-cc-white/50"
-          style={{ fontSize: "clamp(0.6875rem, 0.8vw, 0.75rem)" }}
+          className="font-wide text-cc-white/50 mt-8 md:mt-0"
+          style={{ fontSize: "10px", letterSpacing: "0.03em" }}
         >
           © 2026 Chopper Couture. All Rights Reserved.
         </p>

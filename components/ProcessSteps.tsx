@@ -20,42 +20,42 @@ export const STEPS = [
     title: "Abdruck",
     body:
       "Wir treffen uns im Studio, ich schiebe dir ne Schale mit Alginat in den Mund — eine Minute, kein Würgen, kein Stress. Tut nix, schmeckt nach nix. Done.",
-    src: "/images/process-new/01-abdruck.png",
+    src: "/images/process-new/01-abdruck.webp",
   },
   {
     n: "02",
     title: "Gipsmodell",
     body:
       "Aus deinem Abdruck gieße ich ein türkises Gipsmodell. Knallhart, millimetergenau — von hier an arbeite ich nur noch mit deinem Modell, nicht mehr mit dir.",
-    src: "/images/process-new/02-gipsmodell.png",
+    src: "/images/process-new/02-gipsmodell.webp",
   },
   {
     n: "03",
     title: "Scan",
     body:
       "Dein Modell kommt unter den 3D-Scanner. Blaue Laser, ein paar Sekunden, fertig — dein Kiefer existiert jetzt auch digital.",
-    src: "/images/process-new/03-scan.jpg",
+    src: "/images/process-new/03-scan.webp",
   },
   {
     n: "04",
     title: "3D-Design",
     body:
       "In 3Shape baue ich dein Grillz direkt auf deinen Zähnen. Du sagst mir, was du willst — wir iterieren so lange, bis es sitzt. Erst dann geht's weiter.",
-    src: "/images/process-new/04-3d-design.png",
+    src: "/images/process-new/04-3d-design.webp",
   },
   {
     n: "05",
     title: "SLM-Druck",
     body:
       "Selective Laser Melting beim Schütz Fräszentrum. Dein Stück wird Schicht für Schicht aus Edelmetall geschmolzen — ein Guss, ohne Naht. Mehr dazu unter Medizinisches.",
-    src: "/images/process-new/05-slm.jpg",
+    src: "/images/process-new/05-slm.webp",
   },
   {
     n: "06",
     title: "Politur",
     body:
       "Stundenlang mit dem Stück in der Hand. Jede Kante, jeder Innenraum. Erst wenn's leuchtet, ist es deins.",
-    src: "/images/process-new/06-politur.jpg",
+    src: "/images/process-new/06-politur.webp",
   },
 ];
 

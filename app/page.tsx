@@ -28,6 +28,7 @@ import GallerySection from "@/components/GallerySection";
 import MaterialSection from "@/components/MaterialSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import SmileVideoBlock from "@/components/SmileVideoBlock";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -67,11 +68,15 @@ export default function Home() {
         <Hero videoSrc="/videos/hero-loop.mp4" />
       </div>
 
+      {/* Reihenfolge laut Figma-Mobile-Design 2026-08:
+          Hero → Claim → Galerie → Designer → Brand Promise →
+          Process → Material → About → Contact */}
       <HeroSection />
-      <ProcessSection />
-      <DesignerSection />
-      <BrandPromiseSection />
       <GallerySection />
+      <DesignerSection />
+      <SmileVideoBlock />
+      <BrandPromiseSection />
+      <ProcessSection />
       <MaterialSection />
       <AboutSection />
       <ContactSection />

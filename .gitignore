@@ -14,5 +14,13 @@ out/
 # Große Backups (nie ins Repo)
 public/videos/process_original.mp4
 
+# Master-Video-Exporte im Projekt-Root (60 MB / 159 MB).
+# GitHub lehnt Dateien über 100 MB ab — die gehören nicht ins Repo.
+/CC_Landing_Vid_mobile.mp4
+/CC_Prozess_mobile.mp4
+
+# InDesign-Font-Listen (werden von InDesign automatisch erzeugt)
+indesign/**/AdobeFnt*.lst
+
 # Claude runtime
 .claude/
