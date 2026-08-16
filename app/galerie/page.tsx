@@ -16,23 +16,23 @@ import SectionHeader from "@/components/SectionHeader";
 import Footer from "@/components/Footer";
 
 const DIR = "/images/pieces-new";
-const PIECES: { src: string; cap: string }[] = [
-  { src: `${DIR}/DSC00550.webp`, cap: "V-01" },
-  { src: `${DIR}/DSC00615.webp`, cap: "V-02" },
-  { src: `${DIR}/DSC00585.webp`, cap: "V-03" },
-  { src: `${DIR}/DSC00412.webp`, cap: "V-04" },
-  { src: `${DIR}/DSC00386.webp`, cap: "V-05" },
-  { src: `${DIR}/DSC00519.webp`, cap: "V-06" },
-  { src: `${DIR}/DSC00572.webp`, cap: "V-07" },
-  { src: `${DIR}/DSC00511.webp`, cap: "V-08" },
-  { src: `${DIR}/DSC00537.webp`, cap: "V-09" },
-  { src: `${DIR}/DSC00444.webp`, cap: "V-10" },
-  { src: `${DIR}/DSC00559.webp`, cap: "V-11" },
-  { src: `${DIR}/DSC00394.webp`, cap: "V-12" },
-  { src: `${DIR}/DSC00381.webp`, cap: "V-13" },
-  { src: `${DIR}/DSC00571.webp`, cap: "V-14" },
-  { src: "/images/pieces/ornamental grillz.webp", cap: "V-15" },
-  { src: "/images/pieces/Modell.webp", cap: "V-16" },
+const PIECES: { src: string; cap: string; alt: string }[] = [
+  { src: `${DIR}/DSC00550.webp`, cap: "V-01", alt: "Custom Grillz Einzelzahn — handgefertigt von Chopper Couture Berlin" },
+  { src: `${DIR}/DSC00615.webp`, cap: "V-02", alt: "Dental Jewelry Detailaufnahme — individueller Zahnschmuck" },
+  { src: `${DIR}/DSC00585.webp`, cap: "V-03", alt: "Custom Grillz mit Ornament-Design — Chopper Couture" },
+  { src: `${DIR}/DSC00412.webp`, cap: "V-04", alt: "Grillz Nahaufnahme — SLM-gefertigter Zahnschmuck aus CoCr" },
+  { src: `${DIR}/DSC00386.webp`, cap: "V-05", alt: "Handgefertigter Grillz — Dental Jewelry Berlin" },
+  { src: `${DIR}/DSC00519.webp`, cap: "V-06", alt: "Custom Dental Grillz — individuelles Design" },
+  { src: `${DIR}/DSC00572.webp`, cap: "V-07", alt: "Grillz Detail — polierter Zahnschmuck von Chopper Couture" },
+  { src: `${DIR}/DSC00511.webp`, cap: "V-08", alt: "Dental Jewelry Piece — maßgefertigter Zahnschmuck" },
+  { src: `${DIR}/DSC00537.webp`, cap: "V-09", alt: "Custom Grillz — einzigartiges Design aus Berlin" },
+  { src: `${DIR}/DSC00444.webp`, cap: "V-10", alt: "Grillz Schmuckstück — handpoliert und individuell" },
+  { src: `${DIR}/DSC00559.webp`, cap: "V-11", alt: "Zahnschmuck Detailansicht — Chopper Couture Berlin" },
+  { src: `${DIR}/DSC00394.webp`, cap: "V-12", alt: "Custom Dental Jewelry — präzisionsgefertigt" },
+  { src: `${DIR}/DSC00381.webp`, cap: "V-13", alt: "Grillz mit feinem Design — Zahnschmuck aus Edelmetall" },
+  { src: `${DIR}/DSC00571.webp`, cap: "V-14", alt: "Dental Grillz — individuell gefertigter Zahnschmuck" },
+  { src: "/images/pieces/ornamental grillz.webp", cap: "V-15", alt: "Ornamental Grillz — dekorativer Zahnschmuck von Chopper Couture" },
+  { src: "/images/pieces/Modell.webp", cap: "V-16", alt: "Grillz auf Gipsmodell — Zahnabdruck für Custom Grillz" },
 ];
 
 export default function GaleriePage() {
@@ -84,7 +84,7 @@ export default function GaleriePage() {
           >
             <Image
               src={p.src}
-              alt={p.cap}
+              alt={p.alt}
               fill
               sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
               className="object-cover"

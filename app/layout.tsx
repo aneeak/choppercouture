@@ -51,10 +51,24 @@ export const metadata: Metadata = {
     "Grillz",
     "Custom Grillz",
     "Grillz Berlin",
+    "Grillz kaufen",
+    "Grillz Deutschland",
+    "Grillz bestellen",
+    "Dental Grillz",
     "Dental Jewelry",
+    "Dental Jewellery",
     "Zahnschmuck",
     "Zahnschmuck Berlin",
-    "Grillz Deutschland",
+    "Zahnschmuck Deutschland",
+    "Zahngold",
+    "Zahngold Berlin",
+    "Gold Grillz",
+    "Silber Grillz",
+    "Tooth Gems Berlin",
+    "Zahn Schmuck kaufen",
+    "Custom Dental Jewelry Berlin",
+    "Grillz anfertigen lassen",
+    "Grillz Schmuck",
     "Anika Müggler",
   ],
   authors: [{ name: "Anika Müggler" }],
@@ -109,6 +123,7 @@ const JSON_LD = {
   alternateName: ["choppercouture", "Chopper Couture Berlin"],
   url: SITE,
   image: `${SITE}/og-image.jpg`,
+  logo: `${SITE}/og-image.jpg`,
   description: DESCRIPTION,
   email: "choppercouture@gmail.com",
   telephone: "+4915123182496",
@@ -120,9 +135,78 @@ const JSON_LD = {
     addressLocality: "Berlin",
     addressCountry: "DE",
   },
-  areaServed: "DE",
+  areaServed: { "@type": "Country", name: "DE" },
   sameAs: ["https://instagram.com/choppercouture"],
-  knowsAbout: ["Custom Grillz", "Dental Jewelry", "Zahnschmuck"],
+  knowsAbout: ["Custom Grillz", "Dental Jewelry", "Zahnschmuck", "Dental Grillz", "Zahngold"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Grillz & Dental Jewelry",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Custom Grillz",
+          description: "Individuell gefertigte Grillz nach Zahnabdruck, im SLM-Verfahren aus biokompatibler CoCr-Legierung.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Dental Jewelry",
+          description: "Handgefertigter Zahnschmuck — einzigartige Designs, präzise gefertigt in Berlin.",
+        },
+      },
+    ],
+  },
+};
+
+const FAQ_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Was sind Grillz?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Grillz sind herausnehmbarer Zahnschmuck, der über die Zähne gesteckt wird. Bei Chopper Couture werden sie individuell nach Abdruck gefertigt — im SLM-Verfahren aus biokompatibler CoCr-Legierung.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Wie bekomme ich Custom Grillz bei Chopper Couture?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "In 6 Schritten: Abdruck im Labor, Gipsmodell, 3D-Scan, individuelles Design, SLM-Druck aus Edelmetall, finale Politur. Jedes Piece wird in Berlin handgefertigt.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Aus welchem Material werden die Grillz hergestellt?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Chopper Couture verwendet biokompatible CoCr-Legierung (Cobalt-Chrom), die im selektiven Laserschmelzverfahren (SLM) verarbeitet wird — das gleiche Verfahren wie in der Zahnmedizin.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Kann man Grillz in Berlin kaufen?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ja, Chopper Couture sitzt in Berlin-Friedrichshain. Der Abdruck wird vor Ort genommen. Kontakt per E-Mail an choppercouture@gmail.com oder telefonisch.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Wie viel kosten Custom Grillz?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Der Preis hängt vom Design, der Zahnanzahl und den gewünschten Details ab. Kontaktiere Chopper Couture für ein individuelles Angebot.",
+      },
+    },
+  ],
 };
 
 export const viewport: Viewport = {
@@ -148,6 +232,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_LD) }}
         />
       </head>
       <body className="bg-white text-cc-black">
