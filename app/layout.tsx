@@ -240,6 +240,7 @@ export default function RootLayout({
       className={`${inter.variable} ${ppHatton.variable} antialiased`}
     >
       <head>
+        <meta name="google-site-verification" content="-2VBwCBdUgxnmeV31pChQOgraxFUCo50jiE8r8hpfxg" />
         {/* Typekit vorab verbinden — spart einen Roundtrip beim Font-Load */}
         <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
         <link rel="preconnect" href="https://p.typekit.net" crossOrigin="" />
