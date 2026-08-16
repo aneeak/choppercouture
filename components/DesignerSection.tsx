@@ -67,7 +67,7 @@ const STYLES: StyleDef[] = [
   { key: "whole",      title: "Whole",      body: "Ganzer Zahn. Glatt, silber.",     first: 180, add: 65,
     image: null },
   { key: "ornamental", title: "Ornamental", body: "Verspielt, dynamisch, dekorativ.", first: 305, add: 95,
-    image: "/images/styles/Ornamental.webp" },
+    image: "/images/styles/ornamental.webp" },
 ];
 const styleOf = (k: StyleKey) => STYLES.find((s) => s.key === k)!;
 
