@@ -13,6 +13,7 @@ const LINKS: { href: string; label: string; external?: boolean }[] = [
   { href: "/impressum", label: "Impressum" },
   { href: "/datenschutz", label: "Datenschutz" },
   { href: "/agb", label: "AGB" },
+  { href: "/faq", label: "FAQ" },
   { href: "https://instagram.com/choppercouture", label: "Instagram", external: true },
   { href: "mailto:choppercouture@gmail.com", label: "E-Mail", external: true },
 ];
@@ -41,6 +42,8 @@ export default function Footer() {
             <Link href="/datenschutz" className="hover:text-cc-white transition-colors">DATENSCHUTZ</Link>
             {" · "}
             <Link href="/agb" className="hover:text-cc-white transition-colors">AGB</Link>
+            {" · "}
+            <Link href="/faq" className="hover:text-cc-white transition-colors">FAQ</Link>
           </p>
           <p>
             <a href="https://instagram.com/choppercouture" target="_blank" rel="noopener noreferrer" className="hover:text-cc-white transition-colors">INSTAGRAM</a>

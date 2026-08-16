@@ -171,23 +171,31 @@ const FAQ_LD = {
       name: "Was sind Grillz?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Grillz sind herausnehmbarer Zahnschmuck, der über die Zähne gesteckt wird. Bei Chopper Couture werden sie individuell nach Abdruck gefertigt — im SLM-Verfahren aus biokompatibler CoCr-Legierung.",
+        text: "Grillz sind Zahnschmuck aus Metalllegierung, der über die Zähne gesteckt wird. Er rastet durch den Unterschnitt des Zahnäquators ein und hält so fest im Mund — kann aber jederzeit wieder herausgenommen werden.",
       },
     },
     {
       "@type": "Question",
-      name: "Wie bekomme ich Custom Grillz bei Chopper Couture?",
+      name: "Sind Grillz sicher für die Zähne?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "In 6 Schritten: Abdruck im Labor, Gipsmodell, 3D-Scan, individuelles Design, SLM-Druck aus Edelmetall, finale Politur. Jedes Piece wird in Berlin handgefertigt.",
+        text: "Ja. Sie werden individuell unter höchsten zahntechnischen Standards auf Mikrometer genau gefertigt und schaden dem Zahnschmelz nicht. Grillz sollten nur zu speziellen Anlässen getragen werden — maximal 2 Stunden am Stück, 2–3 Mal die Woche.",
       },
     },
     {
       "@type": "Question",
-      name: "Aus welchem Material werden die Grillz hergestellt?",
+      name: "Wie läuft eine Bestellung bei Chopper Couture ab?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Chopper Couture verwendet biokompatible CoCr-Legierung (Cobalt-Chrom), die im selektiven Laserschmelzverfahren (SLM) verarbeitet wird — das gleiche Verfahren wie in der Zahnmedizin.",
+        text: "Kontakt über Instagram, Website oder E-Mail. Designbesprechung und Formular ausfüllen. Termin zur Abdrucknahme in Berlin. 3D-Design mit Feedback-Runde. Ausarbeitung des Pieces. Persönliche Übergabe mit optimaler Anpassung.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Aus welchem Material sind die Grillz?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Chopper Couture arbeitet mit biokompatibler CoCr-Legierung (Cobalt-Chrom). Die Fertigung erfolgt im selektiven Laserschmelzverfahren (SLM) auf speziellen zahntechnischen Maschinen — das gleiche Verfahren wie in der professionellen Zahnmedizin.",
       },
     },
     {
@@ -195,15 +203,23 @@ const FAQ_LD = {
       name: "Kann man Grillz in Berlin kaufen?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ja, Chopper Couture sitzt in Berlin-Friedrichshain. Der Abdruck wird vor Ort genommen. Kontakt per E-Mail an choppercouture@gmail.com oder telefonisch.",
+        text: "Ja, Chopper Couture sitzt in Berlin-Friedrichshain. Die Abdrucknahme findet vor Ort statt. Der fertige Grillz kann auch versendet werden. Kontakt per E-Mail an choppercouture@gmail.com oder über Instagram.",
       },
     },
     {
       "@type": "Question",
-      name: "Wie viel kosten Custom Grillz?",
+      name: "Was kosten Custom Grillz?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Der Preis hängt vom Design, der Zahnanzahl und den gewünschten Details ab. Kontaktiere Chopper Couture für ein individuelles Angebot.",
+        text: "Zwischen 200 und 2.500 Euro — je nach Design, Zahnanzahl und gewünschten Details. Kontaktiere Chopper Couture für ein individuelles Angebot.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Wie pflege ich meine Grillz?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Immer vor dem Essen, Trinken und Alkoholkonsum herausnehmen. Nach dem Tragen unter Wasser abspülen und an der Luft trocknen lassen. Trocken im Case verstauen, um Verbiegung oder Verformung zu vermeiden.",
       },
     },
   ],
