@@ -183,7 +183,7 @@ export default function AboutPage() {
                 3D, CAD/CAM, digitale Fertigung alles, wo man Formen am Bildschirm baut und sie danach in der Hand hält. Hat gepasst. Zahntechnik konnte plötzlich mehr als Funktion.
               </p>
               <p>
-                Berlin war der nächste Unfall. Art Direction bei einer Werbeagentur, nebenbei Wirtschaftskommunikation studieren, und abends das machen, was mich nicht in Ruhe lässt: Schmuck für Zähne, der nach Schmuck aussieht und nicht nach Rapvideo.
+                Berlin war der nächste Step. Art Direction bei einer Werbeagentur, nebenbei Wirtschaftskommunikation studieren, und abends das machen, was mich nicht in Ruhe lässt: Schmuck für Zähne, der nach Schmuck aussieht und nicht nach Rapvideo.
                 <br />
                 Chopper Couture ist kein Side Project. Es ist das Ding, bei dem alles zusammenkommt, was ich kann und will.
               </p>
