@@ -112,7 +112,7 @@ export default function Navigation() {
       }
       setMenuOpen(false);
     }
-    // No-anchor links (e.g. /about) fall through to default <Link> behaviour.
+    setMenuOpen(false);
   };
 
   /** Logo click — always scroll to top, even when already on /. */

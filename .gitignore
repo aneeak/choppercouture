@@ -22,5 +22,8 @@ public/videos/process_original.mp4
 # InDesign-Font-Listen (werden von InDesign automatisch erzeugt)
 indesign/**/AdobeFnt*.lst
 
+# Galerie-Quellbilder (nur die optimierten in public/images/galerie/)
+CC_Galerie_Bilder/
+
 # Claude runtime
 .claude/
