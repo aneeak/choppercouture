@@ -87,7 +87,7 @@ export default function AboutPage() {
               {/* CTAs zur Marke: zurück zu Pieces/Designer */}
               <div className="flex flex-wrap gap-3 pt-2">
                 <Link
-                  href="/#pieces"
+                  href="/galerie"
                   className="inline-flex items-center gap-3 rounded-full border border-cc-white/80 px-6 py-3 md:px-8 md:py-4 font-hatton text-cc-white hover:bg-cc-white hover:text-cc-purple transition-colors"
                   style={{ fontSize: "clamp(0.9375rem, 1.3vw, 1.25rem)" }}
                 >
