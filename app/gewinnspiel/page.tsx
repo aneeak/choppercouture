@@ -28,7 +28,10 @@ const RAFFLE = {
     "nach Maß aus biokompatibler CoCr-Legierung",
 
   /** Wann gezogen wird. */
-  drawLabel: "am Abend der Veranstaltung, dem 24. Oktober 2026, vor Ort",
+  drawLabel: "nach dem Ende des Vorverkaufs",
+
+  /** Frist, in der sich die gewinnende Person melden muss. */
+  claimDays: 14,
 
   /** Bis wann ein Ticket gekauft sein muss, um teilzunehmen. */
   deadlineLabel: "bis zum Ende des Vorverkaufs am 24. Oktober 2026",
@@ -79,10 +82,11 @@ const CLAUSES: Clause[] = [
         ist nicht nötig — der Kauf ist die Teilnahme.
         <br />
         <br />
-        Das Los selbst gibt es am Einlass: Dort erhältst du gegen dein
-        Vorverkaufs-Ticket pro Ticket ein nummeriertes Los. Die Teilnahme setzt
-        deshalb voraus, dass du da bist — wer ein Vorverkaufs-Ticket kauft, aber
-        nicht kommt, erhält kein Los und nimmt nicht an der Ziehung teil.
+        Die Teilnahme erfolgt automatisch mit dem Kauf — du musst dich nirgends
+        anmelden und nicht bei der Veranstaltung anwesend sein. Maßgeblich ist
+        die Person, die das Ticket bezahlt hat: Wer mehrere Tickets kauft und
+        weitergibt, bleibt selbst Teilnehmerin oder Teilnehmer der Verlosung,
+        weil die Zuordnung über die Zahlung läuft.
         <br />
         <br />
         Tickets, die an der Abendkasse gekauft werden, nehmen an der Verlosung
@@ -121,17 +125,18 @@ const CLAUSES: Clause[] = [
     ),
   },
   {
-    title: "4. Ziehung",
+    title: "4. Ziehung und Benachrichtigung",
     body: (
       <>
-        Die Ziehung erfolgt {RAFFLE.drawLabel} aus allen ausgegebenen Losen nach
-        dem Zufallsprinzip. Es gewinnt, wer das gezogene Los vorlegen kann — das
-        Los gilt also für die Person, die es in der Hand hält, nicht für die
-        Person, die das Ticket bezahlt hat.
+        Die Ziehung erfolgt {RAFFLE.drawLabel} unter allen Vorverkaufs-Tickets
+        nach dem Zufallsprinzip. Eine Ziehung vor Ort findet nicht statt.
         <br />
         <br />
-        Wird das gezogene Los nicht vorgelegt, wird neu gezogen. Der Rechtsweg
-        ist ausgeschlossen.
+        Die Gewinnerin oder der Gewinner wird per E-Mail benachrichtigt, und
+        zwar an die Adresse, die bei der Ticketzahlung hinterlegt war. Erfolgt
+        innerhalb von {RAFFLE.claimDays}&nbsp;Tagen nach der Benachrichtigung
+        keine Rückmeldung, verfällt der Anspruch und der Gewinn wird neu
+        ausgelost. Der Rechtsweg ist ausgeschlossen.
       </>
     ),
   },
@@ -147,14 +152,14 @@ const CLAUSES: Clause[] = [
     title: "7. Datenschutz",
     body: (
       <>
-        Die Lose sind anonym und nummeriert — für die Verlosung selbst verarbeite
-        ich keine personenbezogenen Daten. Am Einlass gleiche ich lediglich deinen
-        Namen mit der Gästeliste ab, die aus den PayPal-Zahlungen entsteht (Vor-
-        und Nachname sowie E-Mail-Adresse). Rechtsgrundlage ist
+        Für die Verlosung verwende ich ausschließlich die Daten, die mir PayPal
+        mit der Ticketzahlung übermittelt: Vor- und Nachname sowie E-Mail-Adresse.
+        Sie dienen allein der Durchführung der Verlosung, der Benachrichtigung
+        und dem Abgleich am Einlass. Rechtsgrundlage ist
         Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO. Eine Weitergabe an Dritte
-        findet nicht statt. Die Gästeliste wird nach der Veranstaltung gelöscht,
-        soweit keine gesetzlichen Aufbewahrungsfristen entgegenstehen. Näheres in
-        der{" "}
+        findet nicht statt. Die Daten werden nach Abschluss der Verlosung
+        gelöscht, soweit keine gesetzlichen Aufbewahrungsfristen entgegenstehen.
+        Näheres in der{" "}
         <a href="/datenschutz" className="underline underline-offset-2 hover:text-cc-purple">
           Datenschutzerklärung
         </a>

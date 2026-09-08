@@ -75,7 +75,15 @@ const FAQS: FaqItem[] = [
           E-Mail
         </a>
         . Wir besprechen dein Design, du füllst ein Formular aus mit deinen
-        Daten und deiner Design-Skizze. Dann machen wir einen Termin für die
+        Daten und deiner Design-Skizze — den{" "}
+        <a
+          href="/downloads/choppercouture-auftragszettel.pdf"
+          download
+          className="underline underline-offset-2 hover:text-cc-purple"
+        >
+          Auftragszettel gibt es hier als PDF
+        </a>
+        . Dann machen wir einen Termin für die
         Abdrucknahme. Ich designe den Grillz in 3D und sende ihn dir zum
         Feedback — Anpassungen sind möglich. Danach arbeite ich das Piece aus
         und bei der persönlichen Übergabe passen wir es optimal an.

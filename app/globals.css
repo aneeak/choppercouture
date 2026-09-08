@@ -274,3 +274,57 @@ main p {
   stroke-width: 3;
   mix-blend-mode: multiply;
 }
+
+/* ── Custom Cursor ──────────────────────────────────────────────────────────
+   Spike-Icon um 180° gedreht statt des Systempfeils, 18x32 px. Hotspot 7/2,
+   also genau die Spitze oben — dort, wo auch der normale Pfeil zeigt.
+
+   Nur für echte Zeiger: Touchgeräte haben keinen Cursor, und wer auf
+   Zeigegenauigkeit angewiesen ist, behält über prefers-reduced-motion nichts
+   davon — deshalb greift die Regel ausschließlich bei (hover: hover) und
+   (pointer: fine).
+
+   Auf dunklen Sektionen wäre das schwarze Icon unsichtbar, dort läuft die
+   weiße Variante. Über anklickbaren Elementen wird es violett. */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: url("/cursor/spike-black.png") 7 2, auto;
+  }
+
+  /* Dunkle Sektionen tragen data-nav-tone="light" (helle Schrift auf dunkel) */
+  [data-nav-tone="light"] {
+    cursor: url("/cursor/spike-white.png") 7 2, auto;
+  }
+
+  /* Alles Anklickbare — unabhängig vom Hintergrund violett */
+  a,
+  button,
+  summary,
+  label,
+  [role="button"],
+  [data-nav-tone="light"] a,
+  [data-nav-tone="light"] button {
+    cursor: url("/cursor/spike-purple.png") 7 2, pointer;
+  }
+
+  /* Textfelder behalten den Textcursor — sonst weiß niemand, wo er tippt */
+  input,
+  textarea,
+  select,
+  [contenteditable="true"] {
+    cursor: text;
+  }
+
+  select,
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="range"] {
+    cursor: url("/cursor/spike-purple.png") 7 2, pointer;
+  }
+
+  /* Deaktivierte Elemente sollen nicht klickbar aussehen */
+  [disabled],
+  .pointer-events-none {
+    cursor: url("/cursor/spike-black.png") 7 2, default;
+  }
+}

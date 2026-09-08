@@ -527,24 +527,6 @@ export default function EventPage() {
                 {EVENT.presaleCapacity} Tickets · an der Abendkasse {doorLabel}
               </p>
 
-              {/* Der Grund, im Vorverkauf zu kaufen — deshalb hervorgehoben. */}
-              <p
-                className="mt-6 border-l-2 border-cc-purple pl-4 body-copy"
-                style={{ fontSize: "clamp(0.875rem, 1vw, 1rem)" }}
-              >
-                <strong className="font-medium">Grillz gewinnen gibt es nur im Vorverkauf.</strong>{" "}
-                Dein Los bekommst du am Einlass, gezogen wird am Abend vor Ort —
-                du musst also da sein. Tickets an der Abendkasse nehmen an der
-                Verlosung nicht teil. Es gelten die{" "}
-                <a
-                  href="/gewinnspiel"
-                  className="underline underline-offset-2 hover:text-cc-purple"
-                >
-                  Teilnahmebedingungen
-                </a>
-                .
-              </p>
-
               {/* Drei Zustände: verkaufbar · ausverkauft · noch nicht gestartet */}
               <div className="mt-8">
                 <BuyButton ticketsLive={ticketsLive} />
@@ -615,6 +597,10 @@ export default function EventPage() {
                   Es gelten die{" "}
                   <a href="/agb" className="underline underline-offset-2 hover:text-cc-purple">
                     AGB
+                  </a>{" "}
+                  und die{" "}
+                  <a href="/gewinnspiel" className="underline underline-offset-2 hover:text-cc-purple">
+                    Teilnahmebedingungen der Verlosung
                   </a>
                   . Fragen vorab:{" "}
                   <a

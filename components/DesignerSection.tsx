@@ -71,6 +71,7 @@ const STYLES: StyleDef[] = [
 ];
 const styleOf = (k: StyleKey) => STYLES.find((s) => s.key === k)!;
 
+
 // ── kleines wiederkehrendes „01- xxx" Label (Sub-Section-Header) ────────────
 function StepLabel({ n, name }: { n: string; name: string }) {
   return (
@@ -355,6 +356,105 @@ export default function DesignerSection() {
               <span>Anfrage senden</span>
               <span aria-hidden="true">→</span>
             </Link>
+
+          </div>
+        </div>
+
+        {/* ── Auftragszettel ──────────────────────────────────────────────
+            Eigener Block über die volle Breite der Sektion, statt klein
+            unter dem CTA zu hängen. Vorschaubild links, damit sofort
+            erkennbar ist, was man da herunterlädt. */}
+        <div className="mt-20 md:mt-28 border border-cc-black/15 bg-cc-white">
+          <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 md:gap-12 p-6 md:p-10 items-center">
+            {/* Vorschau des Zettels */}
+            <a
+              href="/downloads/choppercouture-auftragszettel.pdf"
+              download
+              className="relative block w-full max-w-[260px] mx-auto md:mx-0 aspect-[680/956] border border-cc-black/10 overflow-hidden hover:border-cc-black transition-colors"
+            >
+              <Image
+                src="/images/designer/auftragszettel-vorschau.webp"
+                alt="Vorschau des Auftragszettels — DESIGN YOUR GRILLZ"
+                fill
+                sizes="260px"
+                className="object-cover"
+              />
+            </a>
+
+            <div>
+              <p
+                className="section-name text-cc-black/50"
+                style={{ fontSize: "0.7rem", letterSpacing: "0.08em" }}
+              >
+                LIEBER VON HAND?
+              </p>
+              <h3
+                className="font-hatton-i mt-3"
+                style={{ fontSize: "clamp(1.75rem, 3.4vw, 2.75rem)", lineHeight: "1.1" }}
+              >
+                Design your Grillz.
+              </h3>
+              <p
+                className="mt-4 body-copy text-cc-black/75 leading-relaxed"
+                style={{ fontSize: "clamp(0.9375rem, 1.1vw, 1.125rem)" }}
+              >
+                Lade dir den Auftragszettel als PDF, zeichne dein Design direkt
+                auf das Gebiss und schick ihn mir eingescannt an{" "}
+                <a
+                  href="mailto:choppercouture@gmail.com"
+                  className="underline underline-offset-2 hover:text-cc-purple"
+                >
+                  choppercouture@gmail.com
+                </a>
+                {" "}— bitte nicht abfotografiert.
+              </p>
+              <a
+                href="/downloads/choppercouture-auftragszettel.pdf"
+                download
+                className="mt-6 inline-flex items-center gap-2 rounded-full border border-cc-black bg-cc-black text-cc-white px-6 py-3 md:px-8 md:py-4 font-hatton hover:bg-cc-purple hover:border-cc-purple transition-colors"
+                style={{ fontSize: "clamp(1rem, 1.4vw, 1.375rem)" }}
+              >
+                <span>Auftragszettel laden</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+              <p
+                className="mt-3 section-name text-cc-black/40"
+                style={{ fontSize: "0.65rem", letterSpacing: "0.08em" }}
+              >
+                PDF · A4 · 644 KB
+              </p>
+            </div>
+          </div>
+
+          {/* Haftungsformular — zweiter Download, bewusst ruhiger gehalten als
+              der Auftragszettel: gleiche Wichtigkeit, andere Tonlage. */}
+          <div className="border-t border-cc-black/15 px-6 md:px-10 py-6 md:py-7">
+            <p
+              className="section-name text-cc-black/40"
+              style={{ fontSize: "0.65rem", letterSpacing: "0.08em" }}
+            >
+              AUFKLÄRUNG, EINWILLIGUNG, HAFTUNG
+            </p>
+            <div className="mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <p
+                className="body-copy text-cc-black/70 leading-relaxed md:max-w-[62ch]"
+                style={{ fontSize: "clamp(0.875rem, 1vw, 1rem)" }}
+              >
+                Vor der Abformung auszufüllen: Aufklärung über die Risiken,
+                deine Gesundheitsangaben und die Einwilligung zu Bildaufnahmen.
+                Bring das Formular ausgefüllt zum Termin mit — wir gehen es
+                gemeinsam durch, bevor du unterschreibst.
+              </p>
+              <a
+                href="/downloads/choppercouture-haftung.pdf"
+                download
+                className="shrink-0 inline-flex items-center gap-2 font-hatton-i text-cc-black underline underline-offset-4 hover:text-cc-purple transition-colors"
+                style={{ fontSize: "clamp(0.9375rem, 1.15vw, 1.125rem)" }}
+              >
+                <span>Haftungsformular laden</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
