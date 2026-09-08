@@ -61,12 +61,15 @@ export default function GallerySection() {
         <div
           className="relative w-full bg-cc-black overflow-hidden aspect-[4/5] md:aspect-[16/9]"
         >
+          {/* Hochformat-Quelle: objectPosition 25% von oben hält beide Grillz
+              (OK + UK) im Bild — im 4:5-Mobile- wie im 16:9-Desktop-Crop. */}
           <Image
-            src="/images/pieces-new/DSC00615.webp"
+            src="/images/pieces-new/V100377.webp"
             alt="Selected Pieces — Vorschau"
             fill
             sizes="100vw"
             className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            style={{ objectPosition: "center 25%" }}
             priority
           />
         </div>

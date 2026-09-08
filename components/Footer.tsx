@@ -1,7 +1,7 @@
 /**
  * Footer — Builder-Spec 2026-07
  * -----------------------------
- *  Links: ABOUT · MATERIAL · IMPRESSUM · DATENSCHUTZ · AGB · INSTAGRAM · E-MAIL
+ *  Links: ABOUT · MATERIAL · IMPRESSUM · DATENSCHUTZ · AGB · FAQ · EVENT · INSTAGRAM · E-MAIL
  *  Rechts: © 2026 CHOPPER COUTURE. ALL RIGHTS RESERVED.
  */
 
@@ -14,6 +14,7 @@ const LINKS: { href: string; label: string; external?: boolean }[] = [
   { href: "/datenschutz", label: "Datenschutz" },
   { href: "/agb", label: "AGB" },
   { href: "/faq", label: "FAQ" },
+  { href: "/event", label: "Event" },
   { href: "https://instagram.com/choppercouture", label: "Instagram", external: true },
   { href: "mailto:choppercouture@gmail.com", label: "E-Mail", external: true },
 ];
@@ -46,6 +47,8 @@ export default function Footer() {
             <Link href="/faq" className="hover:text-cc-white transition-colors">FAQ</Link>
           </p>
           <p>
+            <Link href="/event" className="hover:text-cc-white transition-colors">EVENT</Link>
+            {" · "}
             <a href="https://instagram.com/choppercouture" target="_blank" rel="noopener noreferrer" className="hover:text-cc-white transition-colors">INSTAGRAM</a>
             {" · "}
             <a href="mailto:choppercouture@gmail.com" className="hover:text-cc-white transition-colors">E-MAIL</a>

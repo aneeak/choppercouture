@@ -40,6 +40,34 @@ export default function AgbPage() {
               Da es sich um maßangefertigte Einzelanfertigungen handelt, ist ein Widerruf gemäß
               § 312g Abs. 2 Nr. 1 BGB ausgeschlossen.
             </p>
+            <h2
+              className="font-wide font-bold uppercase pt-6"
+              style={{ fontSize: "clamp(0.9375rem, 1.3vw, 1.25rem)", letterSpacing: "0.02em" }}
+            >
+              Event-Tickets
+            </h2>
+            <p>
+              Tickets für Veranstaltungen werden im Vorverkauf über PayPal verkauft. Der Vertrag
+              kommt mit dem Abschluss der Zahlung zustande. Der PayPal-Beleg gilt als Ticket; ein
+              gesondertes Ticket wird nicht versendet. Der Einlass erfolgt über eine Gästeliste
+              anhand des Namens, der bei der Zahlung hinterlegt ist.
+            </p>
+            <p>
+              Bei Veranstaltungen zu einem festen Termin ist das Widerrufsrecht gemäß
+              § 312g Abs. 2 Nr. 9 BGB ausgeschlossen.
+            </p>
+            <p>
+              Fällt eine Veranstaltung aus, wird der Ticketpreis vollständig erstattet. Wird sie
+              verlegt, behält das Ticket seine Gültigkeit; ist der neue Termin nicht möglich, wird
+              der Ticketpreis ebenfalls erstattet. Weitergehende Ansprüche — etwa auf Anfahrt- oder
+              Übernachtungskosten — bestehen nicht.
+            </p>
+            <p>
+              Tickets sind übertragbar. Bitte teile mir den abweichenden Namen vorab per E-Mail mit,
+              damit er auf der Gästeliste steht. Vor Ort gelten das Hausrecht der Veranstaltungsstätte
+              sowie ein etwaiges Mindestalter, das auf der Event-Seite angegeben ist.
+            </p>
+
             <p>
               Fragen dazu?{" "}
               <a href="mailto:choppercouture@gmail.com" className="underline underline-offset-2 hover:text-cc-purple">

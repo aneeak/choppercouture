@@ -22,6 +22,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { useLenis } from "@/components/providers/SmoothScrollProvider";
 
 const LINKS: { href: string; anchor?: string; label: string }[] = [
+  // Event steht bewusst an erster Stelle — solange der Vorverkauf läuft, ist
+  // das der Link, der geklickt werden soll. Nach dem Event wieder entfernen.
+  { href: "/event", label: "Event" },
   { href: "/galerie", label: "Galerie" },
   { href: "/", anchor: "#designer", label: "Designer" },
   { href: "/", anchor: "#process", label: "The Process" },

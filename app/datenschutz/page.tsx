@@ -99,6 +99,41 @@ const BLOCKS: Block[] = [
     ),
   },
   {
+    title: "Ticketkauf über PayPal",
+    body: (
+      <>
+        Tickets für Veranstaltungen werden über PayPal verkauft. Auf dieser Website
+        selbst werden dafür keine Daten erhoben und keine PayPal-Skripte geladen — der
+        Button auf der{" "}
+        <a href="/event" className="underline underline-offset-2 hover:text-cc-purple">
+          Event-Seite
+        </a>{" "}
+        ist ein reiner Link. Erst wenn du ihn anklickst, verlässt du diese Seite und die
+        Zahlung läuft vollständig bei der PayPal (Europe) S.à r.l. et Cie, S.C.A.,
+        22–24 Boulevard Royal, 2449 Luxemburg, ab. Es gilt dort die{" "}
+        <a
+          href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 hover:text-cc-purple"
+        >
+          Datenschutzerklärung von PayPal
+        </a>
+        .
+        <br />
+        <br />
+        Nach einer Zahlung erhalte ich von PayPal die zur Abwicklung nötigen Daten —
+        Vor- und Nachname, E-Mail-Adresse, Zahlungsbetrag und Transaktionsdatum. Ich
+        verwende sie ausschließlich für die Gästeliste am Einlass und die Buchhaltung.
+        Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Vertragserfüllung),
+        für die Aufbewahrung Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;c DSGVO in Verbindung mit
+        den handels- und steuerrechtlichen Aufbewahrungsfristen. Die Gästeliste wird nach
+        der Veranstaltung gelöscht; Zahlungsbelege bewahre ich für die gesetzliche Frist
+        auf. Eine Datenübermittlung in die USA durch PayPal ist möglich.
+      </>
+    ),
+  },
+  {
     title: "Externe Links",
     body: (
       <>

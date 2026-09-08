@@ -54,7 +54,7 @@ type StyleKey = "spiky" | "organic" | "whole" | "ornamental";
 interface StyleDef {
   key: StyleKey;
   title: string;
-  body: string;
+  body: string;          // "\n" erzwingt einen Zeilenumbruch (whitespace-pre-line)
   first: number;
   add: number;
   image: string | null;   // null → keine Bild-Fläche in der Karte
@@ -64,8 +64,8 @@ const STYLES: StyleDef[] = [
     image: "/images/styles/tribal.webp" },
   { key: "organic",    title: "Organic",    body: "Weich, luftig, freundlich.",      first: 210, add: 85,
     image: "/images/styles/modern.webp" },
-  { key: "whole",      title: "Whole",      body: "Ganzer Zahn. Glatt, silber.",     first: 180, add: 65,
-    image: null },
+  { key: "whole",      title: "Whole",      body: "Ganzer Zahn.\nGlatt,\nsilber.",  first: 180, add: 65,
+    image: "/images/styles/whole.webp" },
   { key: "ornamental", title: "Ornamental", body: "Verspielt, dynamisch, dekorativ.", first: 305, add: 95,
     image: "/images/styles/ornamental.webp" },
 ];
@@ -247,7 +247,7 @@ export default function DesignerSection() {
                           {s.title}
                         </h3>
                         <p
-                          className="mt-1 body-copy text-cc-black/70 group-data-[active=true]:text-cc-white/70"
+                          className="mt-1 body-copy whitespace-pre-line text-cc-black/70 group-data-[active=true]:text-cc-white/70"
                           style={{ fontSize: "clamp(0.9375rem, 1.05vw, 1.125rem)" /* 15 → 18px */ }}
                         >
                           {s.body}
