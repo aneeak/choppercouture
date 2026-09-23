@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 const SITE = "https://choppercouture.ch";
 
-// Pflicht bei output: "export" — sonst bricht der Build ab.
+// Pflicht bei output: "export", sonst bricht der Build ab.
 export const dynamic = "force-static";
 
 /**

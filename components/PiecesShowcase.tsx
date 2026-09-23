@@ -3,7 +3,7 @@
 /**
  * PiecesShowcase
  * --------------
- * Desktop (md+): Pin-Horizontal-Scroll via GSAP — vertikales Scrollen
+ * Desktop (md+): Pin-Horizontal-Scroll via GSAP, vertikales Scrollen
  *                bewegt die Bilder horizontal (2 pro Viewport).
  * Mobile:        Natives horizontales Swipe mit snap. Kein Pin, weil
  *                Pin-Scroll auf Touch-Geräten unangenehm ist und Nutzer:innen
@@ -44,7 +44,7 @@ function DesktopPinScroll() {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const [progress, setProgress] = useState(0);
 
-  // Skip DOWN — an das Ende der Pin-Sektion springen (aus Galerie raus).
+  // Skip DOWN, an das Ende der Pin-Sektion springen (aus Galerie raus).
   const skipDown = () => {
     if (!outerRef.current) return;
     const rect = outerRef.current.getBoundingClientRect();
@@ -52,7 +52,7 @@ function DesktopPinScroll() {
     window.scrollTo({ top: target, behavior: "smooth" });
   };
 
-  // Skip UP — vor den Anfang der Pin-Sektion springen (aus Galerie rückwärts raus).
+  // Skip UP, vor den Anfang der Pin-Sektion springen (aus Galerie rückwärts raus).
   const skipUp = () => {
     if (!outerRef.current) return;
     const rect = outerRef.current.getBoundingClientRect();
@@ -135,7 +135,7 @@ function DesktopPinScroll() {
           ))}
         </div>
 
-        {/* Skip UP — Pfeil-Icon oben mittig, springt vor die Galerie zurück */}
+        {/* Skip UP, Pfeil-Icon oben mittig, springt vor die Galerie zurück */}
         <button
           type="button"
           onClick={skipUp}
@@ -147,7 +147,7 @@ function DesktopPinScroll() {
           </svg>
         </button>
 
-        {/* Skip DOWN — Pfeil-Icon unten mittig, springt nach der Galerie weiter */}
+        {/* Skip DOWN, Pfeil-Icon unten mittig, springt nach der Galerie weiter */}
         <button
           type="button"
           onClick={skipDown}

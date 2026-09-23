@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
  */
 
 import ParticleLogo from "@/components/ParticleLogo";
+import useVideoInView from "@/components/useVideoInView";
 
 interface HeroProps {
   videoSrc?: string;
@@ -33,6 +34,9 @@ export default function Hero({
   // Mobile: kleineres Logo, gröberer Sample-Step → weniger Partikel,
   // schont Akku/CPU auf Handys.
   const [isMobile, setIsMobile] = useState(false);
+  // Das Loop-Video lief bisher durch, auch wenn der Hero längst
+  // weggescrollt war. Jetzt pausiert es, sobald es aus dem Bild ist.
+  const videoRef = useVideoInView<HTMLVideoElement>();
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
     const u = () => setIsMobile(mq.matches);
@@ -45,6 +49,7 @@ export default function Hero({
     <section className="relative h-screen w-full overflow-hidden bg-cc-black">
       {/* z-0: background video */}
       <video
+        ref={videoRef}
         className="absolute inset-0 z-0 h-full w-full object-cover"
         poster={poster}
         autoPlay
@@ -63,7 +68,7 @@ export default function Hero({
             - dragRadius 70 → kleine, lokale Pinsel-Zone
             - settle 0.022 → linearer, sanfter Drift zurück zur Form
             - damping 0.78 → Cursor-Impuls stirbt schnell aus
-            - Partikel können nicht überschwingen — kein Glibber
+            - Partikel können nicht überschwingen, kein Glibber
        */}
       <div className="absolute inset-0 z-10">
         <ParticleLogo
@@ -79,10 +84,10 @@ export default function Hero({
         />
       </div>
 
-      {/* z-20: "Dental Jewelry — Berlin" — nur auf Mobile sichtbar,
+      {/* z-20: "Dental Jewelry, Berlin", nur auf Mobile sichtbar,
           zentriert UNTER dem Partikel-Wordmark. Auf Desktop weggeblendet. */}
       <p className="md:hidden absolute left-1/2 -translate-x-1/2 top-[62%] z-20 pointer-events-none whitespace-nowrap font-mono text-[11px] tracking-cc-caps uppercase text-cc-offwhite/80">
-        Dental Jewelry — Berlin
+        Dental Jewelry · Berlin
       </p>
 
       {/* z-20: scroll hint */}

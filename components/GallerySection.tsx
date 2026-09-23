@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GallerySection — 01 GALERIE
+ * GallerySection, 01 GALERIE
  * ---------------------------
  * Sowohl Mobile als auch Desktop: NUR 1 Preview-Bild + "Zur Galerie →"
  * Button (linkt zu /galerie). Der volle Pin-Scroll lebt jetzt
@@ -37,7 +37,7 @@ export default function GallerySection() {
           </span>
         </h2>
 
-        {/* Subline — 3-zeilig, exakte Figma-Positionen (Frame 375, 20px pad).
+        {/* Subline, 3-zeilig, exakte Figma-Positionen (Frame 375, 20px pad).
             Mobile: 44/14/100px (Figma-left 64/34/120 minus 20). */}
         <div
           className="subline mt-6 md:mt-8"
@@ -55,17 +55,17 @@ export default function GallerySection() {
         </div>
       </div>
 
-      {/* 1 Preview-Bild — fullscreen edge-to-edge, KEIN horizontales Padding.
+      {/* 1 Preview-Bild, fullscreen edge-to-edge, KEIN horizontales Padding.
           Mobile: 4:5 Portrait, Desktop: 16:9 Cinematic. */}
       <Link href="/galerie" className="block group w-full">
         <div
           className="relative w-full bg-cc-black overflow-hidden aspect-[4/5] md:aspect-[16/9]"
         >
           {/* Hochformat-Quelle: objectPosition 25% von oben hält beide Grillz
-              (OK + UK) im Bild — im 4:5-Mobile- wie im 16:9-Desktop-Crop. */}
+              (OK + UK) im Bild, im 4:5-Mobile- wie im 16:9-Desktop-Crop. */}
           <Image
             src="/images/pieces-new/V100377.webp"
-            alt="Selected Pieces — Vorschau"
+            alt="Selected Pieces, Vorschau"
             fill
             sizes="100vw"
             className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
@@ -75,7 +75,7 @@ export default function GallerySection() {
         </div>
       </Link>
 
-      {/* Button — rechts ausgerichtet auf Mobile (Figma: left 212),
+      {/* Button, rechts ausgerichtet auf Mobile (Figma: left 212),
           zentriert auf Desktop. PP Hatton italic 19px. */}
       <div className="mt-8 md:mt-12 pb-24 md:pb-32 flex justify-end md:justify-center pr-5 md:pr-0">
         <Link

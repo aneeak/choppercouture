@@ -6,7 +6,7 @@ import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import Navigation from "@/components/Navigation";
 
 /**
- * Fonts (Builder-Spec 2026-07 — echte Pangram-Fonts)
+ * Fonts (Builder-Spec 2026-07, echte Pangram-Fonts)
  * --------------------------------------------------
  *   Loos ExtraWide (Bold)      → Typekit  "loos-extrawide", weight 700
  *   Loos Wide (Light)          → Typekit  "loos-wide",      weight 400
@@ -35,13 +35,13 @@ const ppHatton = localFont({
 
 const SITE = "https://choppercouture.ch";
 const DESCRIPTION =
-  "Chopper Couture — Custom Grillz und Dental Jewelry aus Berlin. Handgefertigter Zahnschmuck nach Abdruck, im SLM-Verfahren aus biokompatibler CoCr-Legierung.";
+  "Chopper Couture: Custom Grillz und Dental Jewelry aus Berlin. Handgefertigter Zahnschmuck nach Abdruck, im SLM-Verfahren aus biokompatibler CoCr-Legierung.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Chopper Couture — Custom Grillz & Dental Jewelry Berlin",
-    template: "%s — Chopper Couture",
+    default: "Chopper Couture | Custom Grillz & Dental Jewelry Berlin",
+    template: "%s | Chopper Couture",
   },
   description: DESCRIPTION,
   applicationName: "Chopper Couture",
@@ -82,20 +82,20 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: SITE,
     siteName: "Chopper Couture",
-    title: "Chopper Couture — Custom Grillz & Dental Jewelry Berlin",
+    title: "Chopper Couture | Custom Grillz & Dental Jewelry Berlin",
     description: DESCRIPTION,
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Chopper Couture — Custom Grillz aus Berlin",
+        alt: "Chopper Couture, Custom Grillz aus Berlin",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chopper Couture — Custom Grillz & Dental Jewelry Berlin",
+    title: "Chopper Couture | Custom Grillz & Dental Jewelry Berlin",
     description: DESCRIPTION,
     images: ["/og-image.jpg"],
   },
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
 
 /**
  * JSON-LD: sagt Google, dass "choppercouture" der Markenname dieser Seite ist.
- * Daten 1:1 aus dem Impressum — nichts erfunden.
+ * Daten 1:1 aus dem Impressum, nichts erfunden.
  */
 const JSON_LD = {
   "@context": "https://schema.org",
@@ -155,7 +155,7 @@ const JSON_LD = {
         itemOffered: {
           "@type": "Service",
           name: "Dental Jewelry",
-          description: "Handgefertigter Zahnschmuck — einzigartige Designs, präzise gefertigt in Berlin.",
+          description: "Handgefertigter Zahnschmuck: einzigartige Designs, präzise gefertigt in Berlin.",
         },
       },
     ],
@@ -171,7 +171,7 @@ const FAQ_LD = {
       name: "Was sind Grillz?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Grillz sind Zahnschmuck aus Metalllegierung, der über die Zähne gesteckt wird. Er rastet durch den Unterschnitt des Zahnäquators ein und hält so fest im Mund — kann aber jederzeit wieder herausgenommen werden.",
+        text: "Grillz sind Zahnschmuck aus Metalllegierung, der über die Zähne gesteckt wird. Er rastet durch den Unterschnitt des Zahnäquators ein und hält so fest im Mund. Herausnehmen kannst du ihn aber jederzeit.",
       },
     },
     {
@@ -179,7 +179,7 @@ const FAQ_LD = {
       name: "Sind Grillz sicher für die Zähne?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ja. Sie werden individuell unter höchsten zahntechnischen Standards auf Mikrometer genau gefertigt und schaden dem Zahnschmelz nicht. Grillz sollten nur zu speziellen Anlässen getragen werden — maximal 2 Stunden am Stück, 2–3 Mal die Woche.",
+        text: "Ja. Sie werden individuell unter höchsten zahntechnischen Standards auf Mikrometer genau gefertigt und schaden dem Zahnschmelz nicht. Grillz sollten nur zu speziellen Anlässen getragen werden: maximal 2 Stunden am Stück, 2–3 Mal die Woche.",
       },
     },
     {
@@ -195,7 +195,7 @@ const FAQ_LD = {
       name: "Aus welchem Material sind die Grillz?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Chopper Couture arbeitet mit biokompatibler CoCr-Legierung (Cobalt-Chrom). Die Fertigung erfolgt im selektiven Laserschmelzverfahren (SLM) auf speziellen zahntechnischen Maschinen — das gleiche Verfahren wie in der professionellen Zahnmedizin.",
+        text: "Chopper Couture arbeitet mit biokompatibler CoCr-Legierung (Cobalt-Chrom). Die Fertigung erfolgt im selektiven Laserschmelzverfahren (SLM) auf speziellen zahntechnischen Maschinen. Das ist das gleiche Verfahren wie in der professionellen Zahnmedizin.",
       },
     },
     {
@@ -211,7 +211,7 @@ const FAQ_LD = {
       name: "Was kosten Custom Grillz?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Zwischen 200 und 2.500 Euro — je nach Design, Zahnanzahl und gewünschten Details. Kontaktiere Chopper Couture für ein individuelles Angebot.",
+        text: "Zwischen 200 und 2.500 Euro, je nach Design, Zahnanzahl und gewünschten Details. Kontaktiere Chopper Couture für ein individuelles Angebot.",
       },
     },
     {
@@ -241,10 +241,10 @@ export default function RootLayout({
     >
       <head>
         <meta name="google-site-verification" content="-2VBwCBdUgxnmeV31pChQOgraxFUCo50jiE8r8hpfxg" />
-        {/* Typekit vorab verbinden — spart einen Roundtrip beim Font-Load */}
+        {/* Typekit vorab verbinden, spart einen Roundtrip beim Font-Load */}
         <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
         <link rel="preconnect" href="https://p.typekit.net" crossOrigin="" />
-        {/* Typekit — Loos-Familie (ExtraWide + Wide) */}
+        {/* Typekit, Loos-Familie (ExtraWide + Wide) */}
         <link rel="stylesheet" href="https://use.typekit.net/bsg1rex.css" />
         <script
           type="application/ld+json"

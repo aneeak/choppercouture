@@ -3,7 +3,7 @@
  * -------------
  * Wiederkehrendes Muster laut Builder-Spec:
  *
- *   01 — THE PROCESS
+ *   01, THE PROCESS
  *   ^^   ^^^^^^^^^^^
  *   PP Hatton Ultralight Italic 72pt   Loos Wide ExtraLight 48pt
  *
@@ -34,7 +34,7 @@ export default function SectionHeader({ number, name, tone = "dark", align = "le
           fontFamily: "var(--font-loos-wide)",
         }}
       >
-        —
+        –
       </span>
       <span
         className="section-name"

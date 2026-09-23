@@ -1,9 +1,9 @@
 "use client";
 
 /**
- * DesignerSection (Section 02) — Builder-Spec 2026-07
+ * DesignerSection (Section 02), Builder-Spec 2026-07
  * ---------------------------------------------------
- *  02 — DESIGNER
+ *  02, DESIGNER
  *  DESIGN                     ← Loos ExtraWide 700
  *      DEIN STÜCK.            ← 2. Zeile 150px eingezogen
  *              Spiel dich…    ← Subline auf eigener Achse (~320px)
@@ -77,7 +77,7 @@ function StepLabel({ n, name }: { n: string; name: string }) {
   return (
     <div className="flex items-baseline gap-3 md:gap-4">
       <span className="section-num" style={{ fontSize: "clamp(1.75rem, 3vw, 2.6875rem)" }}>{n}</span>
-      <span className="text-cc-black/60" style={{ fontSize: "clamp(0.9rem, 1.4vw, 1.375rem)" }}>—</span>
+      <span className="text-cc-black/60" style={{ fontSize: "clamp(0.9rem, 1.4vw, 1.375rem)" }}>–</span>
       <span
         className="section-name normal-case"
         style={{ fontSize: "clamp(1rem, 1.8vw, 1.75rem)", letterSpacing: "0.02em", textTransform: "none" }}
@@ -134,7 +134,7 @@ export default function DesignerSection() {
     const list = [...picks.entries()]
       .map(([id, sk]) => (sk ? `${id} (${styleOf(sk).title})` : `${id} (Stil offen)`))
       .join(", ");
-    const subject = "Designer-Anfrage — Chopper Couture";
+    const subject = "Designer-Anfrage Chopper Couture";
     const body =
       `Hey Anika,\n\nich hab mir was zusammengestellt:\n\n` +
       `Zähne & Stile: ${list || "noch keine Auswahl"}\n` +
@@ -155,7 +155,7 @@ export default function DesignerSection() {
         {/* Section-Header */}
         <SectionHeader number="02" name="DESIGNER" tone="dark" />
 
-        {/* Headline — Mobile: 3-zeilig "Design / dein / Stück." (Figma).
+        {/* Headline, Mobile: 3-zeilig "Design / dein / Stück." (Figma).
             Desktop: 2-zeilig "Design / dein Stück." */}
         <h2 className="headline-lg mt-8 md:mt-10 md:hidden" style={{ fontSize: "52px", lineHeight: "0.95" }}>
           <span className="block">Design</span>
@@ -170,7 +170,7 @@ export default function DesignerSection() {
           </span>
         </h2>
 
-        {/* Subline — Mobile: 3-zeilig "Stil aussuchen, / Zähne anklicken, abschicken. / Ich meld mich bei dir."
+        {/* Subline, Mobile: 3-zeilig "Stil aussuchen, / Zähne anklicken, abschicken. / Ich meld mich bei dir."
             Desktop: 2-zeilig langer Text. */}
         <div className="mt-6 md:mt-8 md:hidden" style={{ fontSize: "22px", lineHeight: "1.3" }}>
           <span className="font-hatton-i block" style={{ fontSize: "22px" }}>Stil aussuchen,</span>
@@ -182,25 +182,25 @@ export default function DesignerSection() {
             className="subline block"
             style={{ paddingLeft: "clamp(9rem, 32vw, 29rem)" }}
           >
-            Spiel dich durch. Stil aussuchen, Zähne anklicken, abschicken —
+            Spiel dich durch. Stil aussuchen, Zähne anklicken, abschicken.
           </span>
           <span
             className="subline block"
             style={{ paddingLeft: "clamp(3rem, 12vw, 10.5rem)" }}
           >
-            ich meld mich bei dir und wir machen einen Termin klar. Ganz unverbindlich.
+            Ich meld mich bei dir und wir machen einen Termin klar. Ganz unverbindlich.
           </span>
         </div>
 
-        {/* Konfigurator — 2 Spalten (doppelter Abstand nach der Subline: 128 → 160px) */}
+        {/* Konfigurator, 2 Spalten (doppelter Abstand nach der Subline: 128 → 160px) */}
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 mt-32 md:mt-40 items-start">
-          {/* Linke Spalte — Zahn-Mapping */}
+          {/* Linke Spalte, Zahn-Mapping */}
           <div className="lg:col-span-7">
             <StepLabel n="01" name="Klicke die Zähne an" />
             <div className="mt-6 md:mt-8 relative w-full select-none" style={{ aspectRatio: `${VB_W} / ${VB_H}` }}>
               <Image
                 src="/images/designer/grill-designer.webp"
-                alt="Gebiss — wähle deine Zähne"
+                alt="Gebiss, wähle deine Zähne"
                 fill
                 sizes="(max-width: 1024px) 100vw, 55vw"
                 className="object-contain pointer-events-none"
@@ -221,7 +221,7 @@ export default function DesignerSection() {
             </div>
           </div>
 
-          {/* Rechte Spalte — Style-Karten + Wünsche + Preis + CTA */}
+          {/* Rechte Spalte, Style-Karten + Wünsche + Preis + CTA */}
           <div className="lg:col-span-5 space-y-10 md:space-y-14">
             <div>
               <StepLabel n="02" name="Wähle deinen Style" />
@@ -334,7 +334,7 @@ export default function DesignerSection() {
             <div className="border-t border-cc-black/15 pt-6">
               <p className="section-name text-cc-black/50 mb-2" style={{ fontSize: "0.7rem" }}>Grober Preis</p>
               <p className="font-hatton-i" style={{ fontSize: "clamp(2rem, 3vw, 2.6875rem)" /* 32 → 43px */ }}>
-                {ready ? `${total.toLocaleString("de-DE")} €` : "—"}
+                {ready ? `${total.toLocaleString("de-DE")} €` : "–"}
               </p>
               {ready && (
                 <p className="mt-2 body-copy text-cc-black/50" style={{ fontSize: "0.875rem" }}>
@@ -374,7 +374,7 @@ export default function DesignerSection() {
             >
               <Image
                 src="/images/designer/auftragszettel-vorschau.webp"
-                alt="Vorschau des Auftragszettels — DESIGN YOUR GRILLZ"
+                alt="Vorschau des Auftragszettels, DESIGN YOUR GRILLZ"
                 fill
                 sizes="260px"
                 className="object-cover"
@@ -406,7 +406,7 @@ export default function DesignerSection() {
                 >
                   choppercouture@gmail.com
                 </a>
-                {" "}— bitte nicht abfotografiert.
+                . Bitte nicht abfotografiert.
               </p>
               <a
                 href="/downloads/choppercouture-auftragszettel.pdf"
@@ -426,7 +426,7 @@ export default function DesignerSection() {
             </div>
           </div>
 
-          {/* Haftungsformular — zweiter Download, bewusst ruhiger gehalten als
+          {/* Haftungsformular, zweiter Download, bewusst ruhiger gehalten als
               der Auftragszettel: gleiche Wichtigkeit, andere Tonlage. */}
           <div className="border-t border-cc-black/15 px-6 md:px-10 py-6 md:py-7">
             <p
@@ -442,7 +442,7 @@ export default function DesignerSection() {
               >
                 Vor der Abformung auszufüllen: Aufklärung über die Risiken,
                 deine Gesundheitsangaben und die Einwilligung zu Bildaufnahmen.
-                Bring das Formular ausgefüllt zum Termin mit — wir gehen es
+                Bring das Formular ausgefüllt zum Termin mit, wir gehen es
                 gemeinsam durch, bevor du unterschreibst.
               </p>
               <a

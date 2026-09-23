@@ -1,9 +1,9 @@
 "use client";
 
 /**
- * ContactSection (Section 06) — Builder-Spec 2026-07
+ * ContactSection (Section 06), Builder-Spec 2026-07
  * --------------------------------------------------
- *  Section-Header: 06 — CONTACT
+ *  Section-Header: 06, CONTACT
  *  HL: "Lass quatschen!" (Loos ExtraWide 700 132pt, einzeilig)
  *  Subline (PP Hatton Italic)
  *  Kontakt-Info-Block (Insta + E-Mail) mit dekorativen Sternen
@@ -28,7 +28,7 @@ export default function ContactSection() {
         {/* Section-Header */}
         <SectionHeader number="06" name="CONTACT" tone="dark" />
 
-        {/* HL — einzeilig, groß */}
+        {/* HL, einzeilig, groß */}
         <h2
           className="headline-lg mt-8 md:mt-10"
           style={{ fontSize: "clamp(2.5rem, 9.2vw, 8.25rem)" /* 40 → 132px */ }}
@@ -36,7 +36,7 @@ export default function ContactSection() {
           Lass quatschen!
         </h2>
 
-        {/* Subline — kompakter (Figma-Text 1:1) */}
+        {/* Subline, kompakter (Figma-Text 1:1) */}
         <p
           className="subline mt-6 md:mt-8 max-w-4xl"
           style={{
@@ -47,7 +47,7 @@ export default function ContactSection() {
           Frage, Idee oder einfach Lust auf ein piece? Schreib mir!
         </p>
 
-        {/* Kontaktinfo-Block — Mobile: schlichter zentrierter Text (Figma).
+        {/* Kontaktinfo-Block, Mobile: schlichter zentrierter Text (Figma).
             Desktop: mit dekorativen Sternen. */}
         <div className="mt-16 md:mt-28 flex items-center justify-center gap-6 md:gap-12">
           <span
@@ -97,7 +97,7 @@ export default function ContactSection() {
           </span>
         </div>
 
-        {/* CTA-Button — Mobile: full-width 335×56, PP Hatton italic 24px */}
+        {/* CTA-Button, Mobile: full-width 335×56, PP Hatton italic 24px */}
         <div className="mt-10 md:mt-20 flex justify-center">
           <Link
             href="mailto:choppercouture@gmail.com?subject=Anfrage%20Chopper%20Couture"

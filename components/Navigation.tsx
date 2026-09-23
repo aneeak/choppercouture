@@ -8,7 +8,7 @@
  * Anchor links + logo click both use `lenis.scrollTo()` because Lenis
  * hijacks the native scroll. Without that, clicking "#process" would jump
  * the browser but Lenis would immediately scroll back to its own
- * position — feels broken.
+ * position, feels broken.
  *
  * Adaptive tone: see comment in the previous version. Sections opt in by
  * setting `data-nav-tone="dark|light"`; whichever sits under the header
@@ -22,9 +22,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { useLenis } from "@/components/providers/SmoothScrollProvider";
 
 const LINKS: { href: string; anchor?: string; label: string }[] = [
-  // Event steht bewusst an erster Stelle — solange der Vorverkauf läuft, ist
-  // das der Link, der geklickt werden soll. Nach dem Event wieder entfernen.
-  { href: "/event", label: "Event" },
+  // Die Expo steht bewusst an erster Stelle: solange der Vorverkauf läuft,
+  // ist das der Link, der geklickt werden soll. Danach wieder entfernen.
+  { href: "/event", label: "Expo" },
   { href: "/galerie", label: "Galerie" },
   { href: "/", anchor: "#designer", label: "Designer" },
   { href: "/", anchor: "#process", label: "The Process" },
@@ -95,7 +95,7 @@ export default function Navigation() {
     }
   };
 
-  /** Click handler for nav links — handles anchors on / and cross-route. */
+  /** Click handler for nav links, handles anchors on / and cross-route. */
   const handleNavClick = (
     e: React.MouseEvent,
     href: string,
@@ -118,7 +118,7 @@ export default function Navigation() {
     setMenuOpen(false);
   };
 
-  /** Logo click — always scroll to top, even when already on /. */
+  /** Logo click, always scroll to top, even when already on /. */
   const handleLogoClick = (e: React.MouseEvent) => {
     if (pathname === "/") {
       e.preventDefault();
@@ -136,7 +136,7 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Dezenter dunkler Verlauf oben — hebt Nav vom Video ab, ohne
+      {/* Dezenter dunkler Verlauf oben, hebt Nav vom Video ab, ohne
           das Design zu verändern. Nur sichtbar über dunklen Sektionen. */}
       {!isLight && (
         <div className="fixed inset-x-0 top-0 z-40 h-32 pointer-events-none bg-gradient-to-b from-black/45 via-black/15 to-transparent" />
@@ -148,7 +148,7 @@ export default function Navigation() {
               href="/"
               onClick={handleLogoClick}
               className="relative block h-[56px] w-[32px] shrink-0"
-              aria-label="Chopper Couture — Startseite / zurück nach oben"
+              aria-label="Chopper Couture, Startseite / zurück nach oben"
             >
               <Image
                 src={logoSrc}

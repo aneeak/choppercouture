@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Spike icon (header use) — same paths as spikes-white.svg but with a
+<!-- Spike icon (header use), same paths as spikes-white.svg but with a
      tight viewBox so the icon fills its container without empty padding. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="108 110 124 218">
   <g fill="#fff">

@@ -2,12 +2,12 @@ import SectionHeader from "@/components/SectionHeader";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "FAQ — Häufige Fragen zu Grillz & Zahnschmuck",
+  title: "FAQ | Häufige Fragen zu Grillz & Zahnschmuck",
   description:
     "Häufig gestellte Fragen zu Custom Grillz und Dental Jewelry von Chopper Couture Berlin. Material, Ablauf, Preise, Pflege und mehr.",
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "FAQ — Häufige Fragen | Chopper Couture",
+    title: "FAQ: Häufige Fragen | Chopper Couture",
     description:
       "Alles was du über Custom Grillz wissen musst: Material, Ablauf, Preise, Pflege. Chopper Couture Berlin.",
     url: "https://choppercouture.ch/faq",
@@ -23,11 +23,11 @@ interface FaqItem {
 const FAQS: FaqItem[] = [
   {
     q: "Was sind Grillz?",
-    a: "Grillz sind Zahnschmuck aus Metalllegierung, der über die Zähne gesteckt wird. Er rastet durch den Unterschnitt des Zahnäquators ein und hält so fest im Mund — kann aber jederzeit wieder herausgenommen werden.",
+    a: "Grillz sind Zahnschmuck aus Metalllegierung, der über die Zähne gesteckt wird. Er rastet durch den Unterschnitt des Zahnäquators ein und hält so fest im Mund. Herausnehmen kannst du ihn aber jederzeit.",
   },
   {
     q: "Tun Grillz weh?",
-    a: "Nein. Die Abdrucknahme ist die gleiche wie beim Zahnarzt — manchmal etwas unangenehm, aber die meisten haben damit keine Probleme. Das Tragen selbst ist schmerzfrei.",
+    a: "Nein. Die Abdrucknahme ist die gleiche wie beim Zahnarzt, also manchmal etwas unangenehm. Die meisten haben damit aber keine Probleme. Das Tragen selbst ist schmerzfrei.",
   },
   {
     q: "Sind Grillz sicher für die Zähne?",
@@ -35,7 +35,7 @@ const FAQS: FaqItem[] = [
       <>
         Ja. Da sie individuell und unter höchsten zahntechnischen Standards auf
         Mikrometer genau gefertigt werden, schaden sie dem Zahnschmelz nicht.
-        Wichtig: Grillz sollten nur zu speziellen Anlässen getragen werden —
+        Wichtig: Grillz sollten nur zu speziellen Anlässen getragen werden,
         nicht täglich, maximal 2&nbsp;Stunden am Stück, 2–3&nbsp;Mal die Woche.
         Bei übermäßigem Tragen kann es durch die Bisserhöhung zu Kopfschmerzen
         kommen, da Kieferposition und Biss beeinflusst werden können.
@@ -46,7 +46,7 @@ const FAQS: FaqItem[] = [
     q: "Kann jeder Grillz tragen?",
     a: (
       <>
-        Grundsätzlich ja — mit wenigen Ausnahmen: Wenn du in einer laufenden
+        Grundsätzlich ja, mit wenigen Ausnahmen: Wenn du in einer laufenden
         kieferorthopädischen Behandlung bist oder eine geplant ist, können die
         Grillz danach nicht mehr passen. Bei Retainern im Frontzahnbereich wird
         es schwierig. Außerdem fertige ich keine Grillz bei Erkrankungen im
@@ -75,7 +75,7 @@ const FAQS: FaqItem[] = [
           E-Mail
         </a>
         . Wir besprechen dein Design, du füllst ein Formular aus mit deinen
-        Daten und deiner Design-Skizze — den{" "}
+        Daten und deiner Design-Skizze, den{" "}
         <a
           href="/downloads/choppercouture-auftragszettel.pdf"
           download
@@ -85,7 +85,7 @@ const FAQS: FaqItem[] = [
         </a>
         . Dann machen wir einen Termin für die
         Abdrucknahme. Ich designe den Grillz in 3D und sende ihn dir zum
-        Feedback — Anpassungen sind möglich. Danach arbeite ich das Piece aus
+        Feedback, Anpassungen sind möglich. Danach arbeite ich das Piece aus
         und bei der persönlichen Übergabe passen wir es optimal an.
       </>
     ),
@@ -96,23 +96,23 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "Muss ich persönlich nach Berlin kommen?",
-    a: "Für die Abdrucknahme ja. Der fertige Grillz kann aber auch versendet werden — die Versandkosten trägt in dem Fall der Kunde.",
+    a: "Für die Abdrucknahme ja. Der fertige Grillz kann aber auch versendet werden, die Versandkosten trägt in dem Fall der Kunde.",
   },
   {
     q: "Aus welchem Material sind die Grillz?",
-    a: "Chopper Couture arbeitet mit biokompatibler CoCr-Legierung (Cobalt-Chrom). Die Fertigung erfolgt im selektiven Laserschmelzverfahren (SLM) auf speziellen zahntechnischen Maschinen — das gleiche Verfahren wie in der professionellen Zahnmedizin.",
+    a: "Chopper Couture arbeitet mit biokompatibler CoCr-Legierung (Cobalt-Chrom). Die Fertigung erfolgt im selektiven Laserschmelzverfahren (SLM) auf speziellen zahntechnischen Maschinen. Das ist das gleiche Verfahren wie in der professionellen Zahnmedizin.",
   },
   {
     q: "Warum kein Gold oder Silber?",
-    a: "Silber kann Allergien auslösen. Meine Maschinen sind spezialisierte zahntechnische Geräte, die aktuell nur mit CoCr-Legierung arbeiten. Ich bin aber dabei, Lösungen für goldene Grillz zu entwickeln — zum Beispiel über Galvanisierung.",
+    a: "Silber kann Allergien auslösen. Meine Maschinen sind spezialisierte zahntechnische Geräte, die aktuell nur mit CoCr-Legierung arbeiten. Ich bin aber dabei, Lösungen für goldene Grillz zu entwickeln, zum Beispiel über Galvanisierung.",
   },
   {
     q: "Wie pflege ich meine Grillz?",
-    a: "Immer vor dem Essen, Trinken und Alkoholkonsum herausnehmen. Nach dem Tragen unter Wasser abspülen und an der Luft trocknen lassen. Danach trocken im Case verstauen — so vermeidest du Verbiegung oder Verformung.",
+    a: "Immer vor dem Essen, Trinken und Alkoholkonsum herausnehmen. Nach dem Tragen unter Wasser abspülen und an der Luft trocknen lassen. Danach trocken im Case verstauen, so vermeidest du Verbiegung oder Verformung.",
   },
   {
     q: "Was kosten Custom Grillz?",
-    a: "Zwischen 200 und 2.500 Euro — je nach Design, Zahnanzahl und gewünschten Details. Kontaktiere mich für ein individuelles Angebot.",
+    a: "Zwischen 200 und 2.500 Euro, je nach Design, Zahnanzahl und gewünschten Details. Kontaktiere mich für ein individuelles Angebot.",
   },
   {
     q: "Gibt es fertige Designs oder nur Custom?",

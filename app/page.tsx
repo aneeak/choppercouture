@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Homepage — One-Pager (Builder-Spec 2026-07)
+ * Homepage, One-Pager (Builder-Spec 2026-07)
  * -------------------------------------------
  *   Header    Original Hero (Particle-Wordmark + hero-loop.mp4 BG)
  *   00        Hero-Claim (Got teeth… + Button + smile.mov)
@@ -12,7 +12,7 @@
  *   Bald:     About / Contact / Über mich / Impressum / Footer
  *
  * Hero-Scrub: der Original-Effekt (opacity 0 + blur 18px während des
- * Scrolls aus dem Hero raus) — bewusst wiederhergestellt.
+ * Scrolls aus dem Hero raus), bewusst wiederhergestellt.
  */
 
 import { useEffect, useRef } from "react";
@@ -62,7 +62,7 @@ export default function Home() {
 
   return (
     <div ref={containerRef}>
-      {/* Original Header/Hero — ParticleLogo + Loop-Video als BG.
+      {/* Original Header/Hero, ParticleLogo + Loop-Video als BG.
           Klasse `cc-hero-scrub` triggert den GSAP-Fade/Blur beim Scrollen. */}
       <div className="cc-hero-scrub" data-nav-tone="dark" data-snap>
         <Hero videoSrc="/videos/hero-loop.mp4" />

@@ -13,9 +13,9 @@ interface PlaceholderImageProps {
   ratio?: string;
   /** Headline label rendered inside the tile. */
   label: string;
-  /** Smaller hint underneath the label — usually the target pixel size. */
+  /** Smaller hint underneath the label, usually the target pixel size. */
   hint?: string;
-  /** Visual tone — brand-aligned palettes. */
+  /** Visual tone, brand-aligned palettes. */
   tone?: "dark" | "light" | "gradient" | "purple";
   className?: string;
 }
@@ -78,7 +78,7 @@ export default function PlaceholderImage({
           </p>
         )}
       </div>
-      {/* Corner crosshairs — printer-style register marks */}
+      {/* Corner crosshairs, printer-style register marks */}
       {(["top-2 left-2", "top-2 right-2", "bottom-2 left-2", "bottom-2 right-2"] as const).map(
         (pos) => (
           <span

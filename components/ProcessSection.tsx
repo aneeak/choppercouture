@@ -3,7 +3,7 @@
 /**
  * ProcessSection (Section 01)
  * ---------------------------
- * Header:  01 — THE PROCESS
+ * Header:  01, THE PROCESS
  * Headline versetzt: "Vom Abdruck" / "     zum Schmuck"
  * Subline:  6 Schritte, von deinem Mund bis zum fertigen Grill.
  * Process-Video (Full-Width)
@@ -13,8 +13,9 @@
  */
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import SectionHeader from "@/components/SectionHeader";
+import useVideoInView from "@/components/useVideoInView";
 
 interface Step {
   n: string;
@@ -27,7 +28,7 @@ const STEPS: Step[] = [
   {
     n: "01",
     title: "ABDRUCK",
-    body: "Wir treffen uns im Labor, ich schiebe dir nen Löffel mit Alginat in den Mund — eine Minute warten. Tut nix, schmeckt nach nix. Done.",
+    body: "Wir treffen uns im Labor, ich schiebe dir nen Löffel mit Alginat in den Mund, eine Minute warten. Tut nix, schmeckt nach nix. Done.",
     src: "/images/process-new/01-abdruck.webp",
   },
   {
@@ -63,23 +64,11 @@ const STEPS: Step[] = [
 ];
 
 export default function ProcessSection() {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  // Dieselbe Logik wie bei Hero und Smile-Block, zentral im Hook.
+  // Zusätzlich zur bisherigen Lösung pausiert das Video jetzt auch,
+  // wenn der Tab in den Hintergrund wandert.
+  const videoRef = useVideoInView<HTMLVideoElement>();
   const [muted, setMuted] = useState(true);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => {});
-        else video.pause();
-      },
-      { rootMargin: "300px 0px", threshold: 0.01 },
-    );
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
 
   const toggleMute = () => {
     const v = videoRef.current;
@@ -87,7 +76,7 @@ export default function ProcessSection() {
     const next = !v.muted;
     v.muted = next;
     setMuted(next);
-    // Nach Unmute manuell play() — Browser lassen unmuted-Autoplay sonst evtl. blocken
+    // Nach Unmute manuell play(), Browser lassen unmuted-Autoplay sonst evtl. blocken
     if (!next) v.play().catch(() => {});
   };
 
@@ -99,10 +88,10 @@ export default function ProcessSection() {
       style={{ paddingTop: "clamp(6rem, 10vw, 9.375rem)" /* 150px auf 1440 */ }}
     >
       <div className="px-6 md:px-12 lg:px-16 max-w-[1440px] mx-auto">
-        {/* Section-Header 01 — THE PROCESS */}
+        {/* Section-Header 01, THE PROCESS */}
         <SectionHeader number="01" name="THE PROCESS" tone="dark" />
 
-        {/* HL — Mobile: 4-zeilig versetzt (Figma), Desktop: 2-zeilig kompakt */}
+        {/* HL, Mobile: 4-zeilig versetzt (Figma), Desktop: 2-zeilig kompakt */}
         <h2
           className="headline-lg mt-8 md:mt-10 md:hidden"
           style={{ fontSize: "46px", lineHeight: "0.95" }}
@@ -129,7 +118,7 @@ export default function ProcessSection() {
           </span>
         </h2>
 
-        {/* Subline — Mobile: 3-zeilig versetzt, Desktop: 1-zeilig */}
+        {/* Subline, Mobile: 3-zeilig versetzt, Desktop: 1-zeilig */}
         <div
           className="subline mt-6 md:mt-8 md:hidden"
           style={{ fontSize: "24px", lineHeight: "1.3" }}
@@ -150,7 +139,7 @@ export default function ProcessSection() {
         </p>
       </div>
 
-      {/* Prozess-Video — Mobile: 596px normaler Block. Desktop: 200vh sticky. */}
+      {/* Prozess-Video, Mobile: 596px normaler Block. Desktop: 200vh sticky. */}
       <div className="mt-8 md:mt-12 w-full h-[596px] md:h-[200vh]">
         <div className="relative md:sticky md:top-0 w-full h-full md:h-screen bg-cc-black overflow-hidden">
           <video
@@ -165,7 +154,7 @@ export default function ProcessSection() {
             <source src="/videos/process.mp4" type="video/mp4" />
           </video>
 
-          {/* Ton an/aus — unten rechts, transparent-weiß, schlicht */}
+          {/* Ton an/aus, unten rechts, transparent-weiß, schlicht */}
           <button
             type="button"
             onClick={toggleMute}
@@ -191,7 +180,7 @@ export default function ProcessSection() {
         </div>
       </div>
 
-      {/* 6 Steps — Bild IMMER links vom Text (im rechten Bereich).
+      {/* 6 Steps, Bild IMMER links vom Text (im rechten Bereich).
           Ganzer 2-Spalten-Block wechselt zwischen links-bündig und ~180px
           nach rechts eingezogen. Nummer + Titel sitzen links-bündig
           über der Text-Spalte (nicht über dem Bild). */}
@@ -206,7 +195,7 @@ export default function ProcessSection() {
                 className={`grid md:grid-cols-12 items-start ${indent}`}
                 style={{ columnGap: "clamp(1.5rem, 3.5vw, 3.125rem)" /* 24 → 50px */, rowGap: "2rem" }}
               >
-                {/* Bild — Mobile: edge-to-edge (negatives mx bricht aus Container-Padding aus).
+                {/* Bild, Mobile: edge-to-edge (negatives mx bricht aus Container-Padding aus).
                     Desktop: in Grid-Spalte links */}
                 <div className="md:col-span-6 lg:col-span-6 -mx-5 md:mx-0">
                   <div className="relative w-full aspect-[4/3] bg-cc-black/5 overflow-hidden">
@@ -220,9 +209,9 @@ export default function ProcessSection() {
                   </div>
                 </div>
 
-                {/* Text — direkt rechts vom Bild (max 50px Abstand via columnGap) */}
+                {/* Text, direkt rechts vom Bild (max 50px Abstand via columnGap) */}
                 <div className="md:col-span-6 lg:col-span-6">
-                  {/* Nummer — 38px auf Mobile (Figma), 43px auf Desktop */}
+                  {/* Nummer, 38px auf Mobile (Figma), 43px auf Desktop */}
                   <div className="flex items-baseline gap-3 md:gap-4">
                     <span
                       className="font-hatton-i step-num"
@@ -230,7 +219,7 @@ export default function ProcessSection() {
                     >
                       {step.n}
                     </span>
-                    <span className="text-cc-black/60" style={{ fontSize: "clamp(1rem, 1.4vw, 1.375rem)" }}>—</span>
+                    <span className="text-cc-black/60" style={{ fontSize: "clamp(1rem, 1.4vw, 1.375rem)" }}>–</span>
                     <span
                       className="font-wide text-cc-black/60 lowercase"
                       style={{ fontSize: "clamp(0.875rem, 1.8vw, 1.75rem)", letterSpacing: "0.02em" }}
@@ -238,7 +227,7 @@ export default function ProcessSection() {
                       step
                     </span>
                   </div>
-                  {/* Titel — PP Hatton italic 36px auf Mobile (Figma), 64px auf Desktop */}
+                  {/* Titel, PP Hatton italic 36px auf Mobile (Figma), 64px auf Desktop */}
                   <h3
                     className="mt-4 md:mt-8 font-hatton-i uppercase"
                     style={{

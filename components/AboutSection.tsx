@@ -1,13 +1,13 @@
 "use client";
 
 /**
- * AboutSection (Section 05) — Builder-Spec 2026-07
+ * AboutSection (Section 05), Builder-Spec 2026-07
  * ------------------------------------------------
  *  Startseiten-About: NUR die Marke Chopper Couture.
  *  Keine Verbindung zur Privatperson Anika Müggler auf dieser Zeile.
  *
  *  Wer mehr über die Person hinter der Marke wissen will, klickt den
- *  CTA "Mehr über uns →" und landet auf /about — dort sind Marke UND
+ *  CTA "Mehr über uns →" und landet auf /about, dort sind Marke UND
  *  Person klar getrennt dargestellt.
  */
 
@@ -41,7 +41,7 @@ export default function AboutSection() {
       <div className="px-6 md:px-12 lg:px-16 max-w-[1440px] mx-auto">
         <SectionHeader number="05" name="ABOUT" tone="light" />
 
-        {/* HL: Chopper / Couture — reine Marken-Ebene */}
+        {/* HL: Chopper / Couture, reine Marken-Ebene */}
         <h2
           className="headline-lg mt-8 md:mt-10"
           style={{ fontSize: "clamp(2.5rem, 9.2vw, 8.25rem)" }}
@@ -56,7 +56,7 @@ export default function AboutSection() {
           </span>
         </h2>
 
-        {/* Subline auf eigener Achse — Marken-Statement, nichts Persönliches */}
+        {/* Subline auf eigener Achse, Marken-Statement, nichts Persönliches */}
         <p
           className="subline mt-6 md:mt-8"
           style={{
@@ -77,11 +77,11 @@ export default function AboutSection() {
                 Chopper Couture macht Zahnschmuck in Berlin. Grillz, die nicht nach Klischee aussehen. Fein, sauber, modern. Hochpräzise auf dein Gebiss angepasst.
               </p>
               <p>
-                Kein Massenprodukt, kein Klischee. Jedes Stück wird nach deinem Abdruck einzeln entworfen und gefertigt Präzision, Filigranität, Individualität.
+                Kein Massenprodukt, kein Klischee. Jedes Stück wird nach deinem Abdruck einzeln entworfen und gefertigt. Präzision, Filigranität, Individualität.
               </p>
             </div>
 
-            {/* CTA — Mobile: mittig-rechts. Desktop: linksbündig */}
+            {/* CTA, Mobile: mittig-rechts. Desktop: linksbündig */}
             <div className="mt-10 md:mt-12 flex justify-end md:justify-start pr-1 md:pr-0">
               <Link
                 href="/about"

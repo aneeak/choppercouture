@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prebuild": "node scripts/gen-image-variants.mjs",
+    "images:clean": "node scripts/gen-image-variants.mjs --clean",
+    "predev": "node scripts/gen-image-variants.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",

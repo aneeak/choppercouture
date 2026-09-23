@@ -8,7 +8,7 @@
  *   2. Hover: blur up to 8px + fade to opacity 0.4 over 600ms,
  *      reverse over 400ms on leave. "Schau hinter die Marke."
  *
- * Uses the real SVG wordmark from the brand book — not a placeholder.
+ * Uses the real SVG wordmark from the brand book, not a placeholder.
  *
  * `size`:
  *   - "hero":  responsive 4rem → 12vw → 12rem (homepage hero)
@@ -39,7 +39,7 @@ export default function Logo({
 
   const src = `/logo/wordmark-${variant}.svg`;
 
-  // ASSUMPTION: native CSS transition for the hover state — keeps it cheap,
+  // ASSUMPTION: native CSS transition for the hover state, keeps it cheap,
   // GPU-composited and avoids JS animation overhead.
   const transitionStyle = interactive
     ? {

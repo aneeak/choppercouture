@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * HeroSection (Section 00 — Hero-Claim)
+ * HeroSection (Section 00, Hero-Claim)
  * -------------------------------------
  * Offwhite Block mit "Got teeth, got options..." (schwarz).
  * CTA-Button: schwarze Outline, PP Hatton italic (Figma Mobile Spec).
@@ -28,7 +28,7 @@ export default function HeroSection() {
           got options...
         </h1>
 
-        {/* Button — Mobile: leicht rechts versetzt (Figma: x=127 auf 375px = pr-[27px]).
+        {/* Button, Mobile: leicht rechts versetzt (Figma: x=127 auf 375px = pr-[27px]).
             Desktop: linksbündig im Container. PP Hatton italic. */}
         <div className="mt-14 md:mt-20 flex md:block justify-end md:justify-start pr-[27px] md:pr-0">
           <Link

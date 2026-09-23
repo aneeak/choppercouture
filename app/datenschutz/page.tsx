@@ -103,10 +103,10 @@ const BLOCKS: Block[] = [
     body: (
       <>
         Tickets für Veranstaltungen werden über PayPal verkauft. Auf dieser Website
-        selbst werden dafür keine Daten erhoben und keine PayPal-Skripte geladen — der
+        selbst werden dafür keine Daten erhoben und keine PayPal-Skripte geladen. Der
         Button auf der{" "}
         <a href="/event" className="underline underline-offset-2 hover:text-cc-purple">
-          Event-Seite
+          Expo-Seite
         </a>{" "}
         ist ein reiner Link. Erst wenn du ihn anklickst, verlässt du diese Seite und die
         Zahlung läuft vollständig bei der PayPal (Europe) S.à r.l. et Cie, S.C.A.,
@@ -122,7 +122,7 @@ const BLOCKS: Block[] = [
         .
         <br />
         <br />
-        Nach einer Zahlung erhalte ich von PayPal die zur Abwicklung nötigen Daten —
+        Nach einer Zahlung erhalte ich von PayPal die zur Abwicklung nötigen Daten:
         Vor- und Nachname, E-Mail-Adresse, Zahlungsbetrag und Transaktionsdatum. Ich
         verwende sie ausschließlich für die Gästeliste am Einlass und die Buchhaltung.
         Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Vertragserfüllung),

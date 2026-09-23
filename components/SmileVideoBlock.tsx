@@ -3,31 +3,18 @@
 /**
  * SmileVideoBlock
  * ---------------
- * Standalone Video-Block. Wandert direkt vor die Brand-Promise —
+ * Standalone Video-Block. Wandert direkt vor die Brand-Promise,
  * Übergang: Designer (offwhite) → dunkles Video → violetter Balken.
  *
  * Mobile-Source: /videos/smile-mobile.mp4
  * Desktop-Source: /videos/smile.mp4
  */
 
-import { useEffect, useRef } from "react";
+import useVideoInView from "@/components/useVideoInView";
 
 export default function SmileVideoBlock() {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => {});
-        else video.pause();
-      },
-      { rootMargin: "300px 0px", threshold: 0.01 },
-    );
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
+  // Gleiche Logik wie beim Hero-Video, deshalb der gemeinsame Hook.
+  const videoRef = useVideoInView<HTMLVideoElement>();
 
   return (
     <div

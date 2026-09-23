@@ -2,9 +2,9 @@ import SectionHeader from "@/components/SectionHeader";
 import Footer from "@/components/Footer";
 
 /**
- * Teilnahmebedingungen — Grillz-Verlosung zur Dental Jewelry Expo
+ * Teilnahmebedingungen, Grillz-Verlosung zur Dental Jewelry Expo
  * ---------------------------------------------------------------
- * Wird von der Event-Seite aus verlinkt. Die Verlosung wird dort als
+ * Wird von der Expo-Seite aus verlinkt. Die Verlosung wird dort als
  * Kaufargument beworben, deshalb müssen die Bedingungen vor dem Kauf
  * erreichbar sein.
  *
@@ -20,7 +20,7 @@ const RAFFLE = {
   winners: 1,
 
   /**
-   * Was genau gewonnen wird. So konkret wie möglich formulieren — daran
+   * Was genau gewonnen wird. So konkret wie möglich formulieren, daran
    * wird die Zusage gemessen.
    */
   prize:
@@ -39,7 +39,7 @@ const RAFFLE = {
 // ────────────────────────────────────────────────────────────────────────────
 
 export const metadata = {
-  title: "Teilnahmebedingungen — Grillz-Verlosung",
+  title: "Teilnahmebedingungen | Grillz-Verlosung",
   description:
     "Teilnahmebedingungen der Grillz-Verlosung unter allen Vorverkaufs-Tickets der Dental Jewelry Expo im Bunker West Berlin.",
   alternates: { canonical: "/gewinnspiel" },
@@ -79,10 +79,10 @@ const CLAUSES: Clause[] = [
         24.&nbsp;Oktober 2026 im Bunker West
         erwirbt. Jedes gekaufte Vorverkaufs-Ticket ergibt ein Los; wer mehrere
         Tickets kauft, nimmt entsprechend mehrfach teil. Eine gesonderte Anmeldung
-        ist nicht nötig — der Kauf ist die Teilnahme.
+        ist nicht nötig, der Kauf ist die Teilnahme.
         <br />
         <br />
-        Die Teilnahme erfolgt automatisch mit dem Kauf — du musst dich nirgends
+        Die Teilnahme erfolgt automatisch mit dem Kauf, du musst dich nirgends
         anmelden und nicht bei der Veranstaltung anwesend sein. Maßgeblich ist
         die Person, die das Ticket bezahlt hat: Wer mehrere Tickets kauft und
         weitergibt, bleibt selbst Teilnehmerin oder Teilnehmer der Verlosung,
@@ -241,7 +241,7 @@ export default function GewinnspielPage() {
           >
             Zurück zum{" "}
             <a href="/event" className="underline underline-offset-2 hover:text-cc-purple">
-              Event
+              Expo
             </a>
             .
           </p>

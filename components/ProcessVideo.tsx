@@ -1,19 +1,21 @@
 "use client";
 
 /**
- * ProcessVideo — der komplette Herstellungsprozess als Video mit Ton.
+ * ProcessVideo, der komplette Herstellungsprozess als Video mit Ton.
  * Startet standardmäßig muted (autoplay-Policy der Browser), User kann
  * den Ton mit einem Klick einschalten.
  */
 
-import { useRef, useState } from "react";
+import { useState } from "react";
+import useVideoInView from "@/components/useVideoInView";
 
 export default function ProcessVideo({
   src = "/videos/process.mp4",
 }: {
   src?: string;
 }) {
-  const ref = useRef<HTMLVideoElement | null>(null);
+  // Pausiert automatisch, sobald das Video aus dem Viewport scrollt.
+  const ref = useVideoInView<HTMLVideoElement>();
   const [muted, setMuted] = useState(true);
 
   const toggleSound = () => {

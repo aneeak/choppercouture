@@ -1,5 +1,5 @@
 /**
- * Footer — Builder-Spec 2026-07
+ * Footer, Builder-Spec 2026-07
  * -----------------------------
  *  Links: ABOUT · MATERIAL · IMPRESSUM · DATENSCHUTZ · AGB · FAQ · EVENT · INSTAGRAM · E-MAIL
  *  Rechts: © 2026 CHOPPER COUTURE. ALL RIGHTS RESERVED.
@@ -14,7 +14,7 @@ const LINKS: { href: string; label: string; external?: boolean }[] = [
   { href: "/datenschutz", label: "Datenschutz" },
   { href: "/agb", label: "AGB" },
   { href: "/faq", label: "FAQ" },
-  { href: "/event", label: "Event" },
+  { href: "/event", label: "Expo" },
   { href: "https://instagram.com/choppercouture", label: "Instagram", external: true },
   { href: "mailto:choppercouture@gmail.com", label: "E-Mail", external: true },
 ];
@@ -47,7 +47,7 @@ export default function Footer() {
             <Link href="/faq" className="hover:text-cc-white transition-colors">FAQ</Link>
           </p>
           <p>
-            <Link href="/event" className="hover:text-cc-white transition-colors">EVENT</Link>
+            <Link href="/event" className="hover:text-cc-white transition-colors">EXPO</Link>
             {" · "}
             <a href="https://instagram.com/choppercouture" target="_blank" rel="noopener noreferrer" className="hover:text-cc-white transition-colors">INSTAGRAM</a>
             {" · "}
@@ -79,7 +79,7 @@ export default function Footer() {
           )}
         </ul>
 
-        {/* Copyright — Mixed Case, klein (Figma). */}
+        {/* Copyright, Mixed Case, klein (Figma). */}
         <p
           className="font-wide text-cc-white/50 mt-8 md:mt-0"
           style={{ fontSize: "10px", letterSpacing: "0.03em" }}

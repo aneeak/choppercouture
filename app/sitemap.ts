@@ -2,11 +2,11 @@ import type { MetadataRoute } from "next";
 
 const SITE = "https://choppercouture.ch";
 
-// Pflicht bei output: "export" — sonst bricht der Build ab.
+// Pflicht bei output: "export", sonst bricht der Build ab.
 export const dynamic = "force-static";
 
 /**
- * Wird beim Build zu /sitemap.xml — meldet Google alle Unterseiten.
+ * Wird beim Build zu /sitemap.xml, meldet Google alle Unterseiten.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();

@@ -44,7 +44,7 @@ export default function AgbPage() {
               className="font-wide font-bold uppercase pt-6"
               style={{ fontSize: "clamp(0.9375rem, 1.3vw, 1.25rem)", letterSpacing: "0.02em" }}
             >
-              Event-Tickets
+              Expo-Tickets
             </h2>
             <p>
               Tickets für Veranstaltungen werden im Vorverkauf über PayPal verkauft. Der Vertrag
@@ -59,13 +59,13 @@ export default function AgbPage() {
             <p>
               Fällt eine Veranstaltung aus, wird der Ticketpreis vollständig erstattet. Wird sie
               verlegt, behält das Ticket seine Gültigkeit; ist der neue Termin nicht möglich, wird
-              der Ticketpreis ebenfalls erstattet. Weitergehende Ansprüche — etwa auf Anfahrt- oder
-              Übernachtungskosten — bestehen nicht.
+              der Ticketpreis ebenfalls erstattet. Weitergehende Ansprüche, etwa auf Anfahrt- oder
+              Übernachtungskosten, bestehen nicht.
             </p>
             <p>
               Tickets sind übertragbar. Bitte teile mir den abweichenden Namen vorab per E-Mail mit,
               damit er auf der Gästeliste steht. Vor Ort gelten das Hausrecht der Veranstaltungsstätte
-              sowie ein etwaiges Mindestalter, das auf der Event-Seite angegeben ist.
+              sowie ein etwaiges Mindestalter, das auf der Expo-Seite angegeben ist.
             </p>
 
             <p>

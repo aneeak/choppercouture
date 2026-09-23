@@ -17,9 +17,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import useVideoInView from "@/components/useVideoInView";
 
 interface PanelProps {
-  /** Background image — full bleed. */
+  /** Background image, full bleed. */
   image?: string;
   /** Optional looping background video. Wins over `image` if both set. */
   video?: string;
@@ -38,6 +39,8 @@ export default function Panel({
   href,
   coverTone = "dark",
 }: PanelProps) {
+  // Video pausiert, sobald das Panel aus dem Viewport ist.
+  const videoRef = useVideoInView<HTMLVideoElement>();
   const [hover, setHover] = useState(false);
 
   return (
@@ -46,6 +49,7 @@ export default function Panel({
       <div className="absolute inset-0">
         {video ? (
           <video
+            ref={videoRef}
             className="h-full w-full object-cover"
             src={video}
             autoPlay
@@ -65,7 +69,7 @@ export default function Panel({
         ) : null}
       </div>
 
-      {/* Cover layer — dissolves on hover */}
+      {/* Cover layer, dissolves on hover */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

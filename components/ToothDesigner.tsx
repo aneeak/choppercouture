@@ -12,7 +12,7 @@
  *      (oder: aktiver Stil-Karte = neu hinzukommende Zähne bekommen ihn).
  *      Klick auf eine Stil-Karte mit bereits markierten Zähnen weist sie zu.
  *   3) Pro Zahn kann ein eigener Stil gewählt werden, indem man die Stil-Karte
- *      wechselt und einen weiteren Zahn klickt — bestehende Zähne können
+ *      wechselt und einen weiteren Zahn klickt, bestehende Zähne können
  *      über die Liste umgestellt werden.
  *
  * Preis-Modell: erster Zahn = first-Preis seines Stils, jeder weitere = add-Preis
@@ -137,7 +137,7 @@ export default function ToothDesigner() {
     const list = [...picks.entries()]
       .map(([id, sk]) => (sk ? `${id} (${styleOf(sk).title})` : `${id} (Stil offen)`))
       .join(", ");
-    const subject = "Designer-Anfrage — Chopper Couture";
+    const subject = "Designer-Anfrage Chopper Couture";
     const body =
       `Hey Anika,\n\nich hab mir im Designer was zusammengestellt:\n\n` +
       `Zähne & Stile: ${list || "noch keine Auswahl"}\n` +
@@ -154,7 +154,7 @@ export default function ToothDesigner() {
         <div className="relative w-full select-none" style={{ aspectRatio: `${VB_W} / ${VB_H}` }}>
           <Image
             src="/images/designer/grill-designer.webp"
-            alt="Gebiss — wähle deine Zähne"
+            alt="Gebiss, wähle deine Zähne"
             fill
             sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-contain pointer-events-none"
@@ -176,20 +176,20 @@ export default function ToothDesigner() {
         </div>
         <p className="mt-4 text-[11px] tracking-cc-caps uppercase text-cc-black/40">
           {selectedCount === 0
-            ? "Step 01 — Klick die Zähne an, die du willst"
+            ? "Step 01 · Klick die Zähne an, die du willst"
             : selectedCount === 1
-              ? "1 Zahn gewählt — jetzt Stil aussuchen ↓"
-              : `${selectedCount} Zähne gewählt — jetzt Stil aussuchen ↓`}
+              ? "1 Zahn gewählt · jetzt Stil aussuchen ↓"
+              : `${selectedCount} Zähne gewählt · jetzt Stil aussuchen ↓`}
         </p>
       </div>
 
       {/* Konfigurator */}
       <aside className="lg:col-span-5 space-y-8">
-        {/* Step 02 — Stil-Karten */}
+        {/* Step 02, Stil-Karten */}
         <div>
           <div className="flex items-baseline justify-between mb-4">
             <p className="text-[11px] tracking-cc-caps uppercase text-cc-black/60">
-              Step 02 — Stil {selectedCount === 0 && <span className="text-cc-black/30">(erst Zähne wählen)</span>}
+              Step 02 · Stil {selectedCount === 0 && <span className="text-cc-black/30">(erst Zähne wählen)</span>}
             </p>
             {selectedCount > 0 && (
               <button
@@ -231,7 +231,7 @@ export default function ToothDesigner() {
           </div>
         </div>
 
-        {/* Auswahlliste — pro Zahn umstellbar */}
+        {/* Auswahlliste, pro Zahn umstellbar */}
         {selectedCount > 0 && (
           <div className="border-t border-cc-black/15 pt-4">
             <p className="text-[11px] tracking-cc-caps uppercase text-cc-black/50 mb-3">
@@ -264,7 +264,7 @@ export default function ToothDesigner() {
         {/* Sonderwünsche */}
         <div className="border-t border-cc-black/15 pt-4">
           <label htmlFor="wishes" className="block text-[11px] tracking-cc-caps uppercase text-cc-black/50 mb-3">
-            Step 03 — Spezielle Wünsche
+            Step 03 · Spezielle Wünsche
           </label>
           <textarea
             id="wishes"
@@ -280,7 +280,7 @@ export default function ToothDesigner() {
         <div className="border-t border-cc-black/15 pt-4">
           <p className="text-[11px] tracking-cc-caps uppercase text-cc-black/50 mb-2">Grober Preis</p>
           <p className="font-black tracking-tight" style={{ fontSize: "clamp(2rem, 3vw, 2.5rem)" }}>
-            {ready ? `${total.toLocaleString("de-DE")} €` : "—"}
+            {ready ? `${total.toLocaleString("de-DE")} €` : "–"}
           </p>
           {ready && (
             <p className="text-xs text-cc-black/50 mt-1">

@@ -5,18 +5,18 @@
  * ------------
  * Full-bleed canvas. The wordmark is rendered as a particle cloud.
  *
- * Mouse model — "Pinsel im Pulver":
+ * Mouse model, "Pinsel im Pulver":
  *   The cursor has a small local influence radius (`dragRadius`). Particles
  *   inside that radius pick up a fraction of the cursor's per-frame movement
- *   as a velocity impulse — they get carried with the stroke.
+ *   as a velocity impulse, they get carried with the stroke.
  *
- * Return model — Powder-Settling (kein Spring, kein Glibber):
+ * Return model, Powder-Settling (kein Spring, kein Glibber):
  *   Movement after impulse:
  *     1. Damping kills the cursor-imparted velocity over a few frames.
  *     2. Position is *linearly* lerped toward `home` each frame
  *        (`x += (hx - x) * settle`).
  *   Because we never write displacement back into velocity, there is NO
- *   spring oscillation — particles cannot overshoot. They settle the way
+ *   spring oscillation, particles cannot overshoot. They settle the way
  *   plaster/metal dust settles: nudged out by a finger, drifting back
  *   without bounce.
  */
@@ -35,7 +35,7 @@ interface Particle {
 interface ParticleLogoProps {
   src?: string;
   color?: string;
-  /** Sample grid step in CSS px — smaller = denser logo. */
+  /** Sample grid step in CSS px, smaller = denser logo. */
   sampleStep?: number;
   /** Width the logo occupies inside the canvas, in CSS px. */
   logoWidth?: number;
@@ -49,7 +49,7 @@ interface ParticleLogoProps {
       0.015 = slow powder drift, 0.05 = quick settle. */
   settle?: number;
   /** Velocity damping per frame (0..1). Lower = momentum dies faster.
-      Pure damping, no spring — never causes bounce. */
+      Pure damping, no spring, never causes bounce. */
   damping?: number;
 }
 
@@ -200,7 +200,7 @@ export default function ParticleLogo({
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
-        // (a) local drag — particle picks up some of cursor's per-frame
+        // (a) local drag, particle picks up some of cursor's per-frame
         //     movement when inside the drag radius.
         if (dragActive) {
           const dx = p.x - mouse.x;

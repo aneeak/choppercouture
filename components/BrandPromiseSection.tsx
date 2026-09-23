@@ -1,5 +1,5 @@
 /**
- * BrandPromiseSection — Builder-Spec 2026-07
+ * BrandPromiseSection, Builder-Spec 2026-07
  * ------------------------------------------
  * Violetter Balken (#7C3AED) zwischen Designer und Gallery.
  * Höhe 600px auf 1440-Design, skaliert responsive.
@@ -35,7 +35,7 @@ export default function BrandPromiseSection() {
           Brand Promise
         </p>
 
-        {/* HL "Life changing / Smiles." — Figma-Text 1:1 mit versetzten Wörtern.
+        {/* HL "Life changing / Smiles.", Figma-Text 1:1 mit versetzten Wörtern.
             Mobile: 3-zeilig, Desktop: 2-zeilig */}
         <h2
           className="headline-lg mt-6 md:mt-6 md:hidden"
@@ -55,7 +55,7 @@ export default function BrandPromiseSection() {
           Smiles.
         </h2>
 
-        {/* Subline — Mobile: rechtsbündig (Screenshot zeigt rechts-mittig durch text-right).
+        {/* Subline, Mobile: rechtsbündig (Screenshot zeigt rechts-mittig durch text-right).
             Desktop: rechtsbündig. */}
         <p
           className="font-hatton-i text-cc-white mt-4 md:mt-12 text-right"

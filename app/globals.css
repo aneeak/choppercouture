@@ -2,15 +2,15 @@
 @import "tailwindcss";
 
 /* =========================================================================
-   CHOPPER COUTURE — Design Tokens
+   CHOPPER COUTURE, Design Tokens
    Quelle: ChopperCouture_BrandIdentity.pdf (2025)
    ========================================================================= */
 
 @theme {
   /* --- Farben (Builder-Spec 2026-07) --- */
-  --color-cc-black: #0d0d0d;        /* Near-black — Text auf hell */
-  --color-cc-pure: #000000;         /* Pure black — dunkle Sektionen (Material) */
-  --color-cc-purple: #7c3aed;       /* Brand Purple — Promise, About-BG */
+  --color-cc-black: #0d0d0d;        /* Near-black, Text auf hell */
+  --color-cc-pure: #000000;         /* Pure black, dunkle Sektionen (Material) */
+  --color-cc-purple: #7c3aed;       /* Brand Purple, Promise, About-BG */
   --color-cc-offwhite: #f9f9f9;     /* Seitenhintergrund */
   --color-cc-gray-light: #e6e6e6;   /* Trennlinien */
   --color-cc-gray-dark: #282828;    /* Sekundäre dunkle Flächen */
@@ -37,7 +37,7 @@
   --font-loos-extrawide: "loos-extrawide", var(--font-inter), ui-sans-serif, sans-serif;
   --font-loos-wide: "loos-wide", var(--font-inter), ui-sans-serif, sans-serif;
   --font-hatton: var(--font-hatton), Georgia, "Times New Roman", serif;
-  /* Legacy-Aliase — bestehende Nutzung nicht brechen */
+  /* Legacy-Aliase, bestehende Nutzung nicht brechen */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-loos-wide), ui-monospace, "SF Mono", monospace;
 
@@ -110,7 +110,7 @@ html.lenis body {
 
 /* ============================================================================
    MOBILE OVERRIDES (Figma Mobile 375 Spec 2026-08)
-   Alle Werte hier greifen NUR unter 768px — Desktop-Layout bleibt unverändert.
+   Alle Werte hier greifen NUR unter 768px, Desktop-Layout bleibt unverändert.
    Die Inline-Styles der Components werden per !important überschrieben.
    ========================================================================== */
 @media (max-width: 767px) {
@@ -277,11 +277,11 @@ main p {
 
 /* ── Custom Cursor ──────────────────────────────────────────────────────────
    Spike-Icon um 180° gedreht statt des Systempfeils, 32x56 px. Hotspot 14/3,
-   also genau die Spitze oben — dort, wo auch der normale Pfeil zeigt.
+   also genau die Spitze oben, dort, wo auch der normale Pfeil zeigt.
 
    Nur für echte Zeiger: Touchgeräte haben keinen Cursor, und wer auf
    Zeigegenauigkeit angewiesen ist, behält über prefers-reduced-motion nichts
-   davon — deshalb greift die Regel ausschließlich bei (hover: hover) und
+   davon, deshalb greift die Regel ausschließlich bei (hover: hover) und
    (pointer: fine).
 
    Auf dunklen Sektionen wäre das schwarze Icon unsichtbar, dort läuft die
@@ -296,7 +296,7 @@ main p {
     cursor: url("/cursor/spike-white.png") 14 3, auto;
   }
 
-  /* Alles Anklickbare — unabhängig vom Hintergrund violett */
+  /* Alles Anklickbare, unabhängig vom Hintergrund violett */
   a,
   button,
   summary,
@@ -307,7 +307,7 @@ main p {
     cursor: url("/cursor/spike-purple.png") 14 3, pointer;
   }
 
-  /* Textfelder behalten den Textcursor — sonst weiß niemand, wo er tippt */
+  /* Textfelder behalten den Textcursor, sonst weiß niemand, wo er tippt */
   input,
   textarea,
   select,
@@ -327,4 +327,27 @@ main p {
   .pointer-events-none {
     cursor: url("/cursor/spike-black.png") 14 3, default;
   }
+}
+
+/* ============================================================================
+   PAINT-KOSTEN BEGRENZEN
+   Die Galerie rendert 105 Kacheln, die Expo-Seite sechs randabfallende
+   Bildblöcke. Ohne Hilfe legt der Browser für alle davon Layout und Paint
+   an, auch für die, die weit außerhalb des Bildschirms liegen. Genau das
+   erzeugt beim Scrollen die Ruckler.
+
+   content-visibility: auto überspringt diese Arbeit für alles, was gerade
+   nicht sichtbar ist. contain-intrinsic-size gibt die erwartete Größe vor,
+   damit die Gesamthöhe der Seite stabil bleibt und die Scrollleiste nicht
+   springt. Bei den Kacheln ist das Verhältnis 1:1, die Höhe entspricht also
+   der Spaltenbreite.
+   ========================================================================== */
+.cv-tile {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 360px;
+}
+
+.cv-block {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 520px;
 }

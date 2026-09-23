@@ -8,13 +8,14 @@
  * ist ~180vh hoch → Nutzer scrollt „durch" das Video hindurch, es bleibt
  * ein Stück in der Ansicht kleben und wird dann wieder freigegeben.
  *
- * Reine CSS-Lösung (position: sticky) — kein GSAP-Pin nötig, spielt gut
+ * Reine CSS-Lösung (position: sticky), kein GSAP-Pin nötig, spielt gut
  * mit Lenis zusammen.
  *
  * `dwell` steuert wie lange das Video „klebt": höher = längeres Hängen.
  */
 
-import { useRef, useState } from "react";
+import { useState } from "react";
+import useVideoInView from "@/components/useVideoInView";
 
 interface StickyVideoProps {
   src: string;
@@ -32,7 +33,8 @@ export default function StickyVideo({
   withSound = false,
   bg = "light",
 }: StickyVideoProps) {
-  const ref = useRef<HTMLVideoElement | null>(null);
+  // Pausiert automatisch, sobald das Video aus dem Viewport scrollt.
+  const ref = useVideoInView<HTMLVideoElement>();
   const [muted, setMuted] = useState(true);
   const bgClass = bg === "dark" ? "bg-cc-black" : "bg-cc-offwhite";
 

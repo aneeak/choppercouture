@@ -1,7 +1,7 @@
 /**
- * MaterialSection (Section 04) — Builder-Spec 2026-07
+ * MaterialSection (Section 04), Builder-Spec 2026-07
  * ---------------------------------------------------
- *  Header (rechts oben):  04 — Gut zu Wissen
+ *  Header (rechts oben):  04, Gut zu Wissen
  *
  *  Über der HL versetzt:
  *    Gefertigt im LABOR BRAUNDENTALIS.
@@ -59,14 +59,14 @@ const CARDS: MatCard[] = [
 
 export default function MaterialSection() {
   return (
-    // Outer section: offwhite — sorgt für Weißraum-Puffer über dem schwarzen
+    // Outer section: offwhite, sorgt für Weißraum-Puffer über dem schwarzen
     // Content, damit der Wechsel offwhite → schwarz erst kurz vor "04 - Gut zu
     // Wissen" passiert.
     <section id="material" data-nav-tone="light" className="bg-cc-offwhite">
       {/* Weißraum-Spacer (300px auf 1440) */}
       <div style={{ height: "clamp(9rem, 20.8vw, 18.75rem)" }} />
 
-      {/* Schwarzer Content-Bereich beginnt hier — kurz über "04 - Gut zu Wissen" */}
+      {/* Schwarzer Content-Bereich beginnt hier, kurz über "04 - Gut zu Wissen" */}
       <div
         className="bg-cc-pure text-cc-white"
         style={{
@@ -78,7 +78,7 @@ export default function MaterialSection() {
         {/* Section-Header rechts oben */}
         <SectionHeader number="04" name="Gut zu Wissen" tone="light" align="right" />
 
-        {/* Über der HL — zweizeiliger Untertitel, Fraunces italic (Figma 15px) */}
+        {/* Über der HL, zweizeiliger Untertitel, Fraunces italic (Figma 15px) */}
         <div className="mt-16 md:mt-24" style={{ fontSize: "clamp(0.9375rem, 1.8vw, 1.625rem)" /* 15 → 26px */ }}>
           <span className="font-hatton-i block" style={{ paddingLeft: 0 }}>
             Gefertigt im Labor Braundentalis.
@@ -91,7 +91,7 @@ export default function MaterialSection() {
           </span>
         </div>
 
-        {/* HL — Mobile 46px damit "Sicherheit" nicht überläuft, Desktop skaliert.
+        {/* HL, Mobile 46px damit "Sicherheit" nicht überläuft, Desktop skaliert.
             2. Zeile 48px eingezogen auf mobile, 210px desktop */}
         <h2
           className="headline-lg mt-10 md:mt-14 mat-hl"
@@ -129,7 +129,7 @@ export default function MaterialSection() {
           <figure className="relative w-full aspect-[688/428] overflow-hidden -mr-6 md:-mr-12 lg:-mr-16">
             <Image
               src="/images/material/Material und Sicherheit.webp"
-              alt="Chopper Couture — Anika mit Grillz-Modell"
+              alt="Chopper Couture, Anika mit Grillz-Modell"
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
               className="object-cover"
@@ -142,7 +142,7 @@ export default function MaterialSection() {
       <figure className="md:hidden relative w-full h-[220px] mt-12 overflow-hidden">
         <Image
           src="/images/material/Material und Sicherheit.webp"
-          alt="Chopper Couture — Anika mit Grillz-Modell"
+          alt="Chopper Couture, Anika mit Grillz-Modell"
           fill
           sizes="100vw"
           className="object-cover"

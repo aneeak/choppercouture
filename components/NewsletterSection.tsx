@@ -4,7 +4,7 @@
  * Bright break from the dark video sections.
  * Big editorial statement + minimal signup field.
  *
- * Brand tonality: confident, refined — no spam disclaimer.
+ * Brand tonality: confident, refined, no spam disclaimer.
  */
 
 export default function NewsletterSection() {

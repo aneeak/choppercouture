@@ -27,3 +27,14 @@ CC_Galerie_Bilder/
 
 # Claude runtime
 .claude/
+
+# Generierte Bildvarianten. Werden vor jedem Build neu erzeugt
+# (npm-Script "prebuild"), gehören deshalb nicht ins Repo.
+public/images/_r/
+
+# Bilder, die auf der Seite nirgends eingebunden sind. Liegen hier nur
+# als Reserve, werden nicht deployed. Die Historie hat sie weiterhin.
+archive/
+
+# TypeScript-Build-Info, wird bei jedem Build neu erzeugt
+tsconfig.tsbuildinfo

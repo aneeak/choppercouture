@@ -6,9 +6,9 @@
  * Weiße Sektion nach dem Hero.
  *
  * Layout (Desktop, 2 Spalten):
- *   LINKS  — großer Typewriter-Claim „Got teeth? Got options."
+ *   LINKS , großer Typewriter-Claim „Got teeth? Got options."
  *            direkt darunter: CTA-Button „Design deine Grillz →"
- *   RECHTS — riesiges Chopper-Couture-Wordmark in derselben Partikel-
+ *   RECHTS, riesiges Chopper-Couture-Wordmark in derselben Partikel-
  *            Struktur wie das Hero-Video-Logo (schwarze Partikel auf weiß).
  *
  * Mobile: stapelt vertikal (Claim → CTA → Wordmark).
@@ -67,7 +67,7 @@ export default function HeroBreak() {
       className="relative bg-cc-offwhite text-cc-black min-h-screen px-6 md:px-12 py-24 md:py-32"
     >
       <div className="max-w-7xl mx-auto h-full grid md:grid-cols-2 gap-12 md:gap-8 items-center min-h-[80vh]">
-        {/* LINKS — Claim + CTA linksbündig */}
+        {/* LINKS, Claim + CTA linksbündig */}
         <div className="flex flex-col items-start">
           {/* Typewriter-Headline in Mono, linksbündig */}
           <h1
@@ -116,7 +116,7 @@ export default function HeroBreak() {
           </p>
         </div>
 
-        {/* RECHTS — riesiges Partikel-Wordmark */}
+        {/* RECHTS, riesiges Partikel-Wordmark */}
         <div className="relative flex items-center justify-end">
           <div
             className="relative w-full"

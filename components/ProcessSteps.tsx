@@ -4,12 +4,12 @@
  * Die echten 6 Stationen des Herstellungsprozesses mit echten Studio-Fotos.
  *
  * Bildzuordnung (siehe public/images/process/IMAGES.md für die volle Liste):
- *   01 → 01-alginat.jpg       — Auftragsschalen mit Alginat-Material
- *   02 → 02-gipsmodell.jpg    — Gipsmodell mit ersten Grillz
- *   03 → 03-scan.jpg          — 3D-Scanner mit blauen Lasern
- *   04 → 04-3d-modeling.jpg   — 3Shape-Software-Screen
- *   05 → 05-slm.jpg           — SLM-gedrucktes Stück auf Modell
- *   06 → 06-politur.jpg       — finales poliertes Stück
+ *   01 → 01-alginat.jpg      , Auftragsschalen mit Alginat-Material
+ *   02 → 02-gipsmodell.jpg   , Gipsmodell mit ersten Grillz
+ *   03 → 03-scan.jpg         , 3D-Scanner mit blauen Lasern
+ *   04 → 04-3d-modeling.jpg  , 3Shape-Software-Screen
+ *   05 → 05-slm.jpg          , SLM-gedrucktes Stück auf Modell
+ *   06 → 06-politur.jpg      , finales poliertes Stück
  */
 
 import Image from "next/image";
@@ -19,35 +19,35 @@ export const STEPS = [
     n: "01",
     title: "Abdruck",
     body:
-      "Wir treffen uns im Studio, ich schiebe dir ne Schale mit Alginat in den Mund — eine Minute, kein Würgen, kein Stress. Tut nix, schmeckt nach nix. Done.",
+      "Wir treffen uns im Studio, ich schiebe dir ne Schale mit Alginat in den Mund, eine Minute, kein Würgen, kein Stress. Tut nix, schmeckt nach nix. Done.",
     src: "/images/process-new/01-abdruck.webp",
   },
   {
     n: "02",
     title: "Gipsmodell",
     body:
-      "Aus deinem Abdruck gieße ich ein türkises Gipsmodell. Knallhart, millimetergenau — von hier an arbeite ich nur noch mit deinem Modell, nicht mehr mit dir.",
+      "Aus deinem Abdruck gieße ich ein türkises Gipsmodell. Knallhart, millimetergenau. Von hier an arbeite ich nur noch mit deinem Modell, nicht mehr mit dir.",
     src: "/images/process-new/02-gipsmodell.webp",
   },
   {
     n: "03",
     title: "Scan",
     body:
-      "Dein Modell kommt unter den 3D-Scanner. Blaue Laser, ein paar Sekunden, fertig — dein Kiefer existiert jetzt auch digital.",
+      "Dein Modell kommt unter den 3D-Scanner. Blaue Laser, ein paar Sekunden, fertig. Dein Kiefer existiert jetzt auch digital.",
     src: "/images/process-new/03-scan.webp",
   },
   {
     n: "04",
     title: "3D-Design",
     body:
-      "In 3Shape baue ich dein Grillz direkt auf deinen Zähnen. Du sagst mir, was du willst — wir iterieren so lange, bis es sitzt. Erst dann geht's weiter.",
+      "In 3Shape baue ich dein Grillz direkt auf deinen Zähnen. Du sagst mir, was du willst, und wir iterieren so lange, bis es sitzt. Erst dann geht's weiter.",
     src: "/images/process-new/04-3d-design.webp",
   },
   {
     n: "05",
     title: "SLM-Druck",
     body:
-      "Selective Laser Melting beim Schütz Fräszentrum. Dein Stück wird Schicht für Schicht aus Edelmetall geschmolzen — ein Guss, ohne Naht. Mehr dazu unter Medizinisches.",
+      "Selective Laser Melting beim Schütz Fräszentrum. Dein Stück wird Schicht für Schicht aus Edelmetall geschmolzen, ein Guss, ohne Naht. Mehr dazu unter Medizinisches.",
     src: "/images/process-new/05-slm.webp",
   },
   {
@@ -83,7 +83,7 @@ export default function ProcessSteps({ tone = "light" }: ProcessStepsProps) {
                 reversed ? "md:[&>*:first-child]:order-2" : ""
               }`}
             >
-              {/* Bild — voll bis zum Bildschirmrand, randabfallend */}
+              {/* Bild, voll bis zum Bildschirmrand, randabfallend */}
               <div className="relative w-full aspect-[4/3] overflow-hidden bg-cc-black">
                 <Image
                   src={step.src}
@@ -93,7 +93,7 @@ export default function ProcessSteps({ tone = "light" }: ProcessStepsProps) {
                   className="object-cover"
                 />
               </div>
-              {/* Text — gleiche Höhe wie Bild, vertical-zentriert */}
+              {/* Text, gleiche Höhe wie Bild, vertical-zentriert */}
               <div className="flex items-center px-6 md:px-12 lg:px-20 py-16 md:py-0">
                 <div className="max-w-md">
                   <p className={`font-mono text-xs tracking-cc-caps uppercase ${eyebrow} mb-6`}>

@@ -1,5 +1,5 @@
 /**
- * About — Sub-Page
+ * About, Sub-Page
  * ----------------
  * Klar getrennt in ZWEI Bereiche:
  *
@@ -21,7 +21,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "About",
   description:
-    "Chopper Couture — Dental Jewelry aus Berlin. Marke und die Person dahinter, Anika Müggler.",
+    "Chopper Couture: Dental Jewelry aus Berlin. Marke und die Person dahinter, Anika Müggler.",
   alternates: { canonical: "/about" },
 };
 
@@ -35,7 +35,7 @@ const BRAND_VALUES = [
 export default function AboutPage() {
   return (
     <>
-      {/* ── Bereich 1: CHOPPER COUTURE (Marke) — violett ─────────────────── */}
+      {/* ── Bereich 1: CHOPPER COUTURE (Marke), violett ─────────────────── */}
       <section
         data-nav-tone="light"
         className="bg-cc-purple text-cc-white"
@@ -71,7 +71,7 @@ export default function AboutPage() {
             Dental Jewelry aus Berlin.
           </p>
 
-          {/* Copy — 1:1 aus dem User-Screenshot (Chopper Couture Bereich) */}
+          {/* Copy, 1:1 aus dem User-Screenshot (Chopper Couture Bereich) */}
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 mt-16 md:mt-24 items-start">
             <div className="hidden lg:block lg:col-span-5" />
             <div className="lg:col-span-7 space-y-6 body-copy" style={{ fontSize: "clamp(1rem, 1.25vw, 1.125rem)" }}>
@@ -134,7 +134,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Bereich 2: ANIKA MÜGGLER (Person) — schwarz ─────────────────── */}
+      {/* ── Bereich 2: ANIKA MÜGGLER (Person), schwarz ─────────────────── */}
       <section
         data-nav-tone="light"
         className="bg-cc-pure text-cc-white"
@@ -172,7 +172,7 @@ export default function AboutPage() {
 
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 mt-16 md:mt-24 items-start">
             <div className="hidden lg:block lg:col-span-5" />
-            {/* Copy — 1:1 aus dem User-Screenshot (07 — Über mich) */}
+            {/* Copy, 1:1 aus dem User-Screenshot (07, Über mich) */}
             <div className="lg:col-span-7 space-y-6 body-copy" style={{ fontSize: "clamp(1rem, 1.25vw, 1.125rem)" }}>
               <p>Ich bin Anika.</p>
               <p>

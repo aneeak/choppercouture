@@ -1,7 +1,7 @@
 /**
- * Impressum — Sub-Page (Section 08 laut Builder-Spec)
+ * Impressum, Sub-Page (Section 08 laut Builder-Spec)
  * ---------------------------------------------------
- *  Section-Header: 08 — IMPRESSUM
+ *  Section-Header: 08, IMPRESSUM
  *  Text 1:1 aus dem Builder-Brief.
  */
 
@@ -110,7 +110,7 @@ export default function ImpressumPage() {
             Impressum.
           </h1>
 
-          {/* Blöcke — 2-Spalten-Layout ab md, Titel = Loos Wide caps, Body = Loos Wide */}
+          {/* Blöcke, 2-Spalten-Layout ab md, Titel = Loos Wide caps, Body = Loos Wide */}
           <div className="grid md:grid-cols-2 gap-x-10 md:gap-x-16 lg:gap-x-24 gap-y-12 md:gap-y-16 mt-20 md:mt-28">
             {BLOCKS.map((b) => (
               <div key={b.title}>
