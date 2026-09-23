@@ -187,7 +187,14 @@ export default function GaleriePage() {
             ) : (
               <figure
                 key={item.src}
-                className="relative w-full bg-cc-black overflow-hidden group"
+                /* self-start und min-h aus demselben Grund wie bei den
+                   Aussteller-Kacheln: Das Bild ist mit fill absolut
+                   positioniert, die Höhe kommt allein aus aspectRatio.
+                   Unter align-self: stretch ignoriert Safari das und die
+                   Kachel fällt zusammen. Die min-h-Werte entsprechen genau
+                   der Spaltenbreite (2, 3 und 4 Spalten), ändern im
+                   Normalfall also nichts. */
+                className="relative w-full bg-cc-black overflow-hidden group self-start min-h-[50vw] md:min-h-[33.333vw] lg:min-h-[25vw]"
                 style={{ aspectRatio: "1 / 1" }}
               >
                 <Image

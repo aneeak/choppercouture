@@ -562,9 +562,26 @@ function ExhibitorTile({
       }`}
     >
       {/* Bilder, voll bis zum Bildschirmrand. gap-px auf dunklem Grund
-          erzeugt die Haarlinien zwischen den drei Feldern. */}
+          erzeugt die Haarlinien zwischen den drei Feldern.
+
+          Zur Höhe, das ist heikler als es aussieht: Die Kinder sind mit
+          fill absolut positioniert und haben deshalb keine Eigenhöhe. Die
+          Höhe kann also nur aus aspect-ratio kommen. Steht das Element
+          zugleich auf align-self: stretch, ignoriert Safari das
+          Seitenverhältnis und die Kachel fällt auf null zusammen, während
+          Chrome sie korrekt zeichnet.
+
+          Zwei Absicherungen, unabhängig voneinander:
+            self-start   nimmt das Element aus dem Stretch, damit
+                         aspect-ratio überhaupt greift
+            min-h-[75vw] garantiert die Höhe auch dann, wenn ein Browser
+                         aspect-ratio nicht anwendet. 75vw ist bei voller
+                         Breite exakt 4:3, der Wert ändert also nichts,
+                         solange alles normal funktioniert.
+          Ab md gilt beides nicht mehr: dort bestimmt die Textspalte die
+          Zeilenhöhe und die Kachel füllt sie per h-full. */}
       {lead ? (
-        <div className="grid grid-cols-3 grid-rows-2 gap-px bg-cc-black/20 aspect-[4/3]">
+        <div className="grid grid-cols-3 grid-rows-2 gap-px bg-cc-black/20 w-full aspect-[4/3] self-start min-h-[75vw] md:self-stretch md:min-h-0 md:h-full">
           <div className="col-span-2 row-span-2 relative overflow-hidden bg-cc-black">
             <Image
               src={lead.src}
@@ -592,6 +609,7 @@ function ExhibitorTile({
           label={exhibitor.role}
           hint="1200 × 1350"
           tone="dark"
+          className="self-start min-h-[75vw] md:self-stretch md:min-h-0 md:h-full"
         />
       )}
 
