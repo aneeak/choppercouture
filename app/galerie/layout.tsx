@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "Handgefertigte Grillz und Dental Jewelry aus Berlin. Jedes Stück individuell designt und im SLM-Verfahren gefertigt.",
     url: "https://choppercouture.ch/galerie",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-cover.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-cover.jpg",
         width: 1200,
         height: 630,
         alt: "Chopper Couture, Custom Grillz aus Berlin",
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chopper Couture | Custom Grillz & Dental Jewelry Berlin",
     description: DESCRIPTION,
-    images: ["/og-image.jpg"],
+    images: ["/og-cover.jpg"],
   },
   robots: {
     index: true,
@@ -122,8 +122,8 @@ const JSON_LD = {
   name: "Chopper Couture",
   alternateName: ["choppercouture", "Chopper Couture Berlin"],
   url: SITE,
-  image: `${SITE}/og-image.jpg`,
-  logo: `${SITE}/og-image.jpg`,
+  image: `${SITE}/og-cover.jpg`,
+  logo: `${SITE}/og-cover.jpg`,
   description: DESCRIPTION,
   email: "choppercouture@gmail.com",
   telephone: "+4915123182496",

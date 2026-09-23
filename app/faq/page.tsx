@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Alles was du über Custom Grillz wissen musst: Material, Ablauf, Preise, Pflege. Chopper Couture Berlin.",
     url: "https://choppercouture.ch/faq",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-cover.jpg", width: 1200, height: 630 }],
   },
 };
 

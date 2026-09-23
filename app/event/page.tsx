@@ -270,7 +270,7 @@ export const metadata = {
     title: `${EVENT.name} | Chopper Couture`,
     description: `${EVENT.name} im ${EVENT.venue}. Tickets im Vorverkauf.`,
     url: `${SITE}/event`,
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-cover.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -293,7 +293,7 @@ const EVENT_LD = {
   eventStatus: "https://schema.org/EventScheduled",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   description: EVENT.teaser,
-  image: `${SITE}/og-image.jpg`,
+  image: `${SITE}/og-cover.jpg`,
   url: `${SITE}/event`,
   location: {
     "@type": "Place",
