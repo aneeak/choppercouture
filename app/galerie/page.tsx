@@ -187,7 +187,7 @@ export default function GaleriePage() {
             ) : (
               <figure
                 key={item.src}
-                className="cv-tile relative w-full bg-cc-black overflow-hidden group"
+                className="relative w-full bg-cc-black overflow-hidden group"
                 style={{ aspectRatio: "1 / 1" }}
               >
                 <Image

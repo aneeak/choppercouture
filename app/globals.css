@@ -330,24 +330,17 @@ main p {
 }
 
 /* ============================================================================
-   PAINT-KOSTEN BEGRENZEN
-   Die Galerie rendert 105 Kacheln, die Expo-Seite sechs randabfallende
-   Bildblöcke. Ohne Hilfe legt der Browser für alle davon Layout und Paint
-   an, auch für die, die weit außerhalb des Bildschirms liegen. Genau das
-   erzeugt beim Scrollen die Ruckler.
+   HINWEIS: content-visibility wurde wieder entfernt
 
-   content-visibility: auto überspringt diese Arbeit für alles, was gerade
-   nicht sichtbar ist. contain-intrinsic-size gibt die erwartete Größe vor,
-   damit die Gesamthöhe der Seite stabil bleibt und die Scrollleiste nicht
-   springt. Bei den Kacheln ist das Verhältnis 1:1, die Höhe entspricht also
-   der Spaltenbreite.
+   Hier standen .cv-tile und .cv-block mit content-visibility: auto, um die
+   Paint-Kosten der 105 Galerie-Kacheln und der Aussteller-Blöcke zu senken.
+
+   Das hat auf dem Handy die Bilder der Ausstellenden gekostet: Von 24
+   Bildern luden 0, weil lazy geladene Bilder in einem übersprungenen
+   Teilbaum nicht angefordert werden. Ohne die Regel luden alle 24.
+
+   Der Nutzen war nie belegt (echte Bildraten liessen sich in der
+   Testumgebung nicht messen), der Schaden dagegen sichtbar. Falls das
+   Thema wieder aufkommt: erst auf einem echten Gerät messen, und
+   content-visibility nie mit loading="lazy" im selben Teilbaum kombinieren.
    ========================================================================== */
-.cv-tile {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 360px;
-}
-
-.cv-block {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 520px;
-}

@@ -557,7 +557,7 @@ function ExhibitorTile({
 
   return (
     <div
-      className={`cv-block grid md:grid-cols-2 items-stretch border-t border-cc-black/15 ${
+      className={`grid md:grid-cols-2 items-stretch border-t border-cc-black/15 ${
         reversed ? "md:[&>*:first-child]:order-2" : ""
       }`}
     >
