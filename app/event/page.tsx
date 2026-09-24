@@ -163,6 +163,18 @@ const EVENT = {
     },
     {
       n: "07",
+      role: "Toothgems",
+      title: "Gems by Jiji",
+      body: "Evgenia Akhomgotova, Dental Cosmetic Specialist. Tooth Gems und Bleaching.",
+      instagram: "gemsbyjiji",
+      images: [
+        { src: "/images/event/aussteller/jiji-1.webp", alt: "Gesetzte Tooth Gems von Gems by Jiji in Nahaufnahme" },
+        { src: "/images/event/aussteller/jiji-2.webp", alt: "Porträt von Evgenia Akhomgotova mit besetzter Sturmhaube" },
+        { src: "/images/event/aussteller/jiji-3.webp", alt: "Lächeln mit Tooth Gems von Gems by Jiji" },
+      ],
+    },
+    {
+      n: "08",
       role: "Dental Tattoos",
       title: "June Handpoke",
       body: "Small stick and poke dental flashes on your skin xP",
@@ -174,7 +186,7 @@ const EVENT = {
       ],
     },
     {
-      n: "08",
+      n: "09",
       role: "Bedazzling Station",
       title: "Diamond Painting Station",
       // Formulierung stammt nicht von der Station selbst, sondern ist an
