@@ -707,7 +707,7 @@ export default function EventPage() {
           className="px-6 md:px-12 lg:px-16 max-w-[1440px] mx-auto"
           style={{ paddingTop: "clamp(4rem, 7vw, 7rem)" }}
         >
-          <SectionHeader number="2026" name="1st" tone="dark" />
+          <SectionHeader number="2026" name="erste" tone="dark" />
 
           {/* Drei Zeilen mit wachsendem Einzug. Auf breiten Schirmen steht der
               volle Titel da, nicht nur "Dental Jewelry". */}
