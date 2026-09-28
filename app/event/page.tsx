@@ -116,18 +116,6 @@ const EVENT = {
     {
       n: "03",
       role: "Grillz",
-      title: "Grill Smith",
-      body: "Bold, shiny, extravagant.",
-      instagram: "grill.smith",
-      images: [
-        { src: "/images/event/aussteller/grill-smith-1.webp", alt: "Grillz und Gems von Grill Smith, getragen" },
-        { src: "/images/event/aussteller/grill-smith-2.webp", alt: "Vollständig mit Steinen besetztes Grillz-Set von Grill Smith" },
-        { src: "/images/event/aussteller/grill-smith-3.webp", alt: "Grillz mit Schriftzug und Steinen von Grill Smith" },
-      ],
-    },
-    {
-      n: "04",
-      role: "Grillz",
       title: "Bladezz",
       body: "Floral, organisch, filigran.",
       instagram: "bladezz_studio",
@@ -138,7 +126,7 @@ const EVENT = {
       ],
     },
     {
-      n: "05",
+      n: "04",
       role: "Toothgems",
       title: "Toothcandy",
       body: "Toothgems von Melissa Righi.",
@@ -150,7 +138,7 @@ const EVENT = {
       ],
     },
     {
-      n: "06",
+      n: "05",
       role: "Toothgems",
       title: "Kristall Pearl",
       body: "Sexy Smiles.",
@@ -162,19 +150,19 @@ const EVENT = {
       ],
     },
     {
-      n: "07",
+      n: "06",
       role: "Toothgems",
       title: "Gems by Jiji",
       body: "Jiji, Dental Cosmetic Specialist. Tooth Gems und Bleaching.",
       instagram: "gemsbyjiji",
       images: [
-        { src: "/images/event/aussteller/jiji-1.webp", alt: "Lächeln mit gesetzten Tooth Gems von Gems by Jiji" },
-        { src: "/images/event/aussteller/jiji-2.webp", alt: "Tooth Gems und goldene Grillz von Gems by Jiji" },
-        { src: "/images/event/aussteller/jiji-3.webp", alt: "Tooth Gems von Gems by Jiji, getragen mit rosa Sturmhaube" },
+        { src: "/images/event/aussteller/jiji-1.webp", alt: "Tooth Gems von Gems by Jiji, getragen mit rosa Sturmhaube" },
+        { src: "/images/event/aussteller/jiji-2.webp", alt: "Lächeln mit gesetzten Tooth Gems von Gems by Jiji" },
+        { src: "/images/event/aussteller/jiji-3.webp", alt: "Tooth Gems und goldene Grillz von Gems by Jiji" },
       ],
     },
     {
-      n: "08",
+      n: "07",
       role: "Dental Tattoos",
       title: "June Handpoke",
       body: "Small stick and poke dental flashes on your skin xP",
@@ -186,7 +174,7 @@ const EVENT = {
       ],
     },
     {
-      n: "09",
+      n: "08",
       role: "Bedazzling Station",
       title: "Diamond Painting Station",
       // Formulierung stammt nicht von der Station selbst, sondern ist an
