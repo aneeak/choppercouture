@@ -92,6 +92,18 @@ const EVENT = {
     {
       n: "01",
       role: "Grillz",
+      title: "Chopper Couture",
+      body: "Anika Müggler, Zahntechnikerin. Dazu ein Workshop zur Modellherstellung.",
+      instagram: "choppercouture",
+      images: [
+        { src: "/images/event/aussteller/chopper-couture-1.webp", alt: "Silbernes Grillz von Chopper Couture, getragen" },
+        { src: "/images/event/aussteller/chopper-couture-2.webp", alt: "Roségoldenes Grillz von Chopper Couture auf dem Gipsmodell" },
+        { src: "/images/event/aussteller/chopper-couture-3.webp", alt: "Ornamentales Grillz von Chopper Couture auf dem Gipsmodell" },
+      ],
+    },
+    {
+      n: "02",
+      role: "Grillz",
       title: "Grillz by Espino",
       body: "Chrome Grillz aus Kreuzberg.",
       instagram: "grillzbyespino",
@@ -102,7 +114,7 @@ const EVENT = {
       ],
     },
     {
-      n: "02",
+      n: "03",
       role: "Grillz",
       title: "dimapeletsky",
       body: "Dark Biomorphic Style.",
@@ -114,7 +126,7 @@ const EVENT = {
       ],
     },
     {
-      n: "03",
+      n: "04",
       role: "Grillz",
       title: "Bladezz",
       body: "Floral, organisch, filigran.",
@@ -126,19 +138,19 @@ const EVENT = {
       ],
     },
     {
-      n: "04",
+      n: "05",
       role: "Toothgems",
       title: "Toothcandy",
       body: "Toothgems von Melissa Righi.",
       instagram: "toothcandy030",
       images: [
-        { src: "/images/event/aussteller/toothcandy-1.webp", alt: "Gesetzte Toothgems von Toothcandy" },
-        { src: "/images/event/aussteller/toothcandy-2.webp", alt: "Rote und schwarze Toothgems von Toothcandy" },
-        { src: "/images/event/aussteller/toothcandy-3.webp", alt: "Porträt von Melissa Righi, Toothcandy" },
+        { src: "/images/event/aussteller/toothcandy-1.webp", alt: "Porträt von Melissa Righi, Toothcandy" },
+        { src: "/images/event/aussteller/toothcandy-2.webp", alt: "Gesetzte Toothgems von Toothcandy" },
+        { src: "/images/event/aussteller/toothcandy-3.webp", alt: "Rote und schwarze Toothgems von Toothcandy" },
       ],
     },
     {
-      n: "05",
+      n: "06",
       role: "Toothgems",
       title: "Kristall Pearl",
       body: "Sexy Smiles.",
@@ -150,7 +162,7 @@ const EVENT = {
       ],
     },
     {
-      n: "06",
+      n: "07",
       role: "Toothgems",
       title: "Gems by Jiji",
       body: "Jiji, Dental Cosmetic Specialist. Tooth Gems und Bleaching.",
@@ -162,7 +174,7 @@ const EVENT = {
       ],
     },
     {
-      n: "07",
+      n: "08",
       role: "Dental Tattoos",
       title: "June Handpoke",
       body: "Small stick and poke dental flashes on your skin xP",
@@ -174,7 +186,31 @@ const EVENT = {
       ],
     },
     {
-      n: "08",
+      n: "09",
+      role: "Tattoo",
+      title: "Anh",
+      body: "Feine Linien, kleine Motive.",
+      instagram: "anh.inks",
+      images: [
+        { src: "/images/event/aussteller/anh-1.webp", alt: "Anh beim Tätowieren im Studio" },
+        { src: "/images/event/aussteller/anh-2.webp", alt: "Fineline-Tattoo eines fliegenden Kranichs von Anh" },
+        { src: "/images/event/aussteller/anh-3.webp", alt: "Ornamentales Fineline-Tattoo auf dem Unterarm von Anh" },
+      ],
+    },
+    {
+      n: "10",
+      role: "Fashion",
+      title: "Lina Leuschen",
+      body: "Genähte Einzelstücke aus Denim, Tüll und Metall.",
+      instagram: "__.adrenalina",
+      images: [
+        { src: "/images/event/aussteller/lina-1.webp", alt: "Kleid mit Reifrock aus Denim und Tüll, Entwurf von Lina Leuschen" },
+        { src: "/images/event/aussteller/lina-2.webp", alt: "Denim-Oberteil mit Nieten und Spannseilen, Entwurf von Lina Leuschen" },
+        { src: "/images/event/aussteller/lina-3.webp", alt: "Jacke mit Print-Ärmeln über Korsage, Entwurf von Lina Leuschen" },
+      ],
+    },
+    {
+      n: "11",
       role: "Bedazzling Station",
       title: "Diamond Painting Station",
       // Formulierung stammt nicht von der Station selbst, sondern ist an
