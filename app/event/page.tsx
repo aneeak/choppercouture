@@ -257,8 +257,8 @@ const EVENT = {
   address: "Hohenzollerndamm 120, 14199 Berlin",
 
   /** Preise in Euro. Kleinunternehmerin § 19 UStG → keine USt. */
-  price: 13,                 // Vorverkauf
-  priceDoor: 18,             // Abendkasse
+  price: 8,                  // Vorverkauf
+  priceDoor: 12,             // Abendkasse
 
   /** Wie viele Tickets es im Vorverkauf gibt. */
   presaleCapacity: 150,
@@ -310,7 +310,7 @@ export const metadata = {
   },
 };
 
-/** Preise als "13 €", oder "k. A." solange nichts gepflegt ist. */
+/** Preise als "8 €", oder "k. A." solange nichts gepflegt ist. */
 const euro = (n: number) => `${n.toLocaleString("de-DE")} €`;
 const priceLabel = EVENT.price > 0 ? euro(EVENT.price) : "k. A.";
 const doorLabel = EVENT.priceDoor > 0 ? euro(EVENT.priceDoor) : "k. A.";
