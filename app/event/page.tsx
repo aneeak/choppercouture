@@ -168,9 +168,9 @@ const EVENT = {
       body: "Jiji, Dental Cosmetic Specialist. Tooth Gems und Bleaching.",
       instagram: "gemsbyjiji",
       images: [
-        { src: "/images/event/aussteller/jiji-1.webp", alt: "Tooth Gems von Gems by Jiji, getragen mit rosa Sturmhaube" },
-        { src: "/images/event/aussteller/jiji-2.webp", alt: "Lächeln mit gesetzten Tooth Gems von Gems by Jiji" },
-        { src: "/images/event/aussteller/jiji-3.webp", alt: "Tooth Gems und goldene Grillz von Gems by Jiji" },
+        { src: "/images/event/aussteller/jiji-1.webp", alt: "Tooth Gems von Gems by Jiji, getragen mit einer mit Steinen besetzten rosa Sturmhaube" },
+        { src: "/images/event/aussteller/jiji-2.webp", alt: "Tooth Gems in Lila und Klar auf den Schneidezähnen, von Gems by Jiji" },
+        { src: "/images/event/aussteller/jiji-3.webp", alt: "Dicht gesetzte klare Tooth Gems von Gems by Jiji" },
       ],
     },
     {
