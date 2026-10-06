@@ -218,9 +218,9 @@ const EVENT = {
       body: "Steine, Kleber, freie Auswahl. Bedazzel, was du dabeihast.",
       instagram: null as string | null,
       images: [
-        { src: "/images/event/aussteller/bedazzling-1.webp", alt: "Schriftzug aus aufgeklebten Strasssteinen" },
-        { src: "/images/event/aussteller/bedazzling-2.webp", alt: "Mit Strasssteinen beklebtes Stoppschild mit dem Wort SLAY" },
-        { src: "/images/event/aussteller/bedazzling-3.webp", alt: "Lose Strasssteine in verschiedenen Farben und Formen" },
+        { src: "/images/event/aussteller/bedazzling-1.webp", alt: "Drei mit Steinen beklebte Zahnmodelle in Flieder, Mint und Rosa, gestapelt" },
+        { src: "/images/event/aussteller/bedazzling-2.webp", alt: "Zwei Hände, dicht mit bunten Strasssteinen beklebt" },
+        { src: "/images/event/aussteller/bedazzling-3.webp", alt: "Tisch der Bedazzling Station mit Steinbogen, Glitzertöpfen und Pinseln" },
       ],
     },
   ],
