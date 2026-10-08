@@ -266,9 +266,70 @@ main p {
   will-change: transform;
 }
 
+/* Gegenlaeufig: dieselbe Bewegung rueckwaerts abgespielt, das Band wandert
+   also nach rechts statt nach links. Zwei Baender uebereinander, die in
+   entgegengesetzte Richtungen laufen, lesen sich als Absicht. */
+.cc-marquee-track--rueckwaerts {
+  animation-direction: reverse;
+}
+
 /* Reduced motion: Band steht still, die erste Liste bleibt sichtbar */
 @media (prefers-reduced-motion: reduce) {
   .cc-marquee-track {
+    animation: none;
+  }
+}
+
+/* --- Ticket auf Touch-Geraeten -----------------------------------------
+   Am Desktop wechselt das Ticket beim Hover auf Schwarz und die Schrift
+   auf "Lets Go!". Auf dem Handy gibt es kein Hover, dort bekaeme man den
+   zweiten Zustand nie zu sehen. Auf Geraeten ohne Mauszeiger laeuft der
+   Wechsel deshalb von selbst: gut fuenf Sekunden violett, rund anderthalb
+   Sekunden schwarz, dann zurueck.
+
+   Vier Elemente muessen dabei im Gleichtakt bleiben, Rahmenfarbe,
+   Innenflaeche, Schriftfarbe und die beiden Textlagen. Deshalb teilen sich
+   alle Keyframes dieselben Prozentmarken und dieselbe Dauer. */
+/* Keyframes stehen bewusst ausserhalb der Media Query. Innerhalb eines
+   @media-Blocks definierte Keyframes existieren nur, solange die Bedingung
+   zutrifft; das laesst sich schwer pruefen und ist unnoetig fragil. Hier
+   sind sie immer da, nur ihre Anwendung haengt an der Bedingung. */
+@keyframes cc-ticket-rahmen {
+  0%, 70%, 100% { color: var(--color-cc-purple); }
+  76%, 92%      { color: var(--color-cc-black); }
+}
+@keyframes cc-ticket-flaeche {
+  0%, 70%, 100% { background-color: rgb(124 58 237 / 0.08); }
+  76%, 92%      { background-color: var(--color-cc-black); }
+}
+@keyframes cc-ticket-schrift {
+  0%, 70%, 100% { color: var(--color-cc-purple); }
+  76%, 92%      { color: var(--color-cc-white); }
+}
+@keyframes cc-ticket-aus {
+  0%, 70%, 100% { opacity: 1; }
+  76%, 92%      { opacity: 0; }
+}
+@keyframes cc-ticket-an {
+  0%, 70%, 100% { opacity: 0; }
+  76%, 92%      { opacity: 1; }
+}
+
+@media (hover: none) {
+  .cc-ticket          { animation: cc-ticket-rahmen 7s ease-in-out infinite; }
+  .cc-ticket-flaeche  { animation: cc-ticket-flaeche 7s ease-in-out infinite; }
+  .cc-ticket-schrift  { animation: cc-ticket-schrift 7s ease-in-out infinite; }
+  .cc-ticket-ruhe     { animation: cc-ticket-aus 7s ease-in-out infinite; }
+  .cc-ticket-aktiv    { animation: cc-ticket-an 7s ease-in-out infinite; }
+}
+
+/* Reduced motion: kein Blinken, das Ticket bleibt violett */
+@media (prefers-reduced-motion: reduce) {
+  .cc-ticket,
+  .cc-ticket-flaeche,
+  .cc-ticket-schrift,
+  .cc-ticket-ruhe,
+  .cc-ticket-aktiv {
     animation: none;
   }
 }

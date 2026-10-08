@@ -43,7 +43,8 @@ const EVENT = {
     "Bedazzling Station",
     "Dental Tattoos",
     "Clothing",
-    "Live Music",
+    "Live Act",
+    "Goodiebags",
   ],
 
   /** Anzeigetext für Datum + Uhrzeit. */
@@ -113,7 +114,9 @@ const EVENT = {
       body: "Anika Müggler, Zahntechnikerin. Dazu ein Workshop zur Modellherstellung.",
       instagram: "choppercouture",
       images: [
-        { src: "/images/event/aussteller/chopper-couture-1.webp", alt: "Silbernes Grillz von Chopper Couture, getragen" },
+        // nurDesktop: auf schmalen Schirmen faellt dieses Bild weg, die
+        // beiden anderen fuellen dort die Kachel.
+        { src: "/images/event/aussteller/chopper-couture-1.webp", alt: "Silbernes Grillz von Chopper Couture, getragen", nurDesktop: true },
         { src: "/images/event/aussteller/chopper-couture-2.webp", alt: "Roségoldenes Grillz von Chopper Couture auf dem Gipsmodell" },
         { src: "/images/event/aussteller/chopper-couture-3.webp", alt: "Ornamentales Grillz von Chopper Couture auf dem Gipsmodell" },
       ],
@@ -556,6 +559,7 @@ function TicketCard({ ticketsLive }: { ticketsLive: boolean }) {
 
   const rahmen = "group relative block w-full";
 
+
   if (EVENT.presaleSoldOut || !ticketsLive) {
     return (
       <div className={`${rahmen} text-cc-black/35`}>
@@ -578,7 +582,7 @@ function TicketCard({ ticketsLive }: { ticketsLive: boolean }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Ticket kaufen für ${priceLabel} im Vorverkauf`}
-      className={`${rahmen} text-cc-purple transition-[transform,color] duration-200 hover:-translate-y-1 hover:text-cc-black focus-visible:-translate-y-1 focus-visible:text-cc-black`}
+      className={`${rahmen} cc-ticket text-cc-purple transition-[transform,color] duration-200 hover:-translate-y-1 hover:text-cc-black focus-visible:-translate-y-1 focus-visible:text-cc-black`}
     >
       {/* Füllung der gesamten Innenfläche. Liegt hinter der Grafik, damit
           Rahmen, Abriss und gestrichelte Linien darüber liegen. Beim Hover
@@ -586,15 +590,16 @@ function TicketCard({ ticketsLive }: { ticketsLive: boolean }) {
           Ticket dann komplett schwarz. */}
       <span
         aria-hidden="true"
-        className="absolute bg-cc-purple/[0.08] transition-colors duration-200 group-hover:bg-cc-black group-focus-visible:bg-cc-black"
+        className="cc-ticket-flaeche absolute bg-cc-purple/[0.08] transition-colors duration-200 group-hover:bg-cc-black group-focus-visible:bg-cc-black"
         style={flaeche}
       />
 
       <TicketShape className="relative block w-full" />
 
       {/* Inhalt im Innenfeld, zwischen den gestrichelten Linien */}
+      {/* Inhalt im Innenfeld, zwischen den gestrichelten Linien */}
       <span
-        className="absolute flex flex-col justify-center gap-[0.35em] px-[4%] text-cc-purple transition-colors duration-200 group-hover:text-cc-white group-focus-visible:text-cc-white"
+        className="cc-ticket-schrift absolute flex flex-col justify-center gap-[0.35em] px-[4%] text-cc-purple transition-colors duration-200 group-hover:text-cc-white group-focus-visible:text-cc-white"
         style={feld}
       >
         <span
@@ -607,17 +612,18 @@ function TicketCard({ ticketsLive }: { ticketsLive: boolean }) {
         <span className="flex min-w-0 items-center justify-between gap-3">
           {/* Die Beschriftung sitzt dort, wo in der Vorlage groß TICKET
               steht. Die Größe rechnet in vw und ist so bemessen, dass sie
-              bei 1024px noch in das Innenfeld passt. */}
+              bei 1024px noch in das Innenfeld passt. Alle drei Werte sind
+              gegenüber der ersten Fassung um 20 Prozent angehoben. */}
           <span
             className="relative headline-md whitespace-nowrap"
-            style={{ fontSize: "clamp(0.875rem, 2.2vw, 2.1rem)" }}
+            style={{ fontSize: "clamp(1.05rem, 2.64vw, 2.52rem)" }}
           >
-            <span className="transition-opacity duration-200 group-hover:opacity-0 group-focus-visible:opacity-0">
+            <span className="cc-ticket-ruhe transition-opacity duration-200 group-hover:opacity-0 group-focus-visible:opacity-0">
               Ticket kaufen
             </span>
             <span
               aria-hidden="true"
-              className="absolute inset-0 flex items-center whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+              className="cc-ticket-aktiv absolute inset-0 flex items-center whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
             >
               Lets Go! 🦷
             </span>
@@ -661,6 +667,12 @@ function ExhibitorTile({
   const reversed = index % 2 === 1;
   const [lead, ...rest] = exhibitor.images;
 
+  /* Ein Bild kann nurDesktop tragen. Dann verschwindet es unterhalb von
+     768px und die beiden kleinen ruecken auf: das erste nimmt die grosse
+     Flaeche, das zweite die volle Hoehe der dritten Spalte. Ab md stellt
+     md:col-span / md:row-span das urspruengliche Mosaik wieder her. */
+  const leadNurDesktop = lead !== undefined && "nurDesktop" in lead;
+
   return (
     <div
       className={`grid md:grid-cols-2 items-stretch border-t border-cc-black/15 ${
@@ -688,7 +700,11 @@ function ExhibitorTile({
           Zeilenhöhe und die Kachel füllt sie per h-full. */}
       {lead ? (
         <div className="grid grid-cols-3 grid-rows-2 gap-px bg-cc-black/20 w-full aspect-[4/3] self-start min-h-[75vw] md:self-stretch md:min-h-0 md:h-full">
-          <div className="col-span-2 row-span-2 relative overflow-hidden bg-cc-black">
+          <div
+            className={`col-span-2 row-span-2 relative overflow-hidden bg-cc-black ${
+              leadNurDesktop ? "hidden md:block" : ""
+            }`}
+          >
             <Image
               src={lead.src}
               alt={lead.alt}
@@ -697,8 +713,17 @@ function ExhibitorTile({
               className="object-cover"
             />
           </div>
-          {rest.map((img) => (
-            <div key={img.src} className="relative overflow-hidden bg-cc-black">
+          {rest.map((img, i) => (
+            <div
+              key={img.src}
+              className={`relative overflow-hidden bg-cc-black ${
+                leadNurDesktop
+                  ? i === 0
+                    ? "col-span-2 row-span-2 md:col-span-1 md:row-span-1"
+                    : "row-span-2 md:row-span-1"
+                  : ""
+              }`}
+            >
               <Image
                 src={img.src}
                 alt={img.alt}
@@ -965,20 +990,35 @@ export default function EventPage() {
             Band über die volle Breite. Auf Desktop verteilen sich die Punkte
             per justify-between bis an beide Ränder, auf Mobile umbrechen sie
             mit Trennpunkten. */}
-        <div className="mt-14 md:mt-20 border-y border-cc-black/15">
-          <ul
-            className="px-6 md:px-12 lg:px-16 py-5 md:py-6 flex flex-wrap md:flex-nowrap md:justify-between gap-x-4 gap-y-2 section-name text-cc-black/60"
-            style={{ fontSize: "clamp(0.6875rem, 0.9vw, 0.8125rem)", letterSpacing: "0.08em" }}
+        {/* Läuft gegenläufig zum Partnerband darunter, also nach rechts
+            statt nach links. Aufbau sonst identisch: zwei Kopien in der
+            Spur, jede mindestens fensterbreit, die zweite aria-hidden.
+            Der Punkt steht hinter jedem Eintrag, auch hinter dem letzten,
+            sonst klafft an der Nahtstelle des Umlaufs eine Lücke im
+            Rhythmus. */}
+        <div className="mt-14 md:mt-20 border-y border-cc-black/15 bg-cc-offwhite overflow-hidden">
+          <div
+            className="cc-marquee-track cc-marquee-track--rueckwaerts flex w-max"
+            style={{ "--cc-marquee-dauer": "36s" } as React.CSSProperties}
           >
-            {EVENT.lineup.map((act, i) => (
-              <li key={act} className="whitespace-nowrap">
-                {act}
-                {i < EVENT.lineup.length - 1 && (
-                  <span className="ml-4 text-cc-black/25 md:hidden">·</span>
-                )}
-              </li>
+            {[0, 1].map((kopie) => (
+              <ul
+                key={kopie}
+                className="flex shrink-0 items-center justify-around min-w-[100vw] py-5 md:py-6 section-name text-cc-black/60"
+                style={{ fontSize: "clamp(0.6875rem, 0.9vw, 0.8125rem)", letterSpacing: "0.08em" }}
+                aria-hidden={kopie === 1}
+              >
+                {EVENT.lineup.map((act) => (
+                  <li key={act} className="shrink-0 whitespace-nowrap px-4 md:px-6">
+                    {act}
+                    <span className="ml-4 md:ml-6 text-cc-black/25" aria-hidden="true">
+                      ·
+                    </span>
+                  </li>
+                ))}
+              </ul>
             ))}
-          </ul>
+          </div>
         </div>
 
         {/* ── Partner-Laufband ─────────────────────────────────────
@@ -986,9 +1026,12 @@ export default function EventPage() {
             Ausstellenden. Die Liste steht zweimal in der Spur, die zweite
             ist eine reine Bildwiederholung und deshalb aria-hidden, sonst
             laese ein Screenreader jede Marke doppelt vor. Der Hintergrund
-            ist explizit cc-offwhite, weil die Logodateien denselben Ton als
-            Flaeche mitbringen und sonst als helle Kaesten auffielen. */}
-        <div className="mt-20 md:mt-32 border-y border-cc-black/15 bg-cc-offwhite overflow-hidden">
+            ist reines Weiss und hebt das Band gegen den leicht grauen
+            Seitengrund ab. Die Logodateien tragen denselben Weisston als
+            Flaeche, sonst saessen sie als sichtbare Kaesten darauf. Wird
+            die Farbe hier geaendert, muessen die Dateien unter
+            public/images/event/partner/ neu gerechnet werden. */}
+        <div className="mt-20 md:mt-32 border-y border-cc-black/15 bg-cc-white overflow-hidden">
           <div className="cc-marquee-track flex w-max">
             {[0, 1].map((kopie) => (
               <ul
