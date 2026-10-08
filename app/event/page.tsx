@@ -170,18 +170,6 @@ const EVENT = {
     {
       n: "07",
       role: "Toothgems",
-      title: "Kristall Pearl",
-      body: "Sexy Smiles.",
-      instagram: "kristall.pearl",
-      images: [
-        { src: "/images/event/aussteller/kristall-1.webp", alt: "Toothgems und silberne Zahnkappen von Kristall Pearl" },
-        { src: "/images/event/aussteller/kristall-2.webp", alt: "Kristall Pearl beim Setzen von Toothgems" },
-        { src: "/images/event/aussteller/kristall-3.webp", alt: "Entwürfe und Steine von Kristall Pearl" },
-      ],
-    },
-    {
-      n: "08",
-      role: "Toothgems",
       title: "Gems by Jiji",
       body: "Jiji, Dental Cosmetic Specialist. Tooth Gems und Bleaching.",
       instagram: "gemsbyjiji",
@@ -193,7 +181,7 @@ const EVENT = {
     },
     // Instagram-Handles der beiden Marken stehen noch aus, deshalb null.
     {
-      n: "09",
+      n: "08",
       role: "Messestand",
       title: "Curaprox",
       body: "Swiss Premium Oral Care von Curaden. Messestand mit Goodiebags.",
@@ -205,7 +193,7 @@ const EVENT = {
       ],
     },
     {
-      n: "10",
+      n: "09",
       role: "Messestand",
       title: "Denttabs",
       body: "Die Zahnputztablette. Messestand mit Goodiebags.",
@@ -217,7 +205,7 @@ const EVENT = {
       ],
     },
     {
-      n: "11",
+      n: "10",
       role: "Dental Tattoos",
       title: "June Handpoke",
       body: "Small stick and poke dental flashes on your skin xP",
@@ -229,7 +217,7 @@ const EVENT = {
       ],
     },
     {
-      n: "12",
+      n: "11",
       role: "Tattoo",
       title: "Anh",
       body: "Feine Linien, kleine Motive.",
@@ -241,7 +229,7 @@ const EVENT = {
       ],
     },
     {
-      n: "13",
+      n: "12",
       role: "Fashion",
       title: "Lina Leuschen",
       body: "Genähte Einzelstücke aus Denim, Tüll und Metall.",
@@ -253,7 +241,7 @@ const EVENT = {
       ],
     },
     {
-      n: "14",
+      n: "13",
       role: "Bedazzling Station",
       title: "Diamond Painting Station",
       // Formulierung stammt nicht von der Station selbst, sondern ist an
