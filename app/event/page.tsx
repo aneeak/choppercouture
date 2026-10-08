@@ -116,7 +116,7 @@ const EVENT = {
       images: [
         { src: "/images/event/aussteller/chopper-couture-1.webp", alt: "Anika Müggler und Jenny von Chopper Couture" },
         { src: "/images/event/aussteller/chopper-couture-2.webp", alt: "Roségoldenes Grillz von Chopper Couture auf dem Gipsmodell" },
-        { src: "/images/event/aussteller/chopper-couture-3.webp", alt: "Ornamentales Grillz von Chopper Couture auf dem Gipsmodell" },
+        { src: "/images/event/aussteller/chopper-couture-3.webp", alt: "Ornamentales Grillz von Chopper Couture in Nahaufnahme, auf dem Gipsmodell" },
       ],
     },
     {
