@@ -973,7 +973,10 @@ export default function EventPage() {
               </p>
             </div>
 
-            <div className="relative w-full aspect-[4/5] overflow-hidden bg-cc-pure mt-10 lg:mt-0 lg:order-1 lg:w-auto lg:h-[calc(var(--bh)*0.4)] lg:shrink-0 xl:absolute xl:z-10 xl:h-[var(--gh)] xl:w-[calc(var(--gh)*0.8)] xl:left-[calc(var(--bh)*0.75)] xl:top-[calc(50%+var(--gy))] xl:-translate-x-1/2 xl:-translate-y-1/2">
+            {/* Unterhalb von 768px ausgeblendet: Dasselbe Foto steht weiter
+                unten noch einmal in der Kachel von Chopper Couture, auf dem
+                Handy standen beide gross untereinander. */}
+            <div className="relative w-full aspect-[4/5] overflow-hidden bg-cc-pure mt-10 hidden md:block lg:mt-0 lg:order-1 lg:w-auto lg:h-[calc(var(--bh)*0.4)] lg:shrink-0 xl:absolute xl:z-10 xl:h-[var(--gh)] xl:w-[calc(var(--gh)*0.8)] xl:left-[calc(var(--bh)*0.75)] xl:top-[calc(50%+var(--gy))] xl:-translate-x-1/2 xl:-translate-y-1/2">
               <Image
                 src="/images/event/grillz-gewinnen.webp"
                 alt="Grillz von Chopper Couture, getragen"
