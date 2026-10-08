@@ -284,8 +284,9 @@ main p {
    Am Desktop wechselt das Ticket beim Hover auf Schwarz und die Schrift
    auf "Lets Go!". Auf dem Handy gibt es kein Hover, dort bekaeme man den
    zweiten Zustand nie zu sehen. Auf Geraeten ohne Mauszeiger laeuft der
-   Wechsel deshalb von selbst: gut fuenf Sekunden violett, rund anderthalb
-   Sekunden schwarz, dann zurueck.
+   Wechsel deshalb von selbst, und zwar im Sekundentakt: eine Sekunde
+   violett, eine Sekunde schwarz. Der Zyklus dauert also zwei Sekunden,
+   der Farbwechsel selbst liegt in den 10 Prozent dazwischen.
 
    Vier Elemente muessen dabei im Gleichtakt bleiben, Rahmenfarbe,
    Innenflaeche, Schriftfarbe und die beiden Textlagen. Deshalb teilen sich
@@ -295,32 +296,32 @@ main p {
    zutrifft; das laesst sich schwer pruefen und ist unnoetig fragil. Hier
    sind sie immer da, nur ihre Anwendung haengt an der Bedingung. */
 @keyframes cc-ticket-rahmen {
-  0%, 70%, 100% { color: var(--color-cc-purple); }
-  76%, 92%      { color: var(--color-cc-black); }
+  0%, 45%, 100% { color: var(--color-cc-purple); }
+  55%, 95%      { color: var(--color-cc-black); }
 }
 @keyframes cc-ticket-flaeche {
-  0%, 70%, 100% { background-color: rgb(124 58 237 / 0.08); }
-  76%, 92%      { background-color: var(--color-cc-black); }
+  0%, 45%, 100% { background-color: rgb(124 58 237 / 0.08); }
+  55%, 95%      { background-color: var(--color-cc-black); }
 }
 @keyframes cc-ticket-schrift {
-  0%, 70%, 100% { color: var(--color-cc-purple); }
-  76%, 92%      { color: var(--color-cc-white); }
+  0%, 45%, 100% { color: var(--color-cc-purple); }
+  55%, 95%      { color: var(--color-cc-white); }
 }
 @keyframes cc-ticket-aus {
-  0%, 70%, 100% { opacity: 1; }
-  76%, 92%      { opacity: 0; }
+  0%, 45%, 100% { opacity: 1; }
+  55%, 95%      { opacity: 0; }
 }
 @keyframes cc-ticket-an {
-  0%, 70%, 100% { opacity: 0; }
-  76%, 92%      { opacity: 1; }
+  0%, 45%, 100% { opacity: 0; }
+  55%, 95%      { opacity: 1; }
 }
 
 @media (hover: none) {
-  .cc-ticket          { animation: cc-ticket-rahmen 7s ease-in-out infinite; }
-  .cc-ticket-flaeche  { animation: cc-ticket-flaeche 7s ease-in-out infinite; }
-  .cc-ticket-schrift  { animation: cc-ticket-schrift 7s ease-in-out infinite; }
-  .cc-ticket-ruhe     { animation: cc-ticket-aus 7s ease-in-out infinite; }
-  .cc-ticket-aktiv    { animation: cc-ticket-an 7s ease-in-out infinite; }
+  .cc-ticket          { animation: cc-ticket-rahmen 2s ease-in-out infinite; }
+  .cc-ticket-flaeche  { animation: cc-ticket-flaeche 2s ease-in-out infinite; }
+  .cc-ticket-schrift  { animation: cc-ticket-schrift 2s ease-in-out infinite; }
+  .cc-ticket-ruhe     { animation: cc-ticket-aus 2s ease-in-out infinite; }
+  .cc-ticket-aktiv    { animation: cc-ticket-an 2s ease-in-out infinite; }
 }
 
 /* Reduced motion: kein Blinken, das Ticket bleibt violett */
