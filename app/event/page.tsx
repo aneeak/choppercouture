@@ -114,9 +114,7 @@ const EVENT = {
       body: "Anika Müggler, Zahntechnikerin. Dazu ein Workshop zur Modellherstellung.",
       instagram: "choppercouture",
       images: [
-        // nurDesktop: auf schmalen Schirmen faellt dieses Bild weg, die
-        // beiden anderen fuellen dort die Kachel.
-        { src: "/images/event/aussteller/chopper-couture-1.webp", alt: "Silbernes Grillz von Chopper Couture, getragen", nurDesktop: true },
+        { src: "/images/event/aussteller/chopper-couture-1.webp", alt: "Anika Müggler und Jenny von Chopper Couture" },
         { src: "/images/event/aussteller/chopper-couture-2.webp", alt: "Roségoldenes Grillz von Chopper Couture auf dem Gipsmodell" },
         { src: "/images/event/aussteller/chopper-couture-3.webp", alt: "Ornamentales Grillz von Chopper Couture auf dem Gipsmodell" },
       ],
@@ -667,11 +665,6 @@ function ExhibitorTile({
   const reversed = index % 2 === 1;
   const [lead, ...rest] = exhibitor.images;
 
-  /* Ein Bild kann nurDesktop tragen. Dann verschwindet es unterhalb von
-     768px und die beiden kleinen ruecken auf: das erste nimmt die grosse
-     Flaeche, das zweite die volle Hoehe der dritten Spalte. Ab md stellt
-     md:col-span / md:row-span das urspruengliche Mosaik wieder her. */
-  const leadNurDesktop = lead !== undefined && "nurDesktop" in lead;
 
   return (
     <div
@@ -700,11 +693,7 @@ function ExhibitorTile({
           Zeilenhöhe und die Kachel füllt sie per h-full. */}
       {lead ? (
         <div className="grid grid-cols-3 grid-rows-2 gap-px bg-cc-black/20 w-full aspect-[4/3] self-start min-h-[75vw] md:self-stretch md:min-h-0 md:h-full">
-          <div
-            className={`col-span-2 row-span-2 relative overflow-hidden bg-cc-black ${
-              leadNurDesktop ? "hidden md:block" : ""
-            }`}
-          >
+          <div className="col-span-2 row-span-2 relative overflow-hidden bg-cc-black">
             <Image
               src={lead.src}
               alt={lead.alt}
@@ -713,17 +702,8 @@ function ExhibitorTile({
               className="object-cover"
             />
           </div>
-          {rest.map((img, i) => (
-            <div
-              key={img.src}
-              className={`relative overflow-hidden bg-cc-black ${
-                leadNurDesktop
-                  ? i === 0
-                    ? "col-span-2 row-span-2 md:col-span-1 md:row-span-1"
-                    : "row-span-2 md:row-span-1"
-                  : ""
-              }`}
-            >
+          {rest.map((img) => (
+            <div key={img.src} className="relative overflow-hidden bg-cc-black">
               <Image
                 src={img.src}
                 alt={img.alt}
