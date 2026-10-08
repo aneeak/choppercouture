@@ -10,9 +10,16 @@ permissions:
   pages: write
   id-token: write
 
+# Eigene Gruppe statt des frueheren "pages": Am 06.10.2026 blieb ein
+# Deployment auf GitHubs Seite im Status waiting haengen. Weil der Lauf die
+# Gruppe nie freigab, konnte kein spaeterer Lauf mehr starten, obwohl mit
+# dem Code alles in Ordnung war. Ein neuer Gruppenname loest die Blockade.
+# cancel-in-progress sorgt dafuer, dass ein haengender Lauf kuenftig nicht
+# mehr alles dahinter aufhaelt: Der neuere Stand gewinnt, was bei einer
+# Website genau richtig ist.
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: pages-deploy
+  cancel-in-progress: true
 
 jobs:
   build:
