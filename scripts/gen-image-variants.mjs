@@ -19,7 +19,7 @@
  * kompletten Varianten-Ordner, danach wird alles neu gerechnet.
  */
 
-import { readdir, stat, mkdir, writeFile, rm } from "node:fs/promises";
+import { readdir, readFile, mkdir, writeFile, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
@@ -41,17 +41,28 @@ const WIDTHS = [256, 384, 640, 828, 1080, 1440, 1920];
 const RASTER = /\.(jpe?g|png|webp)$/i;
 
 /**
- * Basisname einer Variante: Pfad ohne Endung plus kurzer Hash des vollen
- * Quellpfads inklusive Endung.
+ * Basisname einer Variante: Pfad ohne Endung plus kurzer Hash aus
+ * Quellpfad UND Dateiinhalt.
  *
- * Der Hash ist nicht Deko. Ohne ihn erzeugen styles/Ornamental.png und
+ * Der Pfad muss rein, sonst erzeugen styles/Ornamental.png und
  * styles/ornamental.jpg denselben Variantennamen. Auf macOS ist das
  * Dateisystem case-insensitiv, dort überschreiben sich die beiden still
  * und heimlich; auf einem Linux-Webserver wäre eine der beiden ein 404.
+ *
+ * Der Inhalt muss ebenfalls rein. Ohne ihn behält ein ausgetauschtes Bild
+ * seine alte Adresse, und Browser liefern tagelang weiter die Fassung aus
+ * ihrem Cache, obwohl auf dem Server längst die neue liegt. Genau das ist
+ * am 08.10.2026 beim Plakat der Expo-Seite passiert. Mit dem Inhalt im
+ * Hash bekommt jede Änderung eine neue Adresse, die niemand im Cache
+ * haben kann.
  */
-function variantBase(rel) {
+function variantBase(rel, inhalt) {
   const posix = rel.split(path.sep).join("/");
-  const hash = createHash("sha1").update(posix).digest("hex").slice(0, 6);
+  const hash = createHash("sha1")
+    .update(posix)
+    .update(inhalt)
+    .digest("hex")
+    .slice(0, 8);
   return posix.replace(RASTER, "") + "-" + hash;
 }
 
@@ -85,11 +96,11 @@ async function main() {
   for await (const file of walk(SRC_DIR)) {
     const rel = path.relative(SRC_DIR, file); // z.B. "galerie/v100369.jpg"
     const publicSrc = "/images/" + rel.split(path.sep).join("/");
-    const meta = await sharp(file).metadata();
+    const inhalt = await readFile(file);
+    const meta = await sharp(inhalt).metadata();
     if (!meta.width) continue;
 
-    const srcStat = await stat(file);
-    const base = variantBase(rel);
+    const base = variantBase(rel, inhalt);
     const available = [];
 
     /**
@@ -115,17 +126,15 @@ async function main() {
       const outFile = path.join(OUT_DIR, outRel);
       await mkdir(path.dirname(outFile), { recursive: true });
 
-      // Nur neu rechnen, wenn die Variante fehlt oder älter als die Quelle ist.
-      let needs = true;
+      /* Existiert die Datei, ist sie garantiert aktuell: Der Name trägt den
+         Hash des Quellinhalts, ein geändertes Bild bekommt also ohnehin
+         einen neuen Namen. Ein Vergleich von Änderungsdaten erübrigt sich,
+         der war früher nötig und bei blossem Kopieren auch fehleranfällig. */
       if (existsSync(outFile)) {
-        const outStat = await stat(outFile);
-        needs = outStat.mtimeMs < srcStat.mtimeMs;
-      }
-      if (needs) {
-        await sharp(file).resize(w).webp({ quality: 78 }).toFile(outFile);
-        written++;
-      } else {
         skipped++;
+      } else {
+        await sharp(inhalt).resize(w).webp({ quality: 78 }).toFile(outFile);
+        written++;
       }
       available.push(w);
     }
