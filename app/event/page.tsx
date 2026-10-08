@@ -48,7 +48,7 @@ const EVENT = {
 
   /** Anzeigetext für Datum + Uhrzeit. */
   dateLabel: "Samstag, 24. Oktober 2026",
-  doorsLabel: "14:00–02:00 Uhr",
+  doorsLabel: "14:00–00:00 Uhr",
 
   /** Der Ort, im Ton des Decks. */
   venueText:
@@ -65,14 +65,19 @@ const EVENT = {
       text: "Türen auf, Free Drink, die Ausstellung öffnet. Ab jetzt laufen die ersten Slots.",
     },
     {
-      time: "14:00–21:00",
+      time: "14:00–20:30",
       title: "Peak",
       text: "Hands on: Abdrücke nehmen, Tooth Gems setzen, Beratung. Bar und Snacks durchgehend, Musik den ganzen Tag.",
     },
     {
-      time: "21:00–02:00",
+      time: "20:30",
+      title: "Live",
+      text: "Goldie 333 live auf der Bühne.",
+    },
+    {
+      time: "21:00–00:00",
       title: "Stage",
-      text: "Live Act, DJ-Sets, die Grillz-Verlosung und Afterparty bis zwei. Gehen oder bleiben, beides geht.",
+      text: "DJ-Sets, die Grillz-Verlosung und Afterparty bis Mitternacht. Gehen oder bleiben, beides geht.",
     },
   ],
 
@@ -91,6 +96,18 @@ const EVENT = {
   exhibitors: [
     {
       n: "01",
+      role: "Live Music",
+      title: "Goldie 333",
+      body: "Live auf der Bühne, 20:30.",
+      instagram: "goldie.333",
+      images: [
+        { src: "/images/event/aussteller/goldie-1.webp", alt: "Goldie 333 mit Grillz, Cap und Sonnenbrille" },
+        { src: "/images/event/aussteller/goldie-2.webp", alt: "Goldie 333 am Mikrofon auf der Bühne" },
+        { src: "/images/event/aussteller/goldie-3.webp", alt: "Goldie 333, Schwarzweißaufnahme" },
+      ],
+    },
+    {
+      n: "02",
       role: "Grillz",
       title: "Chopper Couture",
       body: "Anika Müggler, Zahntechnikerin. Dazu ein Workshop zur Modellherstellung.",
@@ -102,7 +119,7 @@ const EVENT = {
       ],
     },
     {
-      n: "02",
+      n: "03",
       role: "Grillz",
       title: "Grillz by Espino",
       body: "Chrome Grillz aus Kreuzberg.",
@@ -114,7 +131,7 @@ const EVENT = {
       ],
     },
     {
-      n: "03",
+      n: "04",
       role: "Grillz",
       title: "dimapeletsky",
       body: "Dark Biomorphic Style.",
@@ -126,7 +143,7 @@ const EVENT = {
       ],
     },
     {
-      n: "04",
+      n: "05",
       role: "Grillz",
       title: "Bladezz",
       body: "Floral, organisch, filigran.",
@@ -138,7 +155,7 @@ const EVENT = {
       ],
     },
     {
-      n: "05",
+      n: "06",
       role: "Toothgems",
       title: "Toothcandy",
       body: "Toothgems von Melissa Righi.",
@@ -150,7 +167,7 @@ const EVENT = {
       ],
     },
     {
-      n: "06",
+      n: "07",
       role: "Toothgems",
       title: "Kristall Pearl",
       body: "Sexy Smiles.",
@@ -162,7 +179,7 @@ const EVENT = {
       ],
     },
     {
-      n: "07",
+      n: "08",
       role: "Toothgems",
       title: "Gems by Jiji",
       body: "Jiji, Dental Cosmetic Specialist. Tooth Gems und Bleaching.",
@@ -173,8 +190,33 @@ const EVENT = {
         { src: "/images/event/aussteller/jiji-3.webp", alt: "Dicht gesetzte klare Tooth Gems von Gems by Jiji" },
       ],
     },
+    // Instagram-Handles der beiden Marken stehen noch aus, deshalb null.
     {
-      n: "08",
+      n: "09",
+      role: "Messestand",
+      title: "Curaprox",
+      body: "Swiss Premium Oral Care von Curaden. Messestand mit Goodiebags.",
+      instagram: null as string | null,
+      images: [
+        { src: "/images/event/aussteller/curaprox-1.webp", alt: "Zahnbürsten, Zahnpasta und Interdentalpflege von Curaprox" },
+        { src: "/images/event/aussteller/curaprox-2.webp", alt: "Curaprox Zahnbürsten in vielen Farben, als Bogen gestellt" },
+        { src: "/images/event/aussteller/curaprox-3.webp", alt: "Zwei Curaprox Zahnbürsten neben der Verpackung" },
+      ],
+    },
+    {
+      n: "10",
+      role: "Messestand",
+      title: "Denttabs",
+      body: "Die Zahnputztablette. Messestand mit Goodiebags.",
+      instagram: null as string | null,
+      images: [
+        { src: "/images/event/aussteller/denttabs-1.webp", alt: "Denttabs Zahnputztabletten in Mint und Strawberry mit Bambusbürste" },
+        { src: "/images/event/aussteller/denttabs-2.webp", alt: "Denttabs Strawberry Packung mit Bambusbürste" },
+        { src: "/images/event/aussteller/denttabs-3.webp", alt: "Bambusbürsten im Glas neben einem Glas voller Zahnputztabletten" },
+      ],
+    },
+    {
+      n: "11",
       role: "Dental Tattoos",
       title: "June Handpoke",
       body: "Small stick and poke dental flashes on your skin xP",
@@ -186,7 +228,7 @@ const EVENT = {
       ],
     },
     {
-      n: "09",
+      n: "12",
       role: "Tattoo",
       title: "Anh",
       body: "Feine Linien, kleine Motive.",
@@ -198,7 +240,7 @@ const EVENT = {
       ],
     },
     {
-      n: "10",
+      n: "13",
       role: "Fashion",
       title: "Lina Leuschen",
       body: "Genähte Einzelstücke aus Denim, Tüll und Metall.",
@@ -210,7 +252,7 @@ const EVENT = {
       ],
     },
     {
-      n: "11",
+      n: "14",
       role: "Bedazzling Station",
       title: "Diamond Painting Station",
       // Formulierung stammt nicht von der Station selbst, sondern ist an
@@ -226,7 +268,35 @@ const EVENT = {
   ],
 
   /** Kategorien vom Plakat, für die noch keine Namen final sind. */
-  openSlots: ["Clothing", "Live Music"],
+  openSlots: ["Clothing"],
+
+  /**
+   * Partner und Sponsoren fuers Laufband. Die Dateien liegen bereits auf
+   * gleiche optische Groesse gerechnet unter public/images/event/partner/,
+   * jeweils in doppelter Aufloesung. w und h sind deshalb die halbe
+   * Dateigroesse, also die Anzeigegroesse in CSS-Pixeln. Gleiche Flaeche
+   * statt gleicher Hoehe, sonst wirkt ein breiter Schriftzug neben einem
+   * quadratischen Signet doppelt so gross.
+   */
+  partners: [
+    { src: "/images/event/partner/curaden.webp", alt: "Curaden", w: 132, h: 43 },
+    { src: "/images/event/partner/denttabs.webp", alt: "Denttabs", w: 170, h: 27 },
+    { src: "/images/event/partner/mampe.webp", alt: "Mampe Berlin", w: 118, h: 48 },
+    { src: "/images/event/partner/berliner-luft.webp", alt: "Berliner Luft", w: 109, h: 52 },
+    { src: "/images/event/partner/almdudler.webp", alt: "Almdudler", w: 149, h: 38 },
+    { src: "/images/event/partner/spezi.webp", alt: "Spezi", w: 70, h: 80 },
+    { src: "/images/event/partner/oemus.webp", alt: "OEMUS MEDIA", w: 75, h: 75 },
+  ],
+
+  /** Presse über die Expo. Leeres Array blendet den ganzen Block aus. */
+  press: [
+    {
+      outlet: "Zahntechnik Zeitung",
+      publisher: "OEMUS MEDIA",
+      issue: "Ausgabe 10/2026",
+      url: "https://epaper.zwp-online.info/epaper/sim/zt/2026/zt1026#4",
+    },
+  ],
 
   /** Was es sonst noch gibt. */
   details: [
@@ -289,10 +359,10 @@ const EVENT = {
 
   /** ISO-Start/Ende, nur für die strukturierten Daten.
       +02:00, weil die Sommerzeit erst am 25.10.2026 endet. Die Zeitumstellung
-      in dieser Nacht (03:00 CEST → 02:00 CET) liegt nach dem Ende um 02:00,
-      beide Zeiten stehen also noch in der Sommerzeit. */
+      in dieser Nacht (03:00 CEST → 02:00 CET) liegt nach dem Ende um
+      Mitternacht, beide Zeiten stehen also noch in der Sommerzeit. */
   startIso: "2026-10-24T14:00:00+02:00",
-  endIso: "2026-10-25T02:00:00+02:00",
+  endIso: "2026-10-25T00:00:00+02:00",
 };
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -789,7 +859,13 @@ export default function EventPage() {
             Ticket kollidieren würde; dort stehen Motiv und Ticket deshalb
             als normale Reihe unter dem Text.
 
-            Mobile stapelt: Nachtbild, Text, Ticket, Motiv. */}
+            Mobile stapelt: Ticket, Nachtbild, Text, Motiv. Der Kauf steht
+            dort ganz oben, noch vor dem Nachtbild. Dafuer loest der Wrapper
+            um Motiv und Ticket sich unterhalb von 1024px per contents auf,
+            damit beide direkte Flex-Kinder werden und das Ticket per
+            order-first nach vorn springen kann. Die Abstaende, die vorher
+            vom Wrapper kamen (mt-10, gap-8), tragen deshalb unterhalb von
+            1024px die Kinder selbst. */}
         <div
           className="mt-14 md:mt-20 flex flex-col lg:grid lg:grid-cols-[auto_minmax(0,1fr)] lg:grid-rows-[auto_auto] lg:items-start xl:relative"
           style={
@@ -808,7 +884,7 @@ export default function EventPage() {
           }
         >
           {/* Nachtbild, ganz links */}
-          <div className="relative w-full aspect-[3/4] overflow-hidden bg-cc-pure lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:aspect-auto lg:h-[var(--bh)] lg:w-[calc(var(--bh)*0.75)]">
+          <div className="relative w-full aspect-[3/4] overflow-hidden bg-cc-pure mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:aspect-auto lg:h-[var(--bh)] lg:w-[calc(var(--bh)*0.75)]">
             <Image
               src="/images/event/bunker-west-nacht.webp"
               alt="Eingang des Bunker West bei Nacht, Menschen warten vor der beleuchteten Tür"
@@ -849,10 +925,11 @@ export default function EventPage() {
           {/* Motiv und Ticket. xl:contents löst diesen Wrapper ab 1280px
               auf, damit beide Kinder direkt gegen den Container positioniert
               werden können. Darunter bleibt er eine normale Reihe. */}
-          <div className="mt-10 flex flex-col lg:flex-row lg:items-end gap-8 lg:gap-10 lg:col-start-2 lg:row-start-2 lg:pl-14 lg:pr-12 xl:contents">
-            {/* Ticket steht im DOM vor dem Motiv, damit der Kauf auf dem
-                Handy nicht ans Ende rutscht. */}
-            <div className="px-6 md:px-12 lg:px-0 lg:order-2 w-full lg:w-[420px] lg:shrink-0 xl:absolute xl:z-20 xl:w-[calc(var(--gh)*var(--tv))] xl:left-[calc(var(--bh)*0.75+var(--gh)*0.4+2.5rem)] xl:top-[calc(50%+var(--gy)+var(--gh)/2)] xl:-translate-y-full">
+          <div className="contents lg:flex lg:flex-row lg:items-end lg:gap-10 lg:col-start-2 lg:row-start-2 lg:pl-14 lg:pr-12 xl:contents">
+            {/* order-first zieht das Ticket auf Mobile vor das Nachtbild.
+                Ab 1024px greift wieder lg:order-2, dann steht es rechts
+                neben dem Motiv. */}
+            <div className="px-6 md:px-12 lg:px-0 order-first lg:order-2 w-full lg:w-[420px] lg:shrink-0 xl:absolute xl:z-20 xl:w-[calc(var(--gh)*var(--tv))] xl:left-[calc(var(--bh)*0.75+var(--gh)*0.4+2.5rem)] xl:top-[calc(50%+var(--gy)+var(--gh)/2)] xl:-translate-y-full">
               <TicketCard ticketsLive={ticketsLive} />
 
               {/* Pflichthinweis direkt unter der Grafik. top-full hängt ihn
@@ -871,7 +948,7 @@ export default function EventPage() {
               </p>
             </div>
 
-            <div className="relative w-full aspect-[4/5] overflow-hidden bg-cc-pure lg:order-1 lg:w-auto lg:h-[calc(var(--bh)*0.4)] lg:shrink-0 xl:absolute xl:z-10 xl:h-[var(--gh)] xl:w-[calc(var(--gh)*0.8)] xl:left-[calc(var(--bh)*0.75)] xl:top-[calc(50%+var(--gy))] xl:-translate-x-1/2 xl:-translate-y-1/2">
+            <div className="relative w-full aspect-[4/5] overflow-hidden bg-cc-pure mt-10 lg:mt-0 lg:order-1 lg:w-auto lg:h-[calc(var(--bh)*0.4)] lg:shrink-0 xl:absolute xl:z-10 xl:h-[var(--gh)] xl:w-[calc(var(--gh)*0.8)] xl:left-[calc(var(--bh)*0.75)] xl:top-[calc(50%+var(--gy))] xl:-translate-x-1/2 xl:-translate-y-1/2">
               <Image
                 src="/images/event/grillz-gewinnen.webp"
                 alt="Grillz von Chopper Couture, getragen"
@@ -902,6 +979,46 @@ export default function EventPage() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* ── Partner-Laufband ─────────────────────────────────────
+            Laeuft endlos von rechts nach links, direkt vor den
+            Ausstellenden. Die Liste steht zweimal in der Spur, die zweite
+            ist eine reine Bildwiederholung und deshalb aria-hidden, sonst
+            laese ein Screenreader jede Marke doppelt vor. Der Hintergrund
+            ist explizit cc-offwhite, weil die Logodateien denselben Ton als
+            Flaeche mitbringen und sonst als helle Kaesten auffielen. */}
+        <div className="mt-20 md:mt-32 border-y border-cc-black/15 bg-cc-offwhite overflow-hidden">
+          <div className="cc-marquee-track flex w-max">
+            {[0, 1].map((kopie) => (
+              <ul
+                key={kopie}
+                /* min-w-[100vw] ist der Knackpunkt: Die sieben Logos sind
+                   zusammen schmaler als ein breiter Bildschirm. Ohne die
+                   Mindestbreite waere die Spur schmaler als zweimal das
+                   Fenster, und beim Umlauf klaffte rechts eine Luecke.
+                   justify-around verteilt die Logos dann ueber die ganze
+                   Breite, statt sie links zusammenzuschieben. */
+                className="flex shrink-0 items-center justify-around min-w-[100vw]"
+                aria-hidden={kopie === 1}
+              >
+                {EVENT.partners.map((partner) => (
+                  <li
+                    key={partner.src}
+                    className="shrink-0 px-7 md:px-10 py-6 md:py-7"
+                  >
+                    <Image
+                      src={partner.src}
+                      alt={partner.alt}
+                      width={partner.w}
+                      height={partner.h}
+                      sizes={`${partner.w}px`}
+                    />
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
         </div>
 
         {/* ── Die Ausstellenden ────────────────────────────────────────────
@@ -963,6 +1080,50 @@ export default function EventPage() {
             </div>
           )}
         </div>
+
+        {/* ── Presse ─────────────────────────────────────────────
+            Steht bewusst hinter den Ausstellenden und vor den Fakten. Eine
+            Zeile pro Erwähnung, derselbe Linkstil wie die Instagram-Links
+            in den Kacheln. Ist EVENT.press leer, fällt der Block weg. */}
+        {EVENT.press.length > 0 && (
+          <div className="px-6 md:px-10 max-w-[920px] mx-auto mt-20 md:mt-32">
+            <p
+              className="section-name text-cc-black/50"
+              style={{ fontSize: "0.7rem", letterSpacing: "0.08em" }}
+            >
+              PRESSE
+            </p>
+            <ul className="mt-5">
+              {EVENT.press.map((item) => (
+                <li
+                  key={item.url}
+                  className="border-t border-cc-black/15 pt-5 mt-5 first:mt-0"
+                >
+                  <p
+                    className="font-hatton"
+                    style={{ fontSize: "clamp(1.25rem, 2.4vw, 1.75rem)", lineHeight: "1.2" }}
+                  >
+                    {item.outlet}
+                  </p>
+                  <p
+                    className="mt-2 body-copy text-cc-black/70"
+                    style={{ fontSize: "clamp(0.9375rem, 1.1vw, 1.0625rem)" }}
+                  >
+                    {item.publisher} · {item.issue}
+                  </p>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1.5 inline-block py-3.5 font-mono text-xs tracking-cc-caps uppercase text-cc-black/55 underline underline-offset-4 hover:text-cc-purple transition-colors"
+                  >
+                    Zum E-Paper
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="px-6 md:px-10 max-w-[920px] mx-auto">
           {/* Fakten, Datum, Einlass, Ort, Preis */}
