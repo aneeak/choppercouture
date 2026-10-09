@@ -210,9 +210,9 @@ const EVENT = {
     },
     {
       n: "10",
-      role: "Messestand",
+      role: "Goodiebags",
       title: "Denttabs",
-      body: "Die Zahnputztablette. Messestand mit Goodiebags.",
+      body: "Die Zahnputztablette. Mit Goodiebags.",
       instagram: null as string | null,
       images: [
         { src: "/images/event/aussteller/denttabs-1.webp", alt: "Denttabs Zahnputztabletten in Mint und Strawberry mit Bambusbürste" },
