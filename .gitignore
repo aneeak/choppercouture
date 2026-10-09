@@ -19,8 +19,12 @@ public/videos/process_original.mp4
 /CC_Landing_Vid_mobile.mp4
 /CC_Prozess_mobile.mp4
 
-# InDesign-Font-Listen (werden von InDesign automatisch erzeugt)
-indesign/**/AdobeFnt*.lst
+# Entwurfsmaterial. Zusammen 169 MB, vom Code nirgends referenziert, wird
+# aber bei jedem CI-Lauf mit ausgecheckt. Bleibt lokal liegen, die Historie
+# hat die Dateien weiterhin.
+indesign/
+builder_package/
+illustrator/
 
 # Galerie-Quellbilder (nur die optimierten in public/images/galerie/)
 CC_Galerie_Bilder/
