@@ -112,7 +112,7 @@ const EVENT = {
       n: "02",
       role: "Grillz",
       title: "Chopper Couture",
-      body: "Anika Müggler, Zahntechnikerin. Dazu ein Workshop zur Modellherstellung.",
+      body: "Anika und Jenny, Event-Organisation. Dazu ein Workshop zur Modellherstellung.",
       instagram: "choppercouture",
       images: [
         { src: "/images/event/aussteller/chopper-couture-1.webp", alt: "Anika Müggler und Jenny von Chopper Couture" },
