@@ -167,8 +167,22 @@ const EVENT = {
         { src: "/images/event/aussteller/toothcandy-3.webp", alt: "Rote und schwarze Toothgems von Toothcandy" },
       ],
     },
+    // instagram nimmt hier ausnahmsweise zwei Handles: Sassy Beauty hat
+    // einen Account fuer den Salon und einen fuers Make-up.
     {
       n: "07",
+      role: "Toothgems & Make-up",
+      title: "Sassy Beauty",
+      body: "Tooth Gems und Make-up.",
+      instagram: ["cedanbeautyberlin", "makeupartistin_berlin"],
+      images: [
+        { src: "/images/event/aussteller/sassy-1.webp", alt: "Augen-Make-up mit Steinen und Perlen von Sassy Beauty" },
+        { src: "/images/event/aussteller/sassy-2.webp", alt: "Tooth Gems auf den Schneidez\u00e4hnen von Sassy Beauty" },
+        { src: "/images/event/aussteller/sassy-3.webp", alt: "Gesetzte Tooth Gems von Sassy Beauty, seitlich" },
+      ],
+    },
+    {
+      n: "08",
       role: "Toothgems",
       title: "Gems by Jiji",
       body: "Jiji, Dental Cosmetic Specialist. Tooth Gems und Bleaching.",
@@ -181,7 +195,7 @@ const EVENT = {
     },
     // Instagram-Handles der beiden Marken stehen noch aus, deshalb null.
     {
-      n: "08",
+      n: "09",
       role: "Messestand",
       title: "Curaprox",
       body: "Swiss Premium Oral Care von Curaden. Messestand mit Goodiebags.",
@@ -193,7 +207,7 @@ const EVENT = {
       ],
     },
     {
-      n: "09",
+      n: "10",
       role: "Messestand",
       title: "Denttabs",
       body: "Die Zahnputztablette. Messestand mit Goodiebags.",
@@ -205,7 +219,7 @@ const EVENT = {
       ],
     },
     {
-      n: "10",
+      n: "11",
       role: "Dental Tattoos",
       title: "June Handpoke",
       body: "Small stick and poke dental flashes on your skin xP",
@@ -217,7 +231,7 @@ const EVENT = {
       ],
     },
     {
-      n: "11",
+      n: "12",
       role: "Tattoo",
       title: "Anh",
       body: "Feine Linien, kleine Motive.",
@@ -229,7 +243,7 @@ const EVENT = {
       ],
     },
     {
-      n: "12",
+      n: "13",
       role: "Fashion",
       title: "Lina Leuschen",
       body: "Genähte Einzelstücke aus Denim, Tüll und Metall.",
@@ -241,7 +255,7 @@ const EVENT = {
       ],
     },
     {
-      n: "13",
+      n: "14",
       role: "Bedazzling Station",
       title: "Diamond Painting Station",
       // Formulierung stammt nicht von der Station selbst, sondern ist an
@@ -652,6 +666,9 @@ function ExhibitorTile({
 }) {
   const reversed = index % 2 === 1;
   const [lead, ...rest] = exhibitor.images;
+  const handles = exhibitor.instagram
+    ? [exhibitor.instagram].flat()
+    : [];
 
 
   return (
@@ -727,19 +744,28 @@ function ExhibitorTile({
           <p className="text-base md:text-lg leading-relaxed text-cc-black/75">
             {exhibitor.body}
           </p>
-          {exhibitor.instagram && (
-            <a
-              href={`https://instagram.com/${exhibitor.instagram}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              /* py-3.5 bringt die Trefferfläche auf 44px Höhe, den
-                 Richtwert für Fingertipps. mt-1.5 gleicht die neue
-                 Innenpolsterung aus, damit der sichtbare Abstand zum
-                 Absatz darüber derselbe bleibt wie vorher. */
-              className="mt-1.5 inline-block py-3.5 font-mono text-xs tracking-cc-caps uppercase text-cc-black/55 underline underline-offset-4 hover:text-cc-purple transition-colors"
-            >
-              @{exhibitor.instagram}
-            </a>
+          {/* instagram ist entweder ein Handle oder mehrere, Sassy Beauty hat
+              einen Account fuer den Salon und einen fuers Make-up. Hier wird
+              beides auf dieselbe Liste gebracht, damit die Darstellung nur
+              einen Fall kennt. */}
+          {handles.length > 0 && (
+            <div className="mt-1.5 flex flex-wrap items-center gap-x-5">
+              {handles.map((handle) => (
+                <a
+                  key={handle}
+                  href={`https://instagram.com/${handle}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  /* py-3.5 bringt die Trefferfläche auf 44px Höhe, den
+                     Richtwert für Fingertipps. Das mt-1.5 sitzt am Umschlag
+                     und gleicht die Innenpolsterung aus, damit der sichtbare
+                     Abstand zum Absatz darüber derselbe bleibt wie vorher. */
+                  className="inline-block py-3.5 font-mono text-xs tracking-cc-caps uppercase text-cc-black/55 underline underline-offset-4 hover:text-cc-purple transition-colors"
+                >
+                  @{handle}
+                </a>
+              ))}
+            </div>
           )}
         </div>
       </div>
