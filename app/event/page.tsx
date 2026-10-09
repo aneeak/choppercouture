@@ -73,7 +73,7 @@ const EVENT = {
     {
       time: "20:30",
       title: "Live",
-      text: "Goldie 333 live auf der Bühne.",
+      text: "Goldie 333 on stage.",
     },
     {
       time: "21:00–00:00",
@@ -97,9 +97,9 @@ const EVENT = {
   exhibitors: [
     {
       n: "01",
-      role: "Live Music",
+      role: "Live Act",
       title: "Goldie 333",
-      body: "Live auf der Bühne, 20:30.",
+      body: "On stage, 20:30.",
       instagram: "goldie.333",
       images: [
         { src: "/images/event/aussteller/goldie-1.webp", alt: "Goldie 333 mit Grillz, Cap und Sonnenbrille" },
