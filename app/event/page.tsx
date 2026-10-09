@@ -86,8 +86,9 @@ const EVENT = {
    * ── AUSSTELLENDE ────────────────────────────────────────────────────────
    * Kacheln im Rhythmus der Step-by-Step-Sektionen der Startseite.
    *
-   * Pro Artist drei Fotos: `images[0]` ist das große Bild links im Mosaik,
-   * `images[1]` und `images[2]` stehen rechts daneben. Kommt ein Artist ohne
+   * Pro Artist in der Regel drei Fotos: `images[0]` ist das große Bild
+   * links im Mosaik, die übrigen stehen rechts daneben untereinander.
+   * Die rechte Spalte waechst mit, vier Fotos gehen also auch. Kommt ein Artist ohne
    * Fotos dazu, `images: []` lassen, dann rendert die Kachel automatisch eine
    * Platzhalterfläche.
    *
@@ -191,6 +192,7 @@ const EVENT = {
         { src: "/images/event/aussteller/jiji-1.webp", alt: "Tooth Gems von Gems by Jiji, getragen mit einer mit Steinen besetzten rosa Sturmhaube" },
         { src: "/images/event/aussteller/jiji-2.webp", alt: "Tooth Gems in Lila und Klar auf den Schneidezähnen, von Gems by Jiji" },
         { src: "/images/event/aussteller/jiji-3.webp", alt: "Dicht gesetzte klare Tooth Gems von Gems by Jiji" },
+        { src: "/images/event/aussteller/jiji-4.webp", alt: "Bleaching bei Gems by Jiji, Z\u00e4hne mit blauem Lippenhalter" },
       ],
     },
     // Instagram-Handles der beiden Marken stehen noch aus, deshalb null.
@@ -697,8 +699,18 @@ function ExhibitorTile({
           Ab md gilt beides nicht mehr: dort bestimmt die Textspalte die
           Zeilenhöhe und die Kachel füllt sie per h-full. */}
       {lead ? (
-        <div className="grid grid-cols-3 grid-rows-2 gap-px bg-cc-black/20 w-full aspect-[4/3] self-start min-h-[75vw] md:self-stretch md:min-h-0 md:h-full">
-          <div className="col-span-2 row-span-2 relative overflow-hidden bg-cc-black">
+        <div
+          className="grid grid-cols-3 gap-px bg-cc-black/20 w-full aspect-[4/3] self-start min-h-[75vw] md:self-stretch md:min-h-0 md:h-full"
+          /* Die Zeilenzahl folgt der Anzahl der kleinen Bilder, damit die
+             rechte Spalte auch vier Fotos tragen kann. Bei den ueblichen
+             drei Fotos sind es zwei Zeilen, also genau wie zuvor. Als
+             Tailwind-Klasse ginge das nicht, grid-rows-{n} muss zur
+             Bauzeit feststehen. */
+          style={{
+            gridTemplateRows: `repeat(${Math.max(rest.length, 1)}, minmax(0, 1fr))`,
+          }}
+        >
+          <div className="col-span-2 row-span-full relative overflow-hidden bg-cc-black">
             <Image
               src={lead.src}
               alt={lead.alt}
